@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Avenir";
+  src: url(/fonts/AvenirRegular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: "Avenir";
+    src: url(/fonts/AvenirHeavy.ttf);
+    font-weight: 900;
+    font-style: normal;
+}
