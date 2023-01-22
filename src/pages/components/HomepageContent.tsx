@@ -1,7 +1,7 @@
 import MALxJPN from "./MALxJPN";
 import MostPopularAnimePlaceholder from "./MostPopularAnimePlaceholder";
 import TopAiringAnimePlaceholder from "./TopAiringAnimePlaceholder";
-import TopUpcomingAnimePlaceholder from "./TopUpcomingAnimePlaceholder copy";
+import TopUpcomingAnimePlaceholder from "./TopUpcomingAnimePlaceholder";
 
 const HomepageContent: React.FC = () => {
   return (
