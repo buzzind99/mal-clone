@@ -1,16 +1,15 @@
 import Image from "next/image";
 
-const MALxJPN: React.FC= () => {
+const MALxJPN: React.FC = () => {
   return (
-    <article
-      id="mal-x-jpn"
-      className="font-[Verdana] font-bold text-[0.75rem]"
-    >
+    <article id="mal-x-jpn" className="font-[Verdana] font-bold text-[0.75rem]">
       <div
         id="mal-x-jpn_header"
         className="h-[1.375rem] py-[0.1875rem] border-b-[1px] border-[#bebebe] flex justify-between items-center"
       >
-        <span className="float-left">MALxJapan -More than just anime- {"{this is a dummy}"}</span>
+        <span className="float-left">
+          MALxJapan -More than just anime- {"{this is a dummy}"}
+        </span>
         <a
           href="https://mxj.myanimelist.net/"
           target="https://mxj.myanimelist.net/"
