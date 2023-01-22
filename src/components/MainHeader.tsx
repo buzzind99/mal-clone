@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const MainHeader: React.FC = () => {
   return (
-    <div
+    <header
       id="main-header"
       className="flex bg-white h-12 min-w-[66.25rem] justify-center"
     >
@@ -41,7 +41,7 @@ const MainHeader: React.FC = () => {
           </button>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 
