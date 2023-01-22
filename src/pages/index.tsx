@@ -1,4 +1,5 @@
 import ContentTitleBar from "@/components/ContentTitleBar";
+import FooterChartPlaceholder from "@/components/FooterChartPlaceholder";
 import MainContainer from "@/components/MainContainer";
 import MainHeader from "@/components/MainHeader";
 import NavBar from "@/components/NavBar";
@@ -24,6 +25,7 @@ export default function Home() {
       <MainContainer>
         <HomepageContent />
       </MainContainer>
+      <FooterChartPlaceholder />
     </>
   );
 }
