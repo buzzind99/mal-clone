@@ -25,10 +25,9 @@ const TopAiringAnimePlaceholder: React.FC = () => {
           <Image
             src="https://cdn.myanimelist.net/images/anime/1170/124312.jpg"
             alt="placeholder"
-            width={225}
-            height={318}
-            priority={true}
-            className="h-[4.375rem]"
+            width={50}
+            height={70}
+            className="h-[4.375rem] object-cover"
           />
         </a>
         <div className="ml-2 w-[13.25rem]">
@@ -58,10 +57,9 @@ const TopAiringAnimePlaceholder: React.FC = () => {
           <Image
             src="https://cdn.myanimelist.net/images/anime/6/73245.jpg"
             alt="placeholder"
-            width={225}
-            height={350}
-            priority={true}
-            className="h-[4.375rem]"
+            width={50}
+            height={70}
+            className="h-[4.375rem] object-cover"
           />
         </a>
         <div className="ml-2 w-[13.25rem]">
@@ -91,10 +89,9 @@ const TopAiringAnimePlaceholder: React.FC = () => {
           <Image
             src="https://cdn.myanimelist.net/images/anime/1720/126608.jpg"
             alt="placeholder"
-            width={225}
-            height={318}
-            priority={true}
-            className="h-[4.375rem]"
+            width={50}
+            height={70}
+            className="h-[4.375rem] object-cover"
           />
         </a>
         <div className="ml-2 w-[13.25rem]">
@@ -124,10 +121,9 @@ const TopAiringAnimePlaceholder: React.FC = () => {
           <Image
             src="https://cdn.myanimelist.net/images/anime/1855/128059.jpg"
             alt="placeholder"
-            width={225}
-            height={318}
-            priority={true}
-            className="h-[4.375rem]"
+            width={50}
+            height={70}
+            className="h-[4.375rem] object-cover"
           />
         </a>
         <div className="ml-2 w-[13.25rem]">
@@ -157,10 +153,9 @@ const TopAiringAnimePlaceholder: React.FC = () => {
           <Image
             src="https://cdn.myanimelist.net/images/anime/1259/110227.jpg"
             alt="placeholder"
-            width={225}
-            height={312}
-            priority={true}
-            className="h-[4.375rem]"
+            width={50}
+            height={70}
+            className="h-[4.375rem] object-cover"
           />
         </a>
         <div className="ml-2 w-[13.25rem]">

@@ -31,8 +31,7 @@ const MALxJPN: React.FC = () => {
             alt="mal-x-japan_content_1"
             width={708}
             height={440}
-            priority={true}
-            className="group-hover:opacity-75"
+            className="group-hover:opacity-75 object-cover"
           />
           <div className="mt-[0.3125rem] text-[#1c439b] group-hover:underline">
             Learn how to draw anime &amp; manga from Japanese pros🎨
@@ -50,8 +49,7 @@ const MALxJPN: React.FC = () => {
             alt="mal-x-japan_content_2"
             width={708}
             height={440}
-            priority={true}
-            className="group-hover:opacity-75"
+            className="group-hover:opacity-75 object-cover"
           />
           <div className="mt-[0.3125rem] text-[#1c439b] group-hover:underline">
             How much of an otaku are you? Take the quiz!
@@ -70,8 +68,7 @@ const MALxJPN: React.FC = () => {
             alt="mal-x-japan_content_3"
             width={708}
             height={440}
-            priority={true}
-            className="group-hover:opacity-75"
+            className="group-hover:opacity-75 object-cover"
           />
           <div className="mt-[0.3125rem] text-[#1c439b] group-hover:underline">
             Join the official Paradox Live MAL Club & celebrate the anime! 🎤

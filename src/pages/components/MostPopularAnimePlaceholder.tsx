@@ -25,10 +25,9 @@ const MostPopularAnimePlaceholder: React.FC = () => {
           <Image
             src="https://cdn.myanimelist.net/images/anime/10/47347.jpg"
             alt="placeholder"
-            width={225}
-            height={350}
-            priority={true}
-            className="h-[4.375rem]"
+            width={50}
+            height={70}
+            className="h-[4.375rem] object-cover"
           />
         </a>
         <div className="ml-2 w-[13.25rem]">
@@ -58,10 +57,9 @@ const MostPopularAnimePlaceholder: React.FC = () => {
           <Image
             src="https://cdn.myanimelist.net/images/anime/9/9453.jpg"
             alt="placeholder"
-            width={225}
-            height={337}
-            priority={true}
-            className="h-[4.375rem]"
+            width={50}
+            height={70}
+            className="h-[4.375rem] object-cover"
           />
         </a>
         <div className="ml-2 w-[13.25rem]">
@@ -91,10 +89,9 @@ const MostPopularAnimePlaceholder: React.FC = () => {
           <Image
             src="https://cdn.myanimelist.net/images/anime/1208/94745.jpg"
             alt="placeholder"
-            width={225}
-            height={321}
-            priority={true}
-            className="h-[4.375rem]"
+            width={50}
+            height={70}
+            className="h-[4.375rem] object-cover"
           />
         </a>
         <div className="ml-2 w-[13.25rem]">
@@ -124,10 +121,9 @@ const MostPopularAnimePlaceholder: React.FC = () => {
           <Image
             src="https://cdn.myanimelist.net/images/anime/12/76049.jpg"
             alt="placeholder"
-            width={225}
-            height={320}
-            priority={true}
-            className="h-[4.375rem]"
+            width={50}
+            height={70}
+            className="h-[4.375rem] object-cover"
           />
         </a>
         <div className="ml-2 w-[13.25rem]">
@@ -157,10 +153,9 @@ const MostPopularAnimePlaceholder: React.FC = () => {
           <Image
             src="https://cdn.myanimelist.net/images/anime/11/39717.jpg"
             alt="placeholder"
-            width={225}
-            height={318}
-            priority={true}
-            className="h-[4.375rem]"
+            width={50}
+            height={70}
+            className="h-[4.375rem] object-cover"
           />
         </a>
         <div className="ml-2 w-[13.25rem]">
@@ -190,10 +185,9 @@ const MostPopularAnimePlaceholder: React.FC = () => {
           <Image
             src="https://cdn.myanimelist.net/images/anime/10/78745.jpg"
             alt="placeholder"
-            width={225}
-            height={319}
-            priority={true}
-            className="h-[4.375rem]"
+            width={50}
+            height={70}
+            className="h-[4.375rem] object-cover"
           />
         </a>
         <div className="ml-2 w-[13.25rem]">
@@ -223,10 +217,9 @@ const MostPopularAnimePlaceholder: React.FC = () => {
           <Image
             src="https://cdn.myanimelist.net/images/anime/1286/99889.jpg"
             alt="placeholder"
-            width={225}
-            height={314}
-            priority={true}
-            className="h-[4.375rem]"
+            width={50}
+            height={70}
+            className="h-[4.375rem] object-cover"
           />
         </a>
         <div className="ml-2 w-[13.25rem]">
@@ -256,10 +249,9 @@ const MostPopularAnimePlaceholder: React.FC = () => {
           <Image
             src="https://cdn.myanimelist.net/images/anime/13/17405.jpg"
             alt="placeholder"
-            width={225}
-            height={314}
-            priority={true}
-            className="h-[4.375rem]"
+            width={50}
+            height={70}
+            className="h-[4.375rem] object-cover"
           />
         </a>
         <div className="ml-2 w-[13.25rem]">
@@ -289,10 +281,9 @@ const MostPopularAnimePlaceholder: React.FC = () => {
           <Image
             src="https://cdn.myanimelist.net/images/anime/5/64449.jpg"
             alt="placeholder"
-            width={225}
-            height={319}
-            priority={true}
-            className="h-[4.375rem]"
+            width={50}
+            height={70}
+            className="h-[4.375rem] object-cover"
           />
         </a>
         <div className="ml-2 w-[13.25rem]">
@@ -322,10 +313,9 @@ const MostPopularAnimePlaceholder: React.FC = () => {
           <Image
             src="https://cdn.myanimelist.net/images/anime/11/39717.jpg"
             alt="placeholder"
-            width={225}
-            height={318}
-            priority={true}
-            className="h-[4.375rem]"
+            width={50}
+            height={70}
+            className="h-[4.375rem] object-cover"
           />
         </a>
         <div className="ml-2 w-[13.25rem]">
