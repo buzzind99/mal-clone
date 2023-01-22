@@ -1,0 +1,50 @@
+.bfr_follow::before {
+  content: "Follow Us";
+  font-size: 0.75rem;
+  font-family: Verdana;
+  letter-spacing: -0.05rem;
+  color: #9caed9;
+  margin-right: 1.5rem;
+  line-height: 1.875rem;
+}
+
+.bfr_app::before {
+  content: "Get the App";
+  font-size: 0.75rem;
+  font-family: Verdana;
+  letter-spacing: -0.05rem;
+  color: #9caed9;
+  margin-right: 1.25rem;
+}
+
+.bfr_recommended::before {
+  content: "Recommended";
+  font-size: 0.75rem;
+  font-family: Verdana;
+  letter-spacing: -0.05rem;
+  color: #9caed9;
+  margin-right: 2.25rem;
+}
+
+.bfr_copyright::before {
+  content: "MyAnimeList.net is a property of MyAnimeList Co.,Ltd. ©2023 All Rights Reserved.";
+  font-size: 0.75rem;
+  font-family: Verdana;
+  letter-spacing: -0.05rem;
+  color: #9caed9;
+}
+
+.bfr_tos::before {
+  content: "This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.";
+  font-size: 0.5rem;
+  font-family: Verdana;
+  letter-spacing: -0.025rem;
+  color: #9caed9;
+}
+
+.bg_footer {
+  background-image: url(https://cdn.myanimelist.net/images/footer/footer-sns-border.png?v=1634263200);
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: 720px 1px;
+}
