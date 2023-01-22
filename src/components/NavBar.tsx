@@ -172,6 +172,7 @@ const NavBar: React.FC = () => {
           ></input>
           <button
             disabled
+            aria-label="search button"
             className="h-[1.375rem] w-[1.625rem] bg-[#e1e7f5] rounded-r-[0.3rem] mr-[0.375rem] justify-center"
           >
             <IoSearch
