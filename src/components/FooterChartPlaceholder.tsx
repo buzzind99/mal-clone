@@ -1,6 +1,6 @@
 const FooterChartPlaceholder: React.FC = () => {
   return (
-    <div id="footer-chart" className="bg-[#f8f8f8] ">
+    <div id="footer-chart" className="bg-[#f8f8f8]">
       <div className="w-[66.25rem] mx-auto flex justify-center py-[1.25rem] font-[Verdana] tracking-tighter">
         <div className="w-[12.5rem] mx-4 overflow-hidden inline-block">
           <div className="border-[#dedede] border-b-[1px] pb-2 flex justify-between items-center">
@@ -16,25 +16,25 @@ const FooterChartPlaceholder: React.FC = () => {
                 Bleach: Sennen Kessen-hen
               </a>
             </div>
-            <div className="flex mt-[0.1rem]">
+            <div className="flex mt-[0.1875rem]">
               <span className=" text-[#808080] text-[0.8125rem]">2</span>
               <a className="inline-block text-[0.625rem] ml-2 text-[#1c439b] hover:underline cursor-pointer mt-[0.1875rem]">
                 Fullmetal Alchemist: Brotherhood
               </a>
             </div>
-            <div className="flex mt-[0.1rem]">
+            <div className="flex mt-[0.1875rem]">
               <span className=" text-[#808080] text-[0.8125rem]">3</span>
               <a className="inline-block text-[0.625rem] ml-2 text-[#1c439b] hover:underline cursor-pointer mt-[0.1875rem]">
                 Steins;Gate
               </a>
             </div>
-            <div className="flex mt-[0.1rem]">
+            <div className="flex mt-[0.1875rem]">
               <span className=" text-[#808080] text-[0.8125rem]">4</span>
               <a className="inline-block text-[0.625rem] ml-2 text-[#1c439b] hover:underline cursor-pointer mt-[0.1875rem]">
                 Gintama°
               </a>
             </div>
-            <div className="flex mt-[0.1rem]">
+            <div className="flex mt-[0.1875rem]">
               <span className=" text-[#808080] text-[0.8125rem]">5</span>
               <a className="inline-block text-[0.625rem] ml-2 text-[#1c439b] hover:underline cursor-pointer mt-[0.1875rem]">
                 Kaguya-sama wa Kokurasetai: Ultra Romantic
@@ -56,25 +56,25 @@ const FooterChartPlaceholder: React.FC = () => {
                 Vinland Saga Season 2
               </a>
             </div>
-            <div className="flex mt-[0.1rem]">
+            <div className="flex mt-[0.1875rem]">
               <span className=" text-[#808080] text-[0.8125rem]">2</span>
               <a className="inline-block text-[0.625rem] ml-2 text-[#1c439b] hover:underline cursor-pointer mt-[0.1875rem]">
                 One Piece
               </a>
             </div>
-            <div className="flex mt-[0.1rem]">
+            <div className="flex mt-[0.1875rem]">
               <span className=" text-[#808080] text-[0.8125rem]">3</span>
               <a className="inline-block text-[0.625rem] ml-2 text-[#1c439b] hover:underline cursor-pointer mt-[0.1875rem]">
                 Bungou Stray Dogs 4th Season
               </a>
             </div>
-            <div className="flex mt-[0.1rem]">
+            <div className="flex mt-[0.1875rem]">
               <span className=" text-[#808080] text-[0.8125rem]">4</span>
               <a className="inline-block text-[0.625rem] ml-2 text-[#1c439b] hover:underline cursor-pointer mt-[0.1875rem]">
                 Golden Kamuy 4th Season
               </a>
             </div>
-            <div className="flex mt-[0.1rem]">
+            <div className="flex mt-[0.1875rem]">
               <span className=" text-[#808080] text-[0.8125rem]">5</span>
               <a className="inline-block text-[0.625rem] ml-2 text-[#1c439b] hover:underline cursor-pointer mt-[0.1875rem]">
                 Holo no Graffiti
@@ -98,25 +98,25 @@ const FooterChartPlaceholder: React.FC = () => {
                 Lamperouge, Lelouch
               </a>
             </div>
-            <div className="flex mt-[0.1rem]">
+            <div className="flex mt-[0.1875rem]">
               <span className=" text-[#808080] text-[0.8125rem]">2</span>
               <a className="inline-block text-[0.625rem] ml-2 text-[#1c439b] hover:underline cursor-pointer mt-[0.1875rem]">
                 Levi
               </a>
             </div>
-            <div className="flex mt-[0.1rem]">
+            <div className="flex mt-[0.1875rem]">
               <span className=" text-[#808080] text-[0.8125rem]">3</span>
               <a className="inline-block text-[0.625rem] ml-2 text-[#1c439b] hover:underline cursor-pointer mt-[0.1875rem]">
                 Monkey D., Luffy
               </a>
             </div>
-            <div className="flex mt-[0.1rem]">
+            <div className="flex mt-[0.1875rem]">
               <span className=" text-[#808080] text-[0.8125rem]">4</span>
               <a className="inline-block text-[0.625rem] ml-2 text-[#1c439b] hover:underline cursor-pointer mt-[0.1875rem]">
                 Lawliet, L
               </a>
             </div>
-            <div className="flex mt-[0.1rem]">
+            <div className="flex mt-[0.1875rem]">
               <span className=" text-[#808080] text-[0.8125rem]">5</span>
               <a className="inline-block text-[0.625rem] ml-2 text-[#1c439b] hover:underline cursor-pointer mt-[0.1875rem]">
                 Roronoa, Zoro

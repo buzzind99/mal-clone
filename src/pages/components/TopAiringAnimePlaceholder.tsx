@@ -21,7 +21,7 @@ const TopAiringAnimePlaceholder: React.FC = () => {
         <span className="text-[#808080] font-bold font-[Verdana] h-[4.375rem] w-[1.5rem] align-top leading-none">
           1
         </span>
-        <a className="h-[4.5rem] w-[3.425rem] inline-block border-[1px] border-[#bebebe] cursor-pointer">
+        <a className="h-[4.5rem] w-[3.3875rem] inline-block border-[1px] border-[#bebebe] cursor-pointer">
           <Image
             src="https://cdn.myanimelist.net/images/anime/1170/124312.jpg"
             alt="placeholder"
@@ -53,7 +53,7 @@ const TopAiringAnimePlaceholder: React.FC = () => {
         <span className="text-[#808080] font-bold font-[Verdana] h-[4.375rem] w-[1.5rem] align-top leading-none">
           2
         </span>
-        <a className="h-[4.5rem] w-[3.425rem] inline-block border-[1px] border-[#bebebe] cursor-pointer">
+        <a className="h-[4.5rem] w-[3.3875rem] inline-block border-[1px] border-[#bebebe] cursor-pointer">
           <Image
             src="https://cdn.myanimelist.net/images/anime/6/73245.jpg"
             alt="placeholder"
@@ -85,7 +85,7 @@ const TopAiringAnimePlaceholder: React.FC = () => {
         <span className="text-[#808080] font-bold font-[Verdana] h-[4.375rem] w-[1.5rem] align-top leading-none">
           3
         </span>
-        <a className="h-[4.5rem] w-[3.425rem] inline-block border-[1px] border-[#bebebe] cursor-pointer">
+        <a className="h-[4.5rem] w-[3.3875rem] inline-block border-[1px] border-[#bebebe] cursor-pointer">
           <Image
             src="https://cdn.myanimelist.net/images/anime/1720/126608.jpg"
             alt="placeholder"
@@ -117,7 +117,7 @@ const TopAiringAnimePlaceholder: React.FC = () => {
         <span className="text-[#808080] font-bold font-[Verdana] h-[4.375rem] w-[1.5rem] align-top leading-none">
           4
         </span>
-        <a className="h-[4.5rem] w-[3.425rem] inline-block border-[1px] border-[#bebebe] cursor-pointer">
+        <a className="h-[4.5rem] w-[3.3875rem] inline-block border-[1px] border-[#bebebe] cursor-pointer">
           <Image
             src="https://cdn.myanimelist.net/images/anime/1855/128059.jpg"
             alt="placeholder"
@@ -149,7 +149,7 @@ const TopAiringAnimePlaceholder: React.FC = () => {
         <span className="text-[#808080] font-bold font-[Verdana] h-[4.375rem] w-[1.5rem] align-top leading-none">
           5
         </span>
-        <a className="h-[4.5rem] w-[3.425rem] inline-block border-[1px] border-[#bebebe] cursor-pointer">
+        <a className="h-[4.5rem] w-[3.3875rem] inline-block border-[1px] border-[#bebebe] cursor-pointer">
           <Image
             src="https://cdn.myanimelist.net/images/anime/1259/110227.jpg"
             alt="placeholder"
