@@ -5,7 +5,7 @@ const MainHeader: React.FC = () => {
   return (
     <header
       id="main-header"
-      className="flex bg-white h-12 min-w-[66.25rem] justify-center"
+      className="flex bg-white h-12 w-[66.25rem] justify-center mx-auto"
     >
       <div id="inner-header" className="w-[66.25rem] py-2 flex justify-between">
         <Link href="/">
