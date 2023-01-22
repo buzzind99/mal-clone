@@ -25,9 +25,8 @@ const TopUpcomingAnimePlaceholder: React.FC = () => {
           <Image
             src="https://cdn.myanimelist.net/images/anime/1804/126632.jpg"
             alt="placeholder"
-            width={225}
-            height={319}
-            priority={true}
+            width={50}
+            height={70}
             className="h-[4.375rem]"
           />
         </a>
@@ -58,9 +57,8 @@ const TopUpcomingAnimePlaceholder: React.FC = () => {
           <Image
             src="https://cdn.myanimelist.net/images/anime/1361/130998.jpg"
             alt="placeholder"
-            width={225}
-            height={318}
-            priority={true}
+            width={50}
+            height={70}
             className="h-[4.375rem]"
           />
         </a>
@@ -91,9 +89,8 @@ const TopUpcomingAnimePlaceholder: React.FC = () => {
           <Image
             src="https://cdn.myanimelist.net/images/anime/1499/121027.jpg"
             alt="placeholder"
-            width={225}
-            height={314}
-            priority={true}
+            width={50}
+            height={70}
             className="h-[4.375rem]"
           />
         </a>
@@ -124,9 +121,8 @@ const TopUpcomingAnimePlaceholder: React.FC = () => {
           <Image
             src="https://cdn.myanimelist.net/images/anime/1676/128448.jpg"
             alt="placeholder"
-            width={225}
-            height={318}
-            priority={true}
+            width={50}
+            height={70}
             className="h-[4.375rem]"
           />
         </a>
@@ -157,9 +153,8 @@ const TopUpcomingAnimePlaceholder: React.FC = () => {
           <Image
             src="https://cdn.myanimelist.net/images/anime/1785/131775.jpg"
             alt="placeholder"
-            width={225}
-            height={318}
-            priority={true}
+            width={50}
+            height={70}
             className="h-[4.375rem]"
           />
         </a>
