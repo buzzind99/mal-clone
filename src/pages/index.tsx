@@ -25,7 +25,7 @@ export default function Home() {
       </Head>
       <MainHeader />
       <NavBar />
-      <ContentTitleBar>Welcome to MyAnimeList.net!</ContentTitleBar>
+      <ContentTitleBar title="Welcome to MyAnimeList.net!" />
       <MainContainer>
         <HomepageContent />
       </MainContainer>

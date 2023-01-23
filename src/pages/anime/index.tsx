@@ -21,7 +21,7 @@ export default function Home() {
       </Head>
       <MainHeader />
       <NavBar />
-      <ContentTitleBar>Anime</ContentTitleBar>
+      <ContentTitleBar title="Anime" />
       <MainContainer />
       <FooterChartPlaceholder />
       <MainFooter />

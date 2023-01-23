@@ -20,7 +20,7 @@ const NotFound: React.FC = () => {
       </Head>
       <MainHeader />
       <NavBar />
-      <ContentTitleBar>404 Not Found</ContentTitleBar>
+      <ContentTitleBar title="404 Not Found" />
       <MainContainer>
         <div className="py-14 text-center">
           <div className="flex justify-center">
