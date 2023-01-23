@@ -64,6 +64,7 @@ const AnimeMangaNews: React.FC = () => {
                 {`${data.time_since_posted} by `}
                 <a
                   href={data.author_url}
+                  target={data.author_url}
                   className="inline-block text-[#1c439b] hover:underline"
                 >
                   {`${data.author}`}
@@ -71,6 +72,7 @@ const AnimeMangaNews: React.FC = () => {
                 {` | `}
                 <a
                   href={data.forum_url}
+                  target={data.forum_url}
                   className="inline-block text-[#1c439b] hover:underline"
                 >
                   {`Discuss (${data.comment_count} comments)`}

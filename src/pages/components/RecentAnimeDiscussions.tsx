@@ -39,6 +39,7 @@ const RecentAnimeDiscussions: React.FC = () => {
               by{" "}
               <a
                 href={data.author_url}
+                target={data.author_url}
                 className="text-[#1c439b] hover:underline"
               >
                 {data.author}
