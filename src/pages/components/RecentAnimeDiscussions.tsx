@@ -26,6 +26,7 @@ const RecentAnimeDiscussions: React.FC = () => {
       <div id="anime-manga-news_content" className="flex-col">
         {data.map((data) => (
           <div
+            id={`recent-anime-discussions_content-${data.id}`}
             key={data.id}
             className="mt-[0.375rem] flex-col border-b-[1px] border-[#e5e7eb] pb-[0.375rem] text-[0.6875rem]"
           >

@@ -2,7 +2,10 @@ const FooterChartPlaceholder: React.FC = () => {
   return (
     <div id="footer-chart" className="bg-[#f8f8f8]">
       <div className="mx-auto flex w-[66.25rem] justify-center py-[1.25rem] font-[Verdana] tracking-tighter">
-        <div className="mx-4 inline-block w-[12.5rem] overflow-hidden">
+        <div
+          id="footer-chart_top-anime"
+          className="mx-4 inline-block w-[12.5rem] overflow-hidden"
+        >
           <div className="flex items-center justify-between border-b-[1px] border-[#dedede] pb-2">
             <h3 className="inline-block text-[0.875rem]">Top Anime</h3>
             <a className="cursor-pointer text-[0.75rem] text-[#1c439b] hover:underline">
@@ -42,7 +45,10 @@ const FooterChartPlaceholder: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="mx-4 inline-block w-[12.5rem] overflow-hidden">
+        <div
+          id="footer-chart_top-airing-anime"
+          className="mx-4 inline-block w-[12.5rem] overflow-hidden"
+        >
           <div className="flex items-center justify-between border-b-[1px] border-[#dedede] pb-2">
             <h3 className="inline-block text-[0.875rem]">Top Airing Anime</h3>
             <a className="cursor-pointer text-[0.75rem] text-[#1c439b] hover:underline">
@@ -82,7 +88,10 @@ const FooterChartPlaceholder: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="mx-4 inline-block w-[12.5rem] overflow-hidden">
+        <div
+          id="footer-chart_most-popular-characters"
+          className="mx-4 inline-block w-[12.5rem] overflow-hidden"
+        >
           <div className="flex items-center justify-between border-b-[1px] border-[#dedede] pb-2">
             <h3 className="inline-block text-[0.875rem]">
               Most Popular Characters
