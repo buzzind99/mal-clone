@@ -13,7 +13,8 @@ const RecentAnimeDiscussions: React.FC = () => {
         className="flex h-[1.375rem] items-center justify-between border-b-[1px] border-[#bebebe] pb-[0.1875rem] pt-1"
       >
         <h2 className="font-bold">
-          Recent Anime Discussions {"{this is a dummy, links are external}"}
+          Recent Anime Discussions{" "}
+          {"{this is a placeholder, links are external}"}
         </h2>
         <a
           href="https://myanimelist.net/forum/"

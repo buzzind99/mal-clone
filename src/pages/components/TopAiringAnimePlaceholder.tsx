@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const TopAiringAnimePlaceholder: React.FC = () => {
   return (
@@ -13,9 +14,12 @@ const TopAiringAnimePlaceholder: React.FC = () => {
         <h2 className="text-[0.875rem] tracking-tighter">
           Top Airing Anime {"{dummy}"}
         </h2>
-        <a className="cursor-pointer text-[0.75rem] leading-tight tracking-tight text-[#1c439b] hover:underline">
+        <Link
+          href="/under_construction"
+          className="cursor-pointer text-[0.75rem] leading-tight tracking-tight text-[#1c439b] hover:underline"
+        >
           More
-        </a>
+        </Link>
       </div>
       <div className="flex px-2 pt-4 pb-[1.25rem]">
         <span className="h-[4.375rem] w-[1.5rem] align-top font-[Verdana] font-bold leading-none text-[#808080]">

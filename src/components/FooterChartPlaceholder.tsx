@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const FooterChartPlaceholder: React.FC = () => {
   return (
     <div id="footer-chart" className="bg-[#f8f8f8]">
@@ -8,9 +10,12 @@ const FooterChartPlaceholder: React.FC = () => {
         >
           <div className="flex items-center justify-between border-b-[1px] border-[#dedede] pb-2">
             <h3 className="inline-block text-[0.875rem]">Top Anime</h3>
-            <a className="cursor-pointer text-[0.75rem] text-[#1c439b] hover:underline">
+            <Link
+              href="/under_construction"
+              className="cursor-pointer text-[0.75rem] text-[#1c439b] hover:underline"
+            >
               More
-            </a>
+            </Link>
           </div>
           <div className="tracking-tight">
             <div className="mt-2 flex">
@@ -51,9 +56,12 @@ const FooterChartPlaceholder: React.FC = () => {
         >
           <div className="flex items-center justify-between border-b-[1px] border-[#dedede] pb-2">
             <h3 className="inline-block text-[0.875rem]">Top Airing Anime</h3>
-            <a className="cursor-pointer text-[0.75rem] text-[#1c439b] hover:underline">
+            <Link
+              href="/under_construction"
+              className="cursor-pointer text-[0.75rem] text-[#1c439b] hover:underline"
+            >
               More
-            </a>
+            </Link>
           </div>
           <div className="tracking-tight">
             <div className="mt-2 flex">
@@ -96,9 +104,12 @@ const FooterChartPlaceholder: React.FC = () => {
             <h3 className="inline-block text-[0.875rem]">
               Most Popular Characters
             </h3>
-            <a className="cursor-pointer text-[0.75rem] text-[#1c439b] hover:underline">
+            <Link
+              href="/under_construction"
+              className="cursor-pointer text-[0.75rem] text-[#1c439b] hover:underline"
+            >
               More
-            </a>
+            </Link>
           </div>
           <div className="tracking-tight">
             <div className="mt-2 flex">
