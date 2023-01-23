@@ -1,4 +1,4 @@
-import discussionsData from "./dummy_data/discussionsData.json" assert {type: "json"};
+import discussionsData from "./dummy_data/discussionsData.json" assert { type: "json" };
 
 const RecentAnimeDiscussions: React.FC = () => {
   const data = discussionsData.data;
@@ -29,12 +29,21 @@ const RecentAnimeDiscussions: React.FC = () => {
             key={data.id}
             className="mt-[0.375rem] flex-col border-b-[1px] border-[#e5e7eb] pb-[0.375rem] text-[0.6875rem]"
           >
-            <h3 className="font-bold text-[#1c439b] hover:underline mb-[0.375rem]">
+            <h3 className="mb-[0.375rem] font-bold text-[#1c439b] hover:underline">
               <a href={data.url} target={data.url} title={data.title}>
                 {data.title}
               </a>
             </h3>
-            <p className="text-[#808080]">by <a href={data.author_url} className="text-[#1c439b] hover:underline">{data.author}</a> &#40;{data.replies} replies&#41;</p>
+            <p className="text-[#808080]">
+              by{" "}
+              <a
+                href={data.author_url}
+                className="text-[#1c439b] hover:underline"
+              >
+                {data.author}
+              </a>{" "}
+              &#40;{data.replies} replies&#41;
+            </p>
           </div>
         ))}
       </div>
