@@ -5,9 +5,9 @@ const MainHeader: React.FC = () => {
   return (
     <header
       id="main-header"
-      className="flex bg-white h-12 w-[66.25rem] justify-center mx-auto"
+      className="mx-auto flex h-12 w-[66.25rem] justify-center bg-white"
     >
-      <div id="inner-header" className="w-[66.25rem] py-2 flex justify-between">
+      <div id="inner-header" className="flex w-[66.25rem] justify-between py-2">
         <Link href="/">
           <Image
             src="/mal-logo-xsmall.webp"
@@ -15,27 +15,28 @@ const MainHeader: React.FC = () => {
             width={179}
             height={32}
             priority={true}
+            className="h-[2rem] w-[11.1875rem] object-cover"
           />
         </Link>
         <div
           id="header-buttons"
-          className="flex items-center text-[0.925rem] text-center font-bold align-middle"
+          className="flex items-center text-center align-middle text-[0.925rem] font-bold"
         >
           <button
             title="dummy button"
-            className="rounded-sm bg-[#eb6100] w-[7.125rem] h-[1.625rem] border-[#eb6100]  cursor-pointer inline-block text-white mx-1 border-2"
+            className="mx-1 inline-block h-[1.625rem] w-[7.125rem] cursor-pointer  rounded-sm border-2 border-[#eb6100] bg-[#eb6100] text-white"
           >
             Hide Ads
           </button>
           <button
             title="dummy button"
-            className="rounded-sm bg-white w-[5.875rem] h-[1.625rem] border-[#2e51a2] cursor-pointer inline-block text-[#2e51a2] mx-1 border-2"
+            className="mx-1 inline-block h-[1.625rem] w-[5.875rem] cursor-pointer rounded-sm border-2 border-[#2e51a2] bg-white text-[#2e51a2]"
           >
             Login
           </button>
           <button
             title="dummy button"
-            className="rounded-sm bg-[#2e51a2] w-[5.875rem] h-[1.625rem] border-[#2e51a2] cursor-pointer inline-block text-white ml-1 border-2"
+            className="ml-1 inline-block h-[1.625rem] w-[5.875rem] cursor-pointer rounded-sm border-2 border-[#2e51a2] bg-[#2e51a2] text-white"
           >
             Sign Up
           </button>

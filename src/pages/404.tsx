@@ -35,8 +35,7 @@ const NotFound: React.FC = () => {
               ></Image>
             </Link>
           </div>
-
-          <div className="font-[Helvetica] font-bold text-[#2e51a2] text-[2.4rem]">
+          <div className="font-[Helvetica] text-[2.4rem] font-bold text-[#2e51a2]">
             This page doesn&apos;t exist.
           </div>
         </div>

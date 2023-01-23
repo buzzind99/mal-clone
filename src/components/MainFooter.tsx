@@ -5,14 +5,14 @@ import styles from "../styles/MainFooter.module.css";
 const MainFooter: React.FC = () => {
   return (
     <footer id="main-footer" className="bg-[#2e51a2]">
-      <div className="w-[38rem] pt-8 pb-6 mx-auto">
+      <div className="mx-auto w-[38rem] pt-8 pb-6">
         <div className="flex justify-between">
           <div className={`${styles.bfr_follow}`}>
             <a
               title="Follow @myanimelist on Facebook"
               href="https://www.facebook.com/OfficialMyAnimeList"
               target="https://www.facebook.com/OfficialMyAnimeList"
-              className="cursor-pointer hover:opacity-50 mr-5"
+              className="mr-5 cursor-pointer hover:opacity-50"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -28,7 +28,7 @@ const MainFooter: React.FC = () => {
               title="Follow @myanimelist on Twitter"
               href="https://twitter.com/myanimelist"
               target="https://twitter.com/myanimelist"
-              className="cursor-pointer hover:opacity-50 mr-5"
+              className="mr-5 cursor-pointer hover:opacity-50"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -44,7 +44,7 @@ const MainFooter: React.FC = () => {
               title="Follow @myanimelist on Instagram"
               href="https://www.instagram.com/myanimelistofficial/"
               target="https://www.instagram.com/myanimelistofficial/"
-              className="cursor-pointer hover:opacity-50 mr-4"
+              className="mr-4 cursor-pointer hover:opacity-50"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +60,7 @@ const MainFooter: React.FC = () => {
               title="Join Discord Chat"
               href="https://discord.gg/myanimelist"
               target="https://discord.gg/myanimelist"
-              className="cursor-pointer hover:opacity-50 mr-5"
+              className="mr-5 cursor-pointer hover:opacity-50"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -74,16 +74,24 @@ const MainFooter: React.FC = () => {
             </a>
           </div>
           <div className={`${styles.bfr_app}`}>
-            <a className="cursor-pointer hover:opacity-50">
+            <a
+              href="https://apps.apple.com/us/app/myanimelist-official/id1469330778?md=8&ct=pc_footer"
+              target="https://apps.apple.com/us/app/myanimelist-official/id1469330778?md=8&ct=pc_footer"
+              className="cursor-pointer hover:opacity-50"
+            >
               <Image
                 src="https://cdn.myanimelist.net/images/appli/badge_iOS.png"
                 alt="Get MyAnimeList App on App Store"
                 width={136}
                 height={41}
-                className="inline-block h-[30px] w-[100px] object-cover mr-[0.625rem]"
+                className="mr-[0.625rem] inline-block h-[30px] w-[100px] object-cover"
               />
             </a>
-            <a className="cursor-pointer hover:opacity-50">
+            <a
+              href="https://play.google.com/store/apps/details?utm_campaign=pc_footer&id=net.myanimelist.app&utm_source=mal"
+              target="https://play.google.com/store/apps/details?utm_campaign=pc_footer&id=net.myanimelist.app&utm_source=mal"
+              className="cursor-pointer hover:opacity-50"
+            >
               <Image
                 src="https://cdn.myanimelist.net/images/appli/badge_googleplay.png"
                 alt="Get MyAnimeList App on Google Play"
@@ -96,48 +104,48 @@ const MainFooter: React.FC = () => {
         </div>
       </div>
       <div
-        className={`${styles.bg_footer} pt-8 leading-tight tracking-tighter font-[Verdana] text-[0.75rem] text-center text-white`}
+        className={`${styles.bg_footer} pt-8 text-center font-[Verdana] text-[0.75rem] leading-tight tracking-tighter text-white`}
       >
         <Link
           href="/"
-          className="hover:underline pr-5 border-r-[1px] border-[#9caed9] mr-[1.125rem]"
+          className="mr-[1.125rem] border-r-[1px] border-[#9caed9] pr-5 hover:underline"
         >
           Home
         </Link>
-        <Link href="/" className="hover:underline mr-[1.125rem]">
+        <Link href="/" className="mr-[1.125rem] hover:underline">
           About
         </Link>
-        <Link href="/" className="hover:underline mr-[1.125rem]">
+        <Link href="/" className="mr-[1.125rem] hover:underline">
           Press Room
         </Link>
-        <Link href="/" className="hover:underline mr-[1.125rem]">
+        <Link href="/" className="mr-[1.125rem] hover:underline">
           Support
         </Link>
-        <Link href="/" className="hover:underline mr-[1.125rem]">
+        <Link href="/" className="mr-[1.125rem] hover:underline">
           Advertising
         </Link>
-        <Link href="/" className="hover:underline mr-[1.125rem]">
+        <Link href="/" className="mr-[1.125rem] hover:underline">
           FAQ
         </Link>
-        <Link href="/" className="hover:underline mr-[1.125rem]">
+        <Link href="/" className="mr-[1.125rem] hover:underline">
           Terms
         </Link>
-        <Link href="/" className="hover:underline mr-[1.125rem]">
+        <Link href="/" className="mr-[1.125rem] hover:underline">
           Privacy
         </Link>
-        <Link href="/" className="hover:underline mr-[1.125rem]">
+        <Link href="/" className="mr-[1.125rem] hover:underline">
           Cookie
         </Link>
-        <Link href="/" className="hover:underline mr-[1.125rem]">
+        <Link href="/" className="mr-[1.125rem] hover:underline">
           Notice at Collection
         </Link>
         <Link
           href="/"
-          className="hover:underline pr-5 border-r-[1px] border-[#9caed9] mr-[1.125rem]"
+          className="mr-[1.125rem] border-r-[1px] border-[#9caed9] pr-5 hover:underline"
         >
           Sitemap
         </Link>
-        <Link href="/" className="hover:underline mr-[1.125rem]">
+        <Link href="/" className="mr-[1.125rem] hover:underline">
           Login
         </Link>
         <Link href="/" className="hover:underline">
@@ -145,67 +153,67 @@ const MainFooter: React.FC = () => {
         </Link>
       </div>
       <div
-        className={`${styles.bfr_recommended} flex justify-center items-center py-6 leading-tight tracking-tighter font-[Verdana] text-[0.6875rem] text-[#d8d8d8]`}
+        className={`${styles.bfr_recommended} flex items-center justify-center py-6 font-[Verdana] text-[0.6875rem] leading-tight tracking-tighter text-[#d8d8d8]`}
       >
         <a
           href="http://otakumode.com/fb/5aO"
           target="http://otakumode.com/fb/5aO"
-          className="cursor-pointer flex items-center hover:underline hover:opacity-75 transition-all duration-300 ease-in-out"
+          className="flex cursor-pointer items-center transition-all duration-300 ease-in-out hover:underline hover:opacity-75"
         >
           <Image
             src="https://cdn.myanimelist.net/images/footer/icon_tom30.png?v=1634263200"
             alt="Tokyo Otaku Mode"
             width={30}
             height={30}
-            className="h-[20px] w-[20px] object-cover inline-block mx-3"
+            className="mx-3 inline-block h-[20px] w-[20px] object-cover"
           />
           <p className="mr-3">Tokyo Otaku Mode</p>
         </a>
         <a
           href="https://www.honeyfeed.fm/"
           target="https://www.honeyfeed.fm/"
-          className="cursor-pointer flex items-center hover:underline hover:opacity-75 transition-all duration-300 ease-in-out"
+          className="flex cursor-pointer items-center transition-all duration-300 ease-in-out hover:underline hover:opacity-75"
         >
           <Image
             src="https://cdn.myanimelist.net/images/footer/icon_honeyfeed.png?v=1634263200"
             alt="Honeyfeed"
             width={52}
             height={60}
-            className="h-[20px] w-[17px] object-cover inline-block mx-3"
+            className="mx-3 inline-block h-[20px] w-[17px] object-cover"
           />
           <p className="mr-3">Honeyfeed</p>
         </a>
         <a
           href="https://myanimelist.net/store?_location=mal_f_m"
           target="https://myanimelist.net/store?_location=mal_f_m"
-          className="cursor-pointer flex items-center hover:underline hover:opacity-75 transition-all duration-300 ease-in-out"
+          className="flex cursor-pointer items-center transition-all duration-300 ease-in-out hover:underline hover:opacity-75"
         >
           <Image
             src="https://cdn.myanimelist.net/img/sp/common/icon-manga-store.png?v=1634263200"
             alt="Manga Store"
             width={66}
             height={42}
-            className="h-[16px] w-[25px] object-cover inline-block mx-3"
+            className="mx-3 inline-block h-[16px] w-[25px] object-cover"
           />
           <p className="mr-3">Manga Store</p>
         </a>
         <a
           href="https://otsukai.com/"
           target="https://otsukai.com/"
-          className="cursor-pointer flex items-center hover:underline hover:opacity-75 transition-all duration-300 ease-in-out"
+          className="flex cursor-pointer items-center transition-all duration-300 ease-in-out hover:underline hover:opacity-75"
         >
           <Image
             src="https://cdn.myanimelist.net/images/footer/icon_otsukai.png?v=1634263200"
             alt="Otsukai"
             width={60}
             height={60}
-            className="h-[20px] w-[20px] object-cover inline-block mx-3"
+            className="mx-3 inline-block h-[20px] w-[20px] object-cover"
           />
           <p className="mr-3">Otsukai</p>
         </a>
       </div>
       <div className={`${styles.bfr_copyright} text-center leading-none`} />
-      <div className={`${styles.bfr_tos} text-center leading-none pb-7`} />
+      <div className={`${styles.bfr_tos} pb-7 text-center leading-none`} />
     </footer>
   );
 };
