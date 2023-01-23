@@ -9,7 +9,7 @@ const MALxJPN: React.FC = () => {
       >
         <h2>
           MALxJapan -More than just anime-{" "}
-          {"{this is a dummy, links are external}"}
+          {"{this is a placeholder, links are external}"}
         </h2>
         <a
           href="https://mxj.myanimelist.net/"

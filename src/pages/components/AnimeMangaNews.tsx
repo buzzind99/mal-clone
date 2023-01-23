@@ -11,7 +11,7 @@ const AnimeMangaNews: React.FC = () => {
         className="flex h-[1.375rem] items-center justify-between border-b-[1px] border-[#bebebe] pb-[0.1875rem] pt-1"
       >
         <h2 className="font-bold">
-          Anime & Manga News {"{this is a dummy, links are external}"}
+          Anime & Manga News {"{this is a placeholder, links are external}"}
         </h2>
         <a
           href="https://myanimelist.net/news"
@@ -35,9 +35,10 @@ const AnimeMangaNews: React.FC = () => {
             >
               <Image
                 src={data.image_url}
-                alt="placeholder"
+                alt={data.news_title}
                 width={50}
                 height={70}
+                loading="lazy"
                 className="h-[4.5rem] min-w-[3.25rem] border-[1px] border-[#bebebe] object-cover"
               />
             </a>
