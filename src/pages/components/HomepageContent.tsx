@@ -1,4 +1,5 @@
 import AnimeMangaNews from "./AnimeMangaNews";
+import FeaturedArticles from "./FeaturedArticles";
 import MALxJPN from "./MALxJPN";
 import MostPopularAnimePlaceholder from "./MostPopularAnimePlaceholder";
 import RecentAnimeDiscussions from "./RecentAnimeDiscussions";
@@ -20,6 +21,9 @@ const HomepageContent: React.FC = () => {
         </div>
         <div className="mx-[0.625rem] mb-[1.25rem]">
           <RecentAnimeDiscussions />
+        </div>
+        <div className="mx-[0.625rem] mb-[1.25rem]">
+          <FeaturedArticles />
         </div>
       </div>
       <div id="content-right" className="inline-block w-[20rem]">
