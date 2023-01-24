@@ -1,6 +1,6 @@
 interface Props {
   children?: React.ReactNode;
-};
+}
 
 const MainContainer: React.FC<Props> = ({ children }) => {
   return (
