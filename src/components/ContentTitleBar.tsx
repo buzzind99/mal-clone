@@ -1,7 +1,7 @@
 interface Props {
   children?: React.ReactNode;
   title: string;
-};
+}
 
 const ContentTitleBar: React.FC<Props> = ({ title }) => {
   return (
