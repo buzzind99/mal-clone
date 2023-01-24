@@ -5,9 +5,30 @@ import MainFooter from "@/components/MainFooter";
 import MainHeader from "@/components/MainHeader";
 import NavBar from "@/components/NavBar";
 import Head from "next/head";
-import HomepageContent from "./components/HomepageContent";
+import AnimeMangaNews from "./components/AnimeMangaNews";
+import FeaturedArticles from "./components/FeaturedArticles";
+import MALxJPN from "./components/MALxJPN";
+import MostPopularAnimePlaceholder from "./components/MostPopularAnimePlaceholder";
+import RecentAnimeDiscussions from "./components/RecentAnimeDiscussions";
+import TopAiringAnimePlaceholder from "./components/TopAiringAnimePlaceholder";
+import TopUpcomingAnimePlaceholder from "./components/TopUpcomingAnimePlaceholder";
+import {
+  INewsData,
+  IDiscussionsData,
+  IFeaturedData,
+} from "../types/interfaces";
+interface Props {
+  children?: React.ReactNode;
+  newsData: INewsData[];
+  discussionsData: IDiscussionsData[];
+  featuredData: IFeaturedData[];
+}
 
-export default function Home() {
+export default function Home({
+  newsData,
+  discussionsData,
+  featuredData,
+}: Props) {
   return (
     <>
       <Head>
@@ -27,10 +48,55 @@ export default function Home() {
       <NavBar />
       <ContentTitleBar title="Welcome to MyAnimeList.net!" />
       <MainContainer>
-        <HomepageContent />
+        <div className="relative flex bg-white py-[0.625rem] text-left">
+          <div
+            id="content-left"
+            className="inline-block w-[46.5395rem] border-r-[1px] border-[#e5e5e5]"
+          >
+            <div className="mx-[0.625rem] mb-[1.25rem]">
+              <MALxJPN />
+            </div>
+            <div className="mx-[0.625rem] mb-[1.25rem]">
+              <AnimeMangaNews newsData={newsData} />
+            </div>
+            <div className="mx-[0.625rem] mb-[1.25rem]">
+              <RecentAnimeDiscussions discussionsData={discussionsData} />
+            </div>
+            <div className="mx-[0.625rem] mb-[1.25rem]">
+              <FeaturedArticles featuredData={featuredData} />
+            </div>
+          </div>
+          <div id="content-right" className="inline-block w-[20rem]">
+            <div className="mx-[0.5rem] mt-1">
+              <TopAiringAnimePlaceholder />
+            </div>
+            <div className="mx-[0.5rem] mt-[1.25rem]">
+              <TopUpcomingAnimePlaceholder />
+            </div>
+            <div className="mx-[0.5rem] mt-[1.25rem]">
+              <MostPopularAnimePlaceholder />
+            </div>
+          </div>
+        </div>
       </MainContainer>
       <FooterChartPlaceholder />
       <MainFooter />
     </>
   );
+}
+
+export async function getStaticProps() {
+  const newsData = await import("./components/dummy_data/newsData.json").then(
+    (res) => res.default.data
+  );
+  const discussionsData = await import(
+    "./components/dummy_data/discussionsData.json"
+  ).then((res) => res.default.data);
+  const featuredData = await import(
+    "./components/dummy_data/featuredData.json"
+  ).then((res) => res.default.data);
+
+  return {
+    props: { newsData, discussionsData, featuredData },
+  };
 }
