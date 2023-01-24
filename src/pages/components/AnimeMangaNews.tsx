@@ -1,8 +1,33 @@
 import Image from "next/image";
-import newsData from "./dummy_data/newsData.json" assert { type: "json" };
+import { INewsData } from "../../types/interfaces";
 
-const AnimeMangaNews: React.FC = () => {
-  const dummyData = newsData.data;
+const initialData = [
+  {
+    id: 0,
+    image_url: "",
+    news_title: "",
+    news_url: "",
+    news_description: "",
+    time_since_posted: "",
+    author: "",
+    author_url: "",
+    forum_url: "",
+    comment_count: 0,
+  },
+];
+
+interface Props {
+  newsData: INewsData[];
+}
+
+const AnimeMangaNews: React.FC<Props> = ({ newsData }) => {
+  let dummyData = newsData || initialData;
+
+  // Using div with onClick event listener on links with generic text
+  // (more, view more, etc.) for better SEO
+  const openInNewTab = (url: string) => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
 
   return (
     <article id="anime-manga-news" className="font-[Verdana] text-[0.75rem]">
@@ -13,13 +38,12 @@ const AnimeMangaNews: React.FC = () => {
         <h2 className="font-bold">
           Anime & Manga News {"{this is a placeholder, links are external}"}
         </h2>
-        <a
-          href="https://myanimelist.net/news"
-          target="https://myanimelist.net/news"
-          className="float-right pt-[0.125rem] text-[0.6875rem] font-normal leading-tight text-[#1c439b] hover:underline"
+        <div
+          onClick={() => openInNewTab("https://myanimelist.net/news")}
+          className="float-right cursor-pointer pt-[0.125rem] text-[0.6875rem] font-normal leading-tight text-[#1c439b] hover:underline"
         >
           View More
-        </a>
+        </div>
       </div>
       <div id="anime-manga-news_content" className="flex-col">
         {dummyData.map((data) => (
@@ -30,7 +54,8 @@ const AnimeMangaNews: React.FC = () => {
           >
             <a
               href={data.news_url}
-              target={data.news_url}
+              target="_blank"
+              rel="noopener noreferrer"
               className="cursor-pointer"
             >
               <Image
@@ -42,30 +67,33 @@ const AnimeMangaNews: React.FC = () => {
                 className="h-[4.5rem] min-w-[3.25rem] border-[1px] border-[#bebebe] object-cover"
               />
             </a>
-            <div className="ml-2 inline-block w-full text-[0.6875rem]">
-              <h3 className="pb-[0.1875rem] font-bold text-[#1c439b] hover:underline">
+            <div className="ml-2 inline-block text-[0.6875rem]">
+              <h3 className="pb-[0.1875rem] font-bold text-[#1c439b]">
                 <a
                   href={data.news_url}
-                  target={data.news_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   title={data.news_title}
+                  className="hover:underline"
                 >
                   {data.news_title}
                 </a>
               </h3>
-              <p>
+              <div>
                 {`${data.news_description} `}
-                <a
-                  href={data.news_url}
-                  className="inline-block text-[#1c439b] hover:underline"
+                <div
+                  onClick={() => openInNewTab(data.news_url)}
+                  className="inline-block cursor-pointer text-[#1c439b] hover:underline"
                 >
                   read more
-                </a>
-              </p>
+                </div>
+              </div>
               <p className="mt-[0.375rem] text-[#808080]">
                 {`${data.time_since_posted} by `}
                 <a
                   href={data.author_url}
-                  target={data.author_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-block text-[#1c439b] hover:underline"
                 >
                   {`${data.author}`}
@@ -73,7 +101,8 @@ const AnimeMangaNews: React.FC = () => {
                 {` | `}
                 <a
                   href={data.forum_url}
-                  target={data.forum_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-block text-[#1c439b] hover:underline"
                 >
                   {`Discuss (${data.comment_count} comments)`}

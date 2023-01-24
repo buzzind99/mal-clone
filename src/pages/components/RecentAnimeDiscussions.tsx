@@ -1,7 +1,28 @@
-import discussionsData from "./dummy_data/discussionsData.json" assert { type: "json" };
+import { IDiscussionsData } from "@/types/interfaces";
 
-const RecentAnimeDiscussions: React.FC = () => {
-  const data = discussionsData.data;
+const initialData = [
+  {
+    id: 0,
+    title: "",
+    url: "",
+    author: "",
+    author_url: "",
+    replies: 0,
+  },
+];
+
+interface Props {
+  discussionsData: IDiscussionsData[];
+}
+
+const RecentAnimeDiscussions: React.FC<Props> = ({ discussionsData }) => {
+  let dummyData = discussionsData || initialData;
+
+  // Using div with onClick event listener on links with generic text
+  // (more, view more, etc.) for better SEO
+  const openInNewTab = (url: string) => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
 
   return (
     <article
@@ -13,39 +34,46 @@ const RecentAnimeDiscussions: React.FC = () => {
         className="flex h-[1.375rem] items-center justify-between border-b-[1px] border-[#bebebe] pb-[0.1875rem] pt-1"
       >
         <h2 className="font-bold">
-          Recent Anime Discussions{" "}
-          {"{this is a placeholder, links are external}"}
+          {
+            "Recent Anime Discussions {this is a placeholder, links are external}"
+          }
         </h2>
-        <a
-          href="https://myanimelist.net/forum/"
-          target="https://myanimelist.net/forum/"
-          className="float-right pt-[0.125rem] text-[0.6875rem] font-normal leading-tight text-[#1c439b] hover:underline"
+        <div
+          onClick={() => openInNewTab("https://myanimelist.net/forum/")}
+          className="float-right cursor-pointer pt-[0.125rem] text-[0.6875rem] font-normal leading-tight text-[#1c439b] hover:underline"
         >
           View More
-        </a>
+        </div>
       </div>
       <div id="anime-manga-news_content" className="flex-col">
-        {data.map((data) => (
+        {dummyData.map((data) => (
           <div
             id={`recent-anime-discussions_content-${data.id}`}
             key={data.id}
             className="mt-[0.375rem] flex-col border-b-[1px] border-[#e5e7eb] pb-[0.375rem] text-[0.6875rem]"
           >
-            <h3 className="mb-[0.375rem] font-bold text-[#1c439b] hover:underline">
-              <a href={data.url} target={data.url} title={data.title}>
+            <h3 className="mb-[0.375rem] font-bold text-[#1c439b]">
+              <a
+                href={data.url}
+                target="_blank"
+                title={data.title}
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
                 {data.title}
               </a>
             </h3>
             <p className="text-[#808080]">
-              by{" "}
+              {"by "}
               <a
                 href={data.author_url}
-                target={data.author_url}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-[#1c439b] hover:underline"
               >
                 {data.author}
-              </a>{" "}
-              &#40;{data.replies} replies&#41;
+              </a>
+              {` ${data.replies} replies`}
             </p>
           </div>
         ))}

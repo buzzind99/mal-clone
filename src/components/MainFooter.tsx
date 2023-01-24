@@ -11,7 +11,8 @@ const MainFooter: React.FC = () => {
             <a
               title="Follow @myanimelist on Facebook"
               href="https://www.facebook.com/OfficialMyAnimeList"
-              target="https://www.facebook.com/OfficialMyAnimeList"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mr-5 cursor-pointer hover:opacity-50"
             >
               <svg
@@ -27,7 +28,8 @@ const MainFooter: React.FC = () => {
             <a
               title="Follow @myanimelist on Twitter"
               href="https://twitter.com/myanimelist"
-              target="https://twitter.com/myanimelist"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mr-5 cursor-pointer hover:opacity-50"
             >
               <svg
@@ -43,7 +45,8 @@ const MainFooter: React.FC = () => {
             <a
               title="Follow @myanimelist on Instagram"
               href="https://www.instagram.com/myanimelistofficial/"
-              target="https://www.instagram.com/myanimelistofficial/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mr-4 cursor-pointer hover:opacity-50"
             >
               <svg
@@ -59,7 +62,8 @@ const MainFooter: React.FC = () => {
             <a
               title="Join Discord Chat"
               href="https://discord.gg/myanimelist"
-              target="https://discord.gg/myanimelist"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mr-5 cursor-pointer hover:opacity-50"
             >
               <svg
@@ -76,7 +80,8 @@ const MainFooter: React.FC = () => {
           <div className={`${styles.bfr_app}`}>
             <a
               href="https://apps.apple.com/us/app/myanimelist-official/id1469330778?md=8&ct=pc_footer"
-              target="https://apps.apple.com/us/app/myanimelist-official/id1469330778?md=8&ct=pc_footer"
+              target="_blank"
+              rel="noopener noreferrer"
               className="cursor-pointer hover:opacity-50"
             >
               <Image
@@ -89,7 +94,8 @@ const MainFooter: React.FC = () => {
             </a>
             <a
               href="https://play.google.com/store/apps/details?utm_campaign=pc_footer&id=net.myanimelist.app&utm_source=mal"
-              target="https://play.google.com/store/apps/details?utm_campaign=pc_footer&id=net.myanimelist.app&utm_source=mal"
+              target="_blank"
+              rel="noopener noreferrer"
               className="cursor-pointer hover:opacity-50"
             >
               <Image
@@ -157,7 +163,8 @@ const MainFooter: React.FC = () => {
       >
         <a
           href="http://otakumode.com/fb/5aO"
-          target="http://otakumode.com/fb/5aO"
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex cursor-pointer items-center transition-all duration-300 ease-in-out hover:underline hover:opacity-75"
         >
           <Image
@@ -171,7 +178,8 @@ const MainFooter: React.FC = () => {
         </a>
         <a
           href="https://www.honeyfeed.fm/"
-          target="https://www.honeyfeed.fm/"
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex cursor-pointer items-center transition-all duration-300 ease-in-out hover:underline hover:opacity-75"
         >
           <Image
@@ -185,7 +193,8 @@ const MainFooter: React.FC = () => {
         </a>
         <a
           href="https://myanimelist.net/store?_location=mal_f_m"
-          target="https://myanimelist.net/store?_location=mal_f_m"
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex cursor-pointer items-center transition-all duration-300 ease-in-out hover:underline hover:opacity-75"
         >
           <Image
@@ -199,7 +208,8 @@ const MainFooter: React.FC = () => {
         </a>
         <a
           href="https://otsukai.com/"
-          target="https://otsukai.com/"
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex cursor-pointer items-center transition-all duration-300 ease-in-out hover:underline hover:opacity-75"
         >
           <Image

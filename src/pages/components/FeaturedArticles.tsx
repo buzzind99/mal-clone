@@ -1,8 +1,32 @@
+import { IFeaturedData } from "@/types/interfaces";
 import Image from "next/image";
-import featuredData from "./dummy_data/featuredData.json" assert { type: "json" };
 
-const FeaturedArticles: React.FC = () => {
-  const data = featuredData.data;
+const initialData = [
+  {
+    id: 0,
+    title: "",
+    url: "",
+    image_url: "",
+    description: "",
+    author: "",
+    author_url: "",
+    views: 0,
+    spoiler: false,
+  },
+];
+
+interface Props {
+  featuredData: IFeaturedData[];
+}
+
+const FeaturedArticles: React.FC<Props> = ({ featuredData }) => {
+  let dummyData = featuredData || initialData;
+
+  // Using div with onClick event listener on links with generic text
+  // (more, view more, etc.) for better SEO
+  const openInNewTab = (url: string) => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
 
   return (
     <article id="featured-articles" className="font-[Verdana] text-[0.75rem]">
@@ -13,22 +37,26 @@ const FeaturedArticles: React.FC = () => {
         <h2 className="font-bold">
           Featured Articles {"{this is a placeholder, links are external}"}
         </h2>
-        <a
-          href="https://myanimelist.net/featured"
-          target="https://myanimelist.net/featured"
-          className="float-right pt-[0.125rem] text-[0.6875rem] font-normal leading-tight text-[#1c439b] hover:underline"
+        <div
+          onClick={() => openInNewTab("https://myanimelist.net/featured")}
+          className="float-right cursor-pointer pt-[0.125rem] text-[0.6875rem] font-normal leading-tight text-[#1c439b] hover:underline"
         >
           View More
-        </a>
+        </div>
       </div>
       <div id="featured-articles_content" className="flex-col">
-        {data.map((data) => (
+        {dummyData.map((data) => (
           <div
             id={`featured-articles_content-${data.id}`}
             key={data.id}
             className="mt-[0.375rem] flex border-b-[1px] border-[#e5e7eb] pb-[0.375rem]"
           >
-            <a href={data.url} target={data.url} className="cursor-pointer">
+            <a
+              href={data.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cursor-pointer"
+            >
               <Image
                 src={data.image_url}
                 alt={data.title}
@@ -38,10 +66,11 @@ const FeaturedArticles: React.FC = () => {
               />
             </a>
             <div className="ml-2 inline-block w-full text-[0.6875rem]">
-              <h3 className="pb-[0.1875rem] font-bold text-[#1c439b] hover:underline">
+              <h3 className="pb-[0.1875rem] font-bold text-[#1c439b]">
                 <a
                   href={data.url}
-                  target={data.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   title={data.title}
                   className="text-[#1c439b] hover:underline"
                 >
@@ -54,7 +83,8 @@ const FeaturedArticles: React.FC = () => {
                   {`by `}
                   <a
                     href={data.author_url}
-                    target={data.author_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="pr-2 text-[#1c439b] hover:underline"
                   >
                     {data.author}

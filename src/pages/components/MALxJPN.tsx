@@ -8,12 +8,14 @@ const MALxJPN: React.FC = () => {
         className="flex h-[1.375rem] items-center justify-between border-b-[1px] border-[#bebebe] py-[0.1875rem]"
       >
         <h2>
-          MALxJapan -More than just anime-{" "}
-          {"{this is a placeholder, links are external}"}
+          {
+            "MALxJapan -More than just anime- {this is a placeholder, links are external}"
+          }
         </h2>
         <a
           href="https://mxj.myanimelist.net/"
-          target="https://mxj.myanimelist.net/"
+          target="_blank"
+          rel="noopener noreferrer"
           className="float-right pt-[0.125rem] text-[0.6875rem] font-normal leading-tight text-[#1c439b] hover:underline"
         >
           Visit MALxJapan
@@ -24,7 +26,8 @@ const MALxJPN: React.FC = () => {
           id="mal-x-japan_content_1"
           title="Learn how to draw anime &amp; manga from Japanese pros🎨"
           href="https://mxj.myanimelist.net/animeartacademy/?utm_source=MAL&utm_medium=top_mxj_animeartacademy"
-          target="https://mxj.myanimelist.net/animeartacademy/?utm_source=MAL&utm_medium=top_mxj_animeartacademy"
+          target="_blank"
+          rel="noopener noreferrer"
           className="group w-[14.6875rem] cursor-pointer text-[0.6875rem] leading-tight"
         >
           <Image
@@ -43,7 +46,8 @@ const MALxJPN: React.FC = () => {
           id="mal-x-japan_content_2"
           title="How much of an otaku are you? Take the quiz!"
           href="https://mxj.myanimelist.net/otakujudge/takequiz/?utm_source=MAL&utm_medium=top_mxj_otakujudge-app"
-          target="https://mxj.myanimelist.net/otakujudge/takequiz/?utm_source=MAL&utm_medium=top_mxj_otakujudge-app"
+          target="_blank"
+          rel="noopener noreferrer"
           className="group mx-[0.4375rem] w-[14.6875rem] cursor-pointer text-[0.6875rem] leading-tight"
         >
           <Image
@@ -63,7 +67,8 @@ const MALxJPN: React.FC = () => {
           title="Join the official Paradox Live MAL Club & celebrate the
           anime! 🎤"
           href="https://mxj.myanimelist.net/club/paradoxlive/?utm_source=MAL&utm_medium=top_mxj_paralive-club-event"
-          target="https://mxj.myanimelist.net/club/paradoxlive/?utm_source=MAL&utm_medium=top_mxj_paralive-club-event"
+          target="_blank"
+          rel="noopener noreferrer"
           className="group w-[14.6875rem] cursor-pointer text-[0.6875rem] leading-tight"
         >
           <Image

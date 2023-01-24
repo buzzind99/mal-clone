@@ -1,7 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const MostPopularAnimePlaceholder: React.FC = () => {
+  // Using div with onClick event listener on links with generic text
+  // (more, view more, etc.) for better SEO
+  const router = useRouter();
+  const redirect = () => {
+    router.push("/under_construction");
+  };
+
   return (
     <article
       id="most-popular"
@@ -14,18 +22,21 @@ const MostPopularAnimePlaceholder: React.FC = () => {
         <h2 className="text-[0.875rem] tracking-tighter">
           Most Popular Anime {"{dummy}"}
         </h2>
-        <Link
-          href="/under_construction"
+        <div
+          onClick={redirect}
           className="cursor-pointer text-[0.75rem] leading-tight tracking-tight text-[#1c439b] hover:underline"
         >
           More
-        </Link>
+        </div>
       </div>
       <div className="flex px-2 pt-4 pb-[1.25rem]">
         <span className="h-[4.375rem] w-[1.65rem] align-top font-[Verdana] font-bold leading-none text-[#808080]">
           1
         </span>
-        <a className="inline-block h-[4.5rem] w-[3.425rem] cursor-pointer">
+        <Link
+          href="/under_construction"
+          className="inline-block h-[4.5rem] w-[3.425rem] cursor-pointer"
+        >
           <Image
             src="https://cdn.myanimelist.net/images/anime/10/47347.jpg"
             alt="placeholder"
@@ -33,7 +44,7 @@ const MostPopularAnimePlaceholder: React.FC = () => {
             height={70}
             className="h-[4.5rem] w-[3.25rem] border-[1px] border-[#bebebe] object-cover"
           />
-        </a>
+        </Link>
         <div className="ml-2 w-[13.25rem]">
           <div className="flex justify-between align-top font-[Verdana] leading-tight tracking-tight text-[#1c439b]">
             <h3 className="inline-block max-w-[11.0625rem] cursor-pointer text-[0.75rem] font-bold hover:underline">
@@ -57,7 +68,10 @@ const MostPopularAnimePlaceholder: React.FC = () => {
         <span className="h-[4.375rem] w-[1.65rem] align-top font-[Verdana] font-bold leading-none text-[#808080]">
           2
         </span>
-        <a className="inline-block h-[4.5rem] w-[3.425rem] cursor-pointer">
+        <Link
+          href="/under_construction"
+          className="inline-block h-[4.5rem] w-[3.425rem] cursor-pointer"
+        >
           <Image
             src="https://cdn.myanimelist.net/images/anime/9/9453.jpg"
             alt="placeholder"
@@ -65,7 +79,7 @@ const MostPopularAnimePlaceholder: React.FC = () => {
             height={70}
             className="h-[4.5rem] w-[3.25rem] border-[1px] border-[#bebebe] object-cover"
           />
-        </a>
+        </Link>
         <div className="ml-2 w-[13.25rem]">
           <div className="flex justify-between align-top font-[Verdana] leading-tight tracking-tight text-[#1c439b]">
             <h3 className="inline-block max-w-[11.0625rem] cursor-pointer text-[0.75rem] font-bold hover:underline">
@@ -89,7 +103,10 @@ const MostPopularAnimePlaceholder: React.FC = () => {
         <span className="h-[4.375rem] w-[1.65rem] align-top font-[Verdana] font-bold leading-none text-[#808080]">
           3
         </span>
-        <a className="inline-block h-[4.5rem] w-[3.425rem] cursor-pointer">
+        <Link
+          href="/under_construction"
+          className="inline-block h-[4.5rem] w-[3.425rem] cursor-pointer"
+        >
           <Image
             src="https://cdn.myanimelist.net/images/anime/1208/94745.jpg"
             alt="placeholder"
@@ -97,7 +114,7 @@ const MostPopularAnimePlaceholder: React.FC = () => {
             height={70}
             className="h-[4.5rem] w-[3.25rem] border-[1px] border-[#bebebe] object-cover"
           />
-        </a>
+        </Link>
         <div className="ml-2 w-[13.25rem]">
           <div className="flex justify-between align-top font-[Verdana] leading-tight tracking-tight text-[#1c439b]">
             <h3 className="inline-block max-w-[11.0625rem] cursor-pointer text-[0.75rem] font-bold hover:underline">
@@ -121,7 +138,10 @@ const MostPopularAnimePlaceholder: React.FC = () => {
         <span className="h-[4.375rem] w-[1.65rem] align-top font-[Verdana] font-bold leading-none text-[#808080]">
           4
         </span>
-        <a className="inline-block h-[4.5rem] w-[3.425rem] cursor-pointer">
+        <Link
+          href="/under_construction"
+          className="inline-block h-[4.5rem] w-[3.425rem] cursor-pointer"
+        >
           <Image
             src="https://cdn.myanimelist.net/images/anime/12/76049.jpg"
             alt="placeholder"
@@ -129,7 +149,7 @@ const MostPopularAnimePlaceholder: React.FC = () => {
             height={70}
             className="h-[4.5rem] w-[3.25rem] border-[1px] border-[#bebebe] object-cover"
           />
-        </a>
+        </Link>
         <div className="ml-2 w-[13.25rem]">
           <div className="flex justify-between align-top font-[Verdana] leading-tight tracking-tight text-[#1c439b]">
             <h3 className="inline-block max-w-[11.0625rem] cursor-pointer text-[0.75rem] font-bold hover:underline">
@@ -153,7 +173,10 @@ const MostPopularAnimePlaceholder: React.FC = () => {
         <span className="h-[4.375rem] w-[1.65rem] align-top font-[Verdana] font-bold leading-none text-[#808080]">
           5
         </span>
-        <a className="inline-block h-[4.5rem] w-[3.425rem] cursor-pointer">
+        <Link
+          href="/under_construction"
+          className="inline-block h-[4.5rem] w-[3.425rem] cursor-pointer"
+        >
           <Image
             src="https://cdn.myanimelist.net/images/anime/11/39717.jpg"
             alt="placeholder"
@@ -161,7 +184,7 @@ const MostPopularAnimePlaceholder: React.FC = () => {
             height={70}
             className="h-[4.5rem] w-[3.25rem] border-[1px] border-[#bebebe] object-cover"
           />
-        </a>
+        </Link>
         <div className="ml-2 w-[13.25rem]">
           <div className="flex justify-between align-top font-[Verdana] leading-tight tracking-tight text-[#1c439b]">
             <h3 className="inline-block max-w-[11.0625rem] cursor-pointer text-[0.75rem] font-bold hover:underline">
@@ -185,7 +208,10 @@ const MostPopularAnimePlaceholder: React.FC = () => {
         <span className="h-[4.375rem] w-[1.65rem] align-top font-[Verdana] font-bold leading-none text-[#808080]">
           6
         </span>
-        <a className="inline-block h-[4.5rem] w-[3.425rem] cursor-pointer">
+        <Link
+          href="/under_construction"
+          className="inline-block h-[4.5rem] w-[3.425rem] cursor-pointer"
+        >
           <Image
             src="https://cdn.myanimelist.net/images/anime/10/78745.jpg"
             alt="placeholder"
@@ -193,7 +219,7 @@ const MostPopularAnimePlaceholder: React.FC = () => {
             height={70}
             className="h-[4.5rem] w-[3.25rem] border-[1px] border-[#bebebe] object-cover"
           />
-        </a>
+        </Link>
         <div className="ml-2 w-[13.25rem]">
           <div className="flex justify-between align-top font-[Verdana] leading-tight tracking-tight text-[#1c439b]">
             <h3 className="inline-block max-w-[11.0625rem] cursor-pointer text-[0.75rem] font-bold hover:underline">
@@ -217,7 +243,10 @@ const MostPopularAnimePlaceholder: React.FC = () => {
         <span className="h-[4.375rem] w-[1.65rem] align-top font-[Verdana] font-bold leading-none text-[#808080]">
           7
         </span>
-        <a className="inline-block h-[4.5rem] w-[3.425rem] cursor-pointer">
+        <Link
+          href="/under_construction"
+          className="inline-block h-[4.5rem] w-[3.425rem] cursor-pointer"
+        >
           <Image
             src="https://cdn.myanimelist.net/images/anime/1286/99889.jpg"
             alt="placeholder"
@@ -225,7 +254,7 @@ const MostPopularAnimePlaceholder: React.FC = () => {
             height={70}
             className="h-[4.5rem] w-[3.25rem] border-[1px] border-[#bebebe] object-cover"
           />
-        </a>
+        </Link>
         <div className="ml-2 w-[13.25rem]">
           <div className="flex justify-between align-top font-[Verdana] leading-tight tracking-tight text-[#1c439b]">
             <h3 className="inline-block max-w-[11.0625rem] cursor-pointer text-[0.75rem] font-bold hover:underline">
@@ -249,7 +278,10 @@ const MostPopularAnimePlaceholder: React.FC = () => {
         <span className="h-[4.375rem] w-[1.65rem] align-top font-[Verdana] font-bold leading-none text-[#808080]">
           8
         </span>
-        <a className="inline-block h-[4.5rem] w-[3.425rem] cursor-pointer">
+        <Link
+          href="/under_construction"
+          className="inline-block h-[4.5rem] w-[3.425rem] cursor-pointer"
+        >
           <Image
             src="https://cdn.myanimelist.net/images/anime/13/17405.jpg"
             alt="placeholder"
@@ -257,7 +289,7 @@ const MostPopularAnimePlaceholder: React.FC = () => {
             height={70}
             className="h-[4.5rem] w-[3.25rem] border-[1px] border-[#bebebe] object-cover"
           />
-        </a>
+        </Link>
         <div className="ml-2 w-[13.25rem]">
           <div className="flex justify-between align-top font-[Verdana] leading-tight tracking-tight text-[#1c439b]">
             <h3 className="inline-block max-w-[11.0625rem] cursor-pointer text-[0.75rem] font-bold hover:underline">
@@ -281,7 +313,10 @@ const MostPopularAnimePlaceholder: React.FC = () => {
         <span className="h-[4.375rem] w-[1.65rem] align-top font-[Verdana] font-bold leading-none text-[#808080]">
           9
         </span>
-        <a className="inline-block h-[4.5rem] w-[3.425rem] cursor-pointer">
+        <Link
+          href="/under_construction"
+          className="inline-block h-[4.5rem] w-[3.425rem] cursor-pointer"
+        >
           <Image
             src="https://cdn.myanimelist.net/images/anime/5/64449.jpg"
             alt="placeholder"
@@ -289,7 +324,7 @@ const MostPopularAnimePlaceholder: React.FC = () => {
             height={70}
             className="h-[4.5rem] w-[3.25rem] border-[1px] border-[#bebebe] object-cover"
           />
-        </a>
+        </Link>
         <div className="ml-2 w-[13.25rem]">
           <div className="flex justify-between align-top font-[Verdana] leading-tight tracking-tight text-[#1c439b]">
             <h3 className="inline-block max-w-[11.0625rem] cursor-pointer text-[0.75rem] font-bold hover:underline">
@@ -313,7 +348,10 @@ const MostPopularAnimePlaceholder: React.FC = () => {
         <span className="h-[4.375rem] w-[1.65rem] align-top font-[Verdana] font-bold leading-none tracking-tighter text-[#808080]">
           10
         </span>
-        <a className="inline-block h-[4.5rem] w-[3.425rem] cursor-pointer">
+        <Link
+          href="/under_construction"
+          className="inline-block h-[4.5rem] w-[3.425rem] cursor-pointer"
+        >
           <Image
             src="https://cdn.myanimelist.net/images/anime/11/39717.jpg"
             alt="placeholder"
@@ -321,7 +359,7 @@ const MostPopularAnimePlaceholder: React.FC = () => {
             height={70}
             className="h-[4.5rem] w-[3.25rem] border-[1px] border-[#bebebe] object-cover"
           />
-        </a>
+        </Link>
         <div className="ml-2 w-[13.25rem]">
           <div className="flex justify-between align-top font-[Verdana] leading-tight tracking-tight text-[#1c439b]">
             <h3 className="inline-block max-w-[11.0625rem] cursor-pointer text-[0.75rem] font-bold hover:underline">
