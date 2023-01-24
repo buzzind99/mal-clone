@@ -16,7 +16,7 @@ interface Props {
 }
 
 const RecentAnimeDiscussions: React.FC<Props> = ({ discussionsData }) => {
-  let dummyData = discussionsData || initialData;
+  const dummyData = discussionsData || initialData;
 
   // Using div with onClick event listener on links with generic text
   // (more, view more, etc.) for better SEO

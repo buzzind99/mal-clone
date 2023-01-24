@@ -21,7 +21,7 @@ interface Props {
 }
 
 const AnimeMangaNews: React.FC<Props> = ({ newsData }) => {
-  let dummyData = newsData || initialData;
+  const dummyData = newsData || initialData;
 
   // Using div with onClick event listener on links with generic text
   // (more, view more, etc.) for better SEO

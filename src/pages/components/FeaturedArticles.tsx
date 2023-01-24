@@ -20,7 +20,7 @@ interface Props {
 }
 
 const FeaturedArticles: React.FC<Props> = ({ featuredData }) => {
-  let dummyData = featuredData || initialData;
+  const dummyData = featuredData || initialData;
 
   // Using div with onClick event listener on links with generic text
   // (more, view more, etc.) for better SEO
