@@ -17,6 +17,7 @@ import {
   IDiscussionsData,
   IFeaturedData,
 } from "../types/interfaces";
+
 interface Props {
   children?: React.ReactNode;
   newsData: INewsData[];
