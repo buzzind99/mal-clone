@@ -13,11 +13,13 @@ import RecentAnimeDiscussions from "./components/RecentAnimeDiscussions";
 import TopAiringAnimePlaceholder from "./components/TopAiringAnimePlaceholder";
 import TopUpcomingAnimePlaceholder from "./components/TopUpcomingAnimePlaceholder";
 import LatestAnimeReviews from "./components/LatestAnimeReviews";
+import LatestAnimeRecommendations from "./components/LatestAnimeRecommendations";
 import {
   INewsData,
   IDiscussionsData,
   IFeaturedData,
   IReviewsData,
+  IRecommendationsData,
 } from "../types/interfaces";
 
 interface Props {
@@ -26,13 +28,15 @@ interface Props {
   discussionsData: IDiscussionsData[];
   featuredData: IFeaturedData[];
   reviewsData: IReviewsData[];
+  recommendationsData: IRecommendationsData[];
 }
 
 export default function Home({
   newsData,
   discussionsData,
   featuredData,
-  reviewsData
+  reviewsData,
+  recommendationsData,
 }: Props) {
   return (
     <>
@@ -73,6 +77,9 @@ export default function Home({
             <div className="mx-[0.625rem] mb-[1.25rem]">
               <LatestAnimeReviews reviewsData={reviewsData}/>
             </div>
+            <div className="mx-[0.625rem] mb-10">
+              <LatestAnimeRecommendations recommendationsData={recommendationsData} />
+            </div>
           </div>
           <div id="content-right" className="inline-block w-[20rem]">
             <div className="mx-[0.5rem] mt-1">
@@ -106,8 +113,11 @@ export async function getStaticProps() {
   const reviewsData = await import(
     "./components/dummy_data/reviewsData.json"
   ).then((res) => res.default.data);
+  const recommendationsData = await import(
+    "./components/dummy_data/recommendationsData.json"
+  ).then((res) => res.default.data);
 
   return {
-    props: { newsData, discussionsData, featuredData, reviewsData },
+    props: { newsData, discussionsData, featuredData, reviewsData, recommendationsData },
   };
 }
