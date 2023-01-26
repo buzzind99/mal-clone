@@ -54,7 +54,7 @@ const LatestAnimeReviews: React.FC<Props> = ({ reviewsData }) => {
       <div id="latest-anime-reviews_content" className="flex-col">
         {dummyData.map((data) => (
           <div
-            id={`featured-articles_content-${data.id}`}
+            id={`latest-anime-reviews_content-${data.id}`}
             key={data.id}
             className="mt-[0.375rem] flex border-b-[1px] border-[#e5e7eb] pb-[0.375rem]"
           >
