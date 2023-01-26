@@ -31,3 +31,17 @@ export interface IFeaturedData {
   views: number;
   spoiler: true;
 }
+
+export interface IReviewsData {
+  id: number;
+  title: string;
+  anime_url: string;
+  image_url: string;
+  description: string;
+  review_url: string;
+  user: string;
+  user_url: string;
+  score: number;
+  time_since_posted: string;
+  preliminary: boolean;
+}
