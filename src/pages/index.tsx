@@ -12,6 +12,7 @@ import MostPopularAnimePlaceholder from "./components/MostPopularAnimePlaceholde
 import RecentAnimeDiscussions from "./components/RecentAnimeDiscussions";
 import TopAiringAnimePlaceholder from "./components/TopAiringAnimePlaceholder";
 import TopUpcomingAnimePlaceholder from "./components/TopUpcomingAnimePlaceholder";
+import LatestAnimeReviews from "./components/LatestAnimeReviews";
 import {
   INewsData,
   IDiscussionsData,
@@ -65,6 +66,9 @@ export default function Home({
             </div>
             <div className="mx-[0.625rem] mb-[1.25rem]">
               <FeaturedArticles featuredData={featuredData} />
+            </div>
+            <div className="mx-[0.625rem] mb-[1.25rem]">
+              <LatestAnimeReviews />
             </div>
           </div>
           <div id="content-right" className="inline-block w-[20rem]">
