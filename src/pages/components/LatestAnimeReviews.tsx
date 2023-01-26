@@ -1,3 +1,4 @@
+import { IReviewsData } from "@/types/interfaces";
 import Image from "next/image";
 
 const initialData = [
@@ -16,78 +17,18 @@ const initialData = [
   },
 ];
 
-const LatestAnimeReviews: React.FC = () => {
+interface Props {
+  reviewsData: IReviewsData[];
+}
+
+const LatestAnimeReviews: React.FC<Props> = ({ reviewsData }) => {
+  const dummyData = reviewsData || initialData;
+
   // Using div with onClick event listener on links with generic text
   // (more, view more, etc.) for better SEO
   const openInNewTab = (url: string) => {
     window.open(url, "_blank", "noopener,noreferrer");
   };
-
-  const dummyData = [
-    {
-      id: 1,
-      title: "Tondemo Skill de Isekai Hourou Meshi",
-      anime_url:
-        "https://myanimelist.net/anime/53446/Tondemo_Skill_de_Isekai_Hourou_Meshi",
-      image_url:
-        "https://cdn.myanimelist.net/r/50x70/images/anime/1661/131889.webp?s=a4087997bd35a31cbee921a34d7f60d9",
-      description:
-        "Studen gets isekaid to another world alongside 3 other people, where they all become heroes, but his only magical power is to summon a multidimensional convenience store, where he can buy food, ingredients and several other things. Leaving the hero position for judge as useless, he decides to use his powers to become a cooker/adventurer, while being...",
-      review_url: "https://myanimelist.net/reviews.php?id=470769",
-      user: "lukyknhas",
-      user_url: "https://myanimelist.net/profile/lukyknhas",
-      score: 7,
-      time_since_posted: "1 hour ago",
-      preliminary: true,
-    },
-    {
-      id: 2,
-      title: "Kage no Jitsuryokusha ni Naritakute!",
-      anime_url:
-        "https://myanimelist.net/anime/53446/Tondemo_Skill_de_Isekai_Hourou_Meshi",
-      image_url:
-        "https://cdn.myanimelist.net/r/50x70/images/anime/1661/131889.webp?s=a4087997bd35a31cbee921a34d7f60d9",
-      description:
-        "The negative reviews for this anime are laughable and mostly uninformed. This anime is an easy 10/10 and is by far one of the best anime's I've ever seen. Much of the dislike for this anime seems to come from either manga readers upset that it doesnt adapt the anime in the way they wanted or people that dont understand the anime. To fully enjoy this...",
-      review_url: "https://myanimelist.net/reviews.php?id=470890",
-      user: "Gidoru",
-      user_url: "https://myanimelist.net/profile/Gidoru",
-      score: 10,
-      time_since_posted: "1 hour ago",
-      preliminary: true,
-    },
-    {
-      id: 3,
-      title: "Re:Zero kara Hajimeru Isekai Seikatsu",
-      anime_url:
-        "https://myanimelist.net/anime/31240/Re_Zero_kara_Hajimeru_Isekai_Seikatsu",
-      image_url:
-        "https://cdn.myanimelist.net/r/50x70/images/anime/1874/121869.webp?s=1c5e52985ef3835f111b437e37b1667b",
-      description:
-        "(SPOILERS ARE MARKED) First Isekai I have watched and I probably won't delve too much deeper into the genre outside of konosuba which I am watching simultaneously w/ re: zero. Anyways, this show has a dedicated romantic subplot which I enjoyed throughout as a romance fan and while Subaru is cringe at times, his character development is admirable. Criticisms...",
-      review_url: "https://myanimelist.net/reviews.php?id=470888",
-      user: "nashyyyyyyy",
-      user_url: "https://myanimelist.net/profile/nashyyyyyyy",
-      score: 8,
-      time_since_posted: "3 hour ago",
-      preliminary: false,
-    },
-    {
-      id: 4,
-      title: "Bocchi the Rock!",
-      anime_url: "https://myanimelist.net/anime/47917/Bocchi_the_Rock",
-      image_url:
-        "https://cdn.myanimelist.net/r/50x70/images/anime/1448/127956.webp?s=5aedb25ef404ccfafa06af8ad7565fbd",
-      description:
-        "Better portrayal of social awkwardness than Komi san? Better music than k-on!? Severely hilarious side-splitting comedy? Bocchi the rock has everything. I thought I had decided on my anime of the year in spring, and yet Bocchi the rock completely shocked me and took that spot. Honestly top 5 anime of all time for me. There is not a single flaw I can...",
-      review_url: "https://myanimelist.net/reviews.php?id=470887",
-      user: "meridiasbeacon",
-      user_url: "https://myanimelist.net/profile/meridiasbeacon",
-      score: 10,
-      time_since_posted: "3 hour ago",
-      preliminary: false,
-    },
-  ];
 
   return (
     <article
