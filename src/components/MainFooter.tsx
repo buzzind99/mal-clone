@@ -4,7 +4,7 @@ import styles from "../styles/MainFooter.module.css";
 
 const MainFooter: React.FC = () => {
   return (
-    <footer id="main-footer" className="bg-[#2e51a2]">
+    <footer id="main-footer" className="min-w-[66.25rem] bg-[#2e51a2]">
       <div className="mx-auto w-[38rem] pt-8 pb-6">
         <div className="flex justify-between">
           <div className={`${styles.bfr_follow}`}>
@@ -110,7 +110,7 @@ const MainFooter: React.FC = () => {
         </div>
       </div>
       <div
-        className={`${styles.bg_footer} pt-8 text-center font-[Verdana] text-[0.75rem] leading-tight tracking-tighter text-white`}
+        className={`${styles.bg_footer} min-w-[66.25rem] pt-8 text-center font-[Verdana] text-[0.75rem] leading-tight tracking-tighter text-white`}
       >
         <Link
           href="/"
