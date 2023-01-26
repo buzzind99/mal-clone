@@ -82,14 +82,14 @@ const MainFooter: React.FC = () => {
               href="https://apps.apple.com/us/app/myanimelist-official/id1469330778?md=8&ct=pc_footer"
               target="_blank"
               rel="noopener noreferrer"
-              className="cursor-pointer hover:opacity-50"
+              className="mr-[0.625rem] cursor-pointer hover:opacity-50"
             >
               <Image
                 src="https://cdn.myanimelist.net/images/appli/badge_iOS.png"
                 alt="Get MyAnimeList App on App Store"
                 width={136}
                 height={41}
-                className="mr-[0.625rem] inline-block h-[30px] w-[100px] object-cover"
+                className="inline-block h-[30px] w-[100px] object-cover"
               />
             </a>
             <a
