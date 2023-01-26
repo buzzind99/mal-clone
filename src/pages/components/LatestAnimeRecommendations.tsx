@@ -1,19 +1,21 @@
 import Image from "next/image";
 import { IRecommendationsData } from "@/types/interfaces";
 
-const initialData = {
-  id: 0,
-  anime: "",
-  anime_url: "",
-  image_url: "",
-  anime_rec: "",
-  anime_rec_url: "",
-  image_rec_url: "",
-  description: "",
-  user: "",
-  user_url: "",
-  time_since_posted: "",
-};
+const initialData = [
+  {
+    id: 0,
+    anime: "",
+    anime_url: "",
+    image_url: "",
+    anime_rec: "",
+    anime_rec_url: "",
+    image_rec_url: "",
+    description: "",
+    user: "",
+    user_url: "",
+    time_since_posted: "",
+  },
+];
 
 interface Props {
   recommendationsData: IRecommendationsData[];
