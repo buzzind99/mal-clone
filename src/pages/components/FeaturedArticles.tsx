@@ -35,7 +35,7 @@ const FeaturedArticles: React.FC<Props> = ({ featuredData }) => {
         className="flex h-[1.375rem] items-center justify-between border-b-[1px] border-[#bebebe] pb-[0.1875rem] pt-1"
       >
         <h2 className="font-bold">
-          Featured Articles {"{this is a placeholder, links are external}"}
+          {"Featured Articles {this is a placeholder, links are external}"}
         </h2>
         <div
           onClick={() => openInNewTab("https://myanimelist.net/featured")}
@@ -65,7 +65,7 @@ const FeaturedArticles: React.FC<Props> = ({ featuredData }) => {
                 className="h-[4.5rem] min-w-[3.25rem] border-[1px] border-[#bebebe] object-cover"
               />
             </a>
-            <div className="ml-2 inline-block w-full text-[0.6875rem]">
+            <div className="ml-2 inline-block text-[0.6875rem]">
               <h3 className="pb-[0.1875rem] font-bold text-[#1c439b]">
                 <a
                   href={data.url}
@@ -78,7 +78,7 @@ const FeaturedArticles: React.FC<Props> = ({ featuredData }) => {
                 </a>
               </h3>
               <p>{data.description}</p>
-              <div className="mt-[0.375rem] flex w-full items-center leading-relaxed text-[#808080]">
+              <div className="mt-[0.375rem] flex items-center leading-relaxed text-[#808080]">
                 <p>
                   {`by `}
                   <a
