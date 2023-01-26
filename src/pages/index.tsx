@@ -17,6 +17,7 @@ import {
   INewsData,
   IDiscussionsData,
   IFeaturedData,
+  IReviewsData,
 } from "../types/interfaces";
 
 interface Props {
@@ -24,12 +25,14 @@ interface Props {
   newsData: INewsData[];
   discussionsData: IDiscussionsData[];
   featuredData: IFeaturedData[];
+  reviewsData: IReviewsData[];
 }
 
 export default function Home({
   newsData,
   discussionsData,
   featuredData,
+  reviewsData
 }: Props) {
   return (
     <>
@@ -68,7 +71,7 @@ export default function Home({
               <FeaturedArticles featuredData={featuredData} />
             </div>
             <div className="mx-[0.625rem] mb-[1.25rem]">
-              <LatestAnimeReviews />
+              <LatestAnimeReviews reviewsData={reviewsData}/>
             </div>
           </div>
           <div id="content-right" className="inline-block w-[20rem]">
@@ -100,8 +103,11 @@ export async function getStaticProps() {
   const featuredData = await import(
     "./components/dummy_data/featuredData.json"
   ).then((res) => res.default.data);
+  const reviewsData = await import(
+    "./components/dummy_data/reviewsData.json"
+  ).then((res) => res.default.data);
 
   return {
-    props: { newsData, discussionsData, featuredData },
+    props: { newsData, discussionsData, featuredData, reviewsData },
   };
 }
