@@ -31,7 +31,7 @@ const LatestAnimeRecommendations: React.FC<Props> = ({
   };
 
   const readMore = (desc: string) => {
-    const match = desc.match(/\.\.\.$/);
+    const match = desc.match(/\.{3}$/);
     return !!match;
   };
 
