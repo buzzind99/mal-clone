@@ -45,3 +45,17 @@ export interface IReviewsData {
   time_since_posted: string;
   preliminary: boolean;
 }
+
+export interface IRecommendationsData {
+  id: number;
+  anime: string;
+  anime_url: string;
+  image_url: string;
+  anime_rec: string;
+  anime_rec_url: string;
+  image_rec_url: string;
+  description: string;
+  user: string;
+  user_url: string;
+  time_since_posted: string;
+}
