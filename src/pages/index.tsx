@@ -21,6 +21,7 @@ import {
   IReviewsData,
   IRecommendationsData,
 } from "../types/interfaces";
+import SeasonalAnime from "./components/SeasonalAnime";
 
 interface Props {
   children?: React.ReactNode;
@@ -60,35 +61,38 @@ export default function Home({
         <div className="relative flex bg-white py-[0.625rem] text-left">
           <div
             id="content-left"
-            className="inline-block w-[46.5395rem] border-r-[1px] border-[#e5e5e5]"
+            className="inline-block w-[46.25rem] border-r-[1px] border-[#e5e5e5] pr-[0.625rem] pl-[0.6875rem]"
           >
-            <div className="mx-[0.625rem] mb-[1.25rem]">
+            <div className="mb-[1.25rem]">
               <MALxJPN />
             </div>
-            <div className="mx-[0.625rem] mb-[1.25rem]">
+            <div className="mb-[1.25rem]">
+              <SeasonalAnime />
+            </div>
+            <div className="mb-[1.25rem]">
               <AnimeMangaNews newsData={newsData} />
             </div>
-            <div className="mx-[0.625rem] mb-[1.25rem]">
+            <div className="mb-[1.25rem]">
               <RecentAnimeDiscussions discussionsData={discussionsData} />
             </div>
-            <div className="mx-[0.625rem] mb-[1.25rem]">
+            <div className="mb-[1.25rem]">
               <FeaturedArticles featuredData={featuredData} />
             </div>
-            <div className="mx-[0.625rem] mb-[1.25rem]">
+            <div className="mb-[1.25rem]">
               <LatestAnimeReviews reviewsData={reviewsData}/>
             </div>
-            <div className="mx-[0.625rem] mb-10">
+            <div className="mb-10">
               <LatestAnimeRecommendations recommendationsData={recommendationsData} />
             </div>
           </div>
-          <div id="content-right" className="inline-block w-[20rem]">
-            <div className="mx-[0.5rem] mt-1">
+          <div id="content-right" className="inline-block w-[20rem] px-[0.5rem]">
+            <div className="mt-1">
               <TopAiringAnimePlaceholder />
             </div>
-            <div className="mx-[0.5rem] mt-[1.25rem]">
+            <div className="mt-[1.25rem]">
               <TopUpcomingAnimePlaceholder />
             </div>
-            <div className="mx-[0.5rem] mt-[1.25rem]">
+            <div className="mt-[1.25rem]">
               <MostPopularAnimePlaceholder />
             </div>
           </div>
