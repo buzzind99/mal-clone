@@ -4,7 +4,7 @@ const NavBar: React.FC = () => {
   return (
     <nav
       id="nav-bar"
-      className="mx-auto flex h-[2.125rem] w-[66.25rem] items-center justify-between bg-[#2e51a2] text-[0.9rem]"
+      className="mx-auto flex h-[2.125rem] w-[66.375rem] items-center justify-between bg-[#2e51a2] text-[0.9rem]"
     >
       <div
         id="nav-left"
