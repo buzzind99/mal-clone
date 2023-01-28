@@ -51,11 +51,7 @@ const FeaturedArticles: React.FC<Props> = ({ featuredData }) => {
             key={data.id}
             className="mt-[0.375rem] flex border-b-[1px] border-[#e5e7eb] pb-[0.375rem]"
           >
-            <a
-              href={data.url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href={data.url} target="_blank" rel="noopener noreferrer">
               <Image
                 src={data.image_url}
                 alt={data.title}
