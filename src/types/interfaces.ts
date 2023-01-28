@@ -59,3 +59,10 @@ export interface IRecommendationsData {
   user_url: string;
   time_since_posted: string;
 }
+
+export interface ISeasonalAnimeData {
+  id: number;
+  anime: string;
+  anime_url: string;
+  image_url: string;
+}
