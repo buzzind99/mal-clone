@@ -7,7 +7,7 @@ const MainHeader: React.FC = () => {
       id="main-header"
       className="mx-auto flex h-12 w-[66.25rem] justify-center bg-white"
     >
-      <div id="inner-header" className="flex w-[66.25rem] justify-between py-2">
+      <div id="inner-header" className="flex w-[66.375rem] justify-between py-2">
         <Link href="/">
           <Image
             src="/mal-logo-xsmall.webp"
