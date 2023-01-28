@@ -62,7 +62,6 @@ const LatestAnimeReviews: React.FC<Props> = ({ reviewsData }) => {
               href={data.anime_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="cursor-pointer"
             >
               <Image
                 src={data.image_url}
