@@ -10,7 +10,7 @@ const FooterChartPlaceholder: React.FC = () => {
 
   return (
     <div id="footer-chart" className="bg-[#f8f8f8]">
-      <div className="mx-auto flex w-[66.25rem] justify-center py-[1.25rem] font-[Verdana] tracking-tighter">
+      <div className="mx-auto flex w-[66.375rem] justify-center py-[1.25rem] font-[Verdana] tracking-tighter">
         <div
           id="footer-chart_top-anime"
           className="mx-4 inline-block w-[12.5rem] overflow-hidden"
