@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "@/styles/SeasonalAnime.module.css";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { ISeasonalAnimeData } from "@/types/interfaces";
 
 const initialData = [{ id: 0, anime: "", anime_url: "", image_url: "" }];
@@ -17,13 +17,13 @@ const SeasonalAnime: React.FC<Props> = ({ seasonalAnimeData }) => {
 
   const dummyData = seasonalAnimeData || initialData;
 
-  const slideState = [
+  const slideState = useMemo(() => [
     [...dummyData.slice(16, 20), ...dummyData.slice(0, 9)],
     [...dummyData.slice(0, 13)],
     [...dummyData.slice(4, 17)],
     [...dummyData.slice(8, 20), ...dummyData.slice(0, 1)],
     [...dummyData.slice(12, 20), ...dummyData.slice(0, 5)],
-  ];
+  ], [dummyData]);
 
   const [slideStyle, setSlideStyle] = useState<SlideStyle>({
     marginLeft: "-41.5rem",
@@ -70,7 +70,7 @@ const SeasonalAnime: React.FC<Props> = ({ seasonalAnimeData }) => {
     }, 500);
 
     return () => clearTimeout(timer);
-  }, [counter]);
+  }, [counter, slideState]);
 
   // Using div with onClick event listener on links with generic text
   // (more, view more, etc.) for better SEO
@@ -129,9 +129,8 @@ const SeasonalAnime: React.FC<Props> = ({ seasonalAnimeData }) => {
               <Image
                 src={data.image_url}
                 alt={data.anime}
-                width={162}
-                height={222}
-                priority={true}
+                width={160}
+                height={220}
                 className="h-[13.75rem] w-[10rem] border-[1px] border-[#e5e5e5] object-cover"
               />
             </a>
