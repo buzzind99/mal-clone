@@ -55,7 +55,6 @@ const FeaturedArticles: React.FC<Props> = ({ featuredData }) => {
               href={data.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="cursor-pointer"
             >
               <Image
                 src={data.image_url}
