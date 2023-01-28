@@ -28,7 +28,7 @@ const MALxJPN: React.FC = () => {
           href="https://mxj.myanimelist.net/animeartacademy/?utm_source=MAL&utm_medium=top_mxj_animeartacademy"
           target="_blank"
           rel="noopener noreferrer"
-          className="group w-[14.6875rem] cursor-pointer text-[0.6875rem] leading-tight"
+          className="group w-[14.6875rem] text-[0.6875rem] leading-tight"
         >
           <Image
             src="/mal-x-jpn_card1.webp"
@@ -48,7 +48,7 @@ const MALxJPN: React.FC = () => {
           href="https://mxj.myanimelist.net/otakujudge/takequiz/?utm_source=MAL&utm_medium=top_mxj_otakujudge-app"
           target="_blank"
           rel="noopener noreferrer"
-          className="group mx-[0.4375rem] w-[14.6875rem] cursor-pointer text-[0.6875rem] leading-tight"
+          className="group mx-[0.4375rem] w-[14.6875rem] text-[0.6875rem] leading-tight"
         >
           <Image
             src="/mal-x-jpn_card2.webp"
@@ -69,7 +69,7 @@ const MALxJPN: React.FC = () => {
           href="https://mxj.myanimelist.net/club/paradoxlive/?utm_source=MAL&utm_medium=top_mxj_paralive-club-event"
           target="_blank"
           rel="noopener noreferrer"
-          className="group w-[14.6875rem] cursor-pointer text-[0.6875rem] leading-tight"
+          className="group w-[14.6875rem] text-[0.6875rem] leading-tight"
         >
           <Image
             src="/mal-x-jpn_card3.webp"
