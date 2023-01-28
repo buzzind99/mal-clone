@@ -56,7 +56,6 @@ const AnimeMangaNews: React.FC<Props> = ({ newsData }) => {
               href={data.news_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="cursor-pointer"
             >
               <Image
                 src={data.image_url}
