@@ -14,14 +14,15 @@ import TopAiringAnimePlaceholder from "./components/TopAiringAnimePlaceholder";
 import TopUpcomingAnimePlaceholder from "./components/TopUpcomingAnimePlaceholder";
 import LatestAnimeReviews from "./components/LatestAnimeReviews";
 import LatestAnimeRecommendations from "./components/LatestAnimeRecommendations";
+import SeasonalAnime from "./components/SeasonalAnime";
 import {
   INewsData,
   IDiscussionsData,
   IFeaturedData,
   IReviewsData,
   IRecommendationsData,
+  ISeasonalAnimeData,
 } from "../types/interfaces";
-import SeasonalAnime from "./components/SeasonalAnime";
 
 interface Props {
   children?: React.ReactNode;
@@ -30,6 +31,7 @@ interface Props {
   featuredData: IFeaturedData[];
   reviewsData: IReviewsData[];
   recommendationsData: IRecommendationsData[];
+  seasonalAnimeData: ISeasonalAnimeData[];
 }
 
 export default function Home({
@@ -38,6 +40,7 @@ export default function Home({
   featuredData,
   reviewsData,
   recommendationsData,
+  seasonalAnimeData,
 }: Props) {
   return (
     <>
@@ -67,7 +70,7 @@ export default function Home({
               <MALxJPN />
             </div>
             <div className="mb-[1.25rem]">
-              <SeasonalAnime />
+              <SeasonalAnime seasonalAnimeData={seasonalAnimeData} />
             </div>
             <div className="mb-[1.25rem]">
               <AnimeMangaNews newsData={newsData} />
@@ -79,13 +82,18 @@ export default function Home({
               <FeaturedArticles featuredData={featuredData} />
             </div>
             <div className="mb-[1.25rem]">
-              <LatestAnimeReviews reviewsData={reviewsData}/>
+              <LatestAnimeReviews reviewsData={reviewsData} />
             </div>
             <div className="mb-10">
-              <LatestAnimeRecommendations recommendationsData={recommendationsData} />
+              <LatestAnimeRecommendations
+                recommendationsData={recommendationsData}
+              />
             </div>
           </div>
-          <div id="content-right" className="inline-block w-[20rem] px-[0.5rem]">
+          <div
+            id="content-right"
+            className="inline-block w-[20rem] px-[0.5rem]"
+          >
             <div className="mt-1">
               <TopAiringAnimePlaceholder />
             </div>
@@ -120,8 +128,18 @@ export async function getStaticProps() {
   const recommendationsData = await import(
     "./components/dummy_data/recommendationsData.json"
   ).then((res) => res.default.data);
+  const seasonalAnimeData = await import("@/data/seasonalAnimeData.json").then(
+    (res) => res.default.data
+  );
 
   return {
-    props: { newsData, discussionsData, featuredData, reviewsData, recommendationsData },
+    props: {
+      newsData,
+      discussionsData,
+      featuredData,
+      reviewsData,
+      recommendationsData,
+      seasonalAnimeData,
+    },
   };
 }
