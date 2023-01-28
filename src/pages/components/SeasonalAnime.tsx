@@ -131,6 +131,7 @@ const SeasonalAnime: React.FC<Props> = ({ seasonalAnimeData }) => {
                 alt={data.anime}
                 width={160}
                 height={220}
+                loading="eager"
                 className="h-[13.75rem] w-[10rem] border-[1px] border-[#e5e5e5] object-cover"
               />
             </a>
