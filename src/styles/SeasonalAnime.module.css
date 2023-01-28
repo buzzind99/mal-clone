@@ -1,0 +1,37 @@
+.bg_anime {
+  background-image: url(/image_box_shadow_bottom.png);
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  text-shadow: rgb(0 0 0 / 80%) 1px 1px 0;
+}
+
+.bg_button_left {
+  background-image: url(/btn_handle.png);
+  background-position: -40px 0;
+  background-repeat: no-repeat;
+  background-size: 5rem auto;
+  top: 4.375rem;
+  left: -2.5rem;
+  z-index: 10;
+  position: absolute;
+  cursor: pointer;
+  height: 5rem;
+  width: 2.5rem;
+  opacity: 0;
+}
+
+.bg_button_right {
+  background-image: url(/btn_handle.png);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: 5rem auto;
+  top: 4.375rem;
+  right: -2.5rem;
+  z-index: 10;
+  position: absolute;
+  cursor: pointer;
+  height: 5rem;
+  width: 2.5rem;
+  opacity: 0;
+}
