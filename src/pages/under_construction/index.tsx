@@ -4,15 +4,14 @@ import MainContainer from "@/components/MainContainer";
 import MainFooter from "@/components/MainFooter";
 import MainHeader from "@/components/MainHeader";
 import NavBar from "@/components/NavBar";
+import UnderConstruction from "@/components/UnderConstruction";
 import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
 
-const UnderConstruction: React.FC = () => {
+const UnderConstructionPage: React.FC = () => {
   return (
     <>
       <Head>
-        <title>Page is Under Construction - MyAnimeList.net</title>
+        <title>This Page is Under Construction - MyAnimeList.net</title>
         <meta name="keywords" content="anime, myanimelist, anime news, manga" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="keywords" content="anime, myanimelist, anime news, manga" />
@@ -20,24 +19,9 @@ const UnderConstruction: React.FC = () => {
       </Head>
       <MainHeader />
       <NavBar />
-      <ContentTitleBar title="Page is Under Construction" />
+      <ContentTitleBar title="This page is under construction" />
       <MainContainer>
-        <div className="py-14 text-center">
-          <div className="flex justify-center">
-            <Link href="/">
-              <Image
-                src="/under-construction.webp"
-                alt="Page is Under Construction"
-                width={506}
-                height={360}
-                className="object-cover"
-              ></Image>
-            </Link>
-          </div>
-          <div className="pt-2 font-[Helvetica] text-[2.4rem] font-bold text-[#ffca39]">
-            This page is under construction
-          </div>
-        </div>
+        <UnderConstruction />
       </MainContainer>
       <FooterChartPlaceholder />
       <MainFooter />
@@ -45,4 +29,4 @@ const UnderConstruction: React.FC = () => {
   );
 };
 
-export default UnderConstruction;
+export default UnderConstructionPage;
