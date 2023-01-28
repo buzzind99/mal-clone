@@ -75,7 +75,6 @@ const LatestAnimeRecommendations: React.FC<Props> = ({
                 href={data.anime_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cursor-pointer"
               >
                 <Image
                   src={data.image_url}
@@ -109,7 +108,6 @@ const LatestAnimeRecommendations: React.FC<Props> = ({
                 href={data.anime_rec_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cursor-pointer"
               >
                 <Image
                   src={data.image_rec_url}
