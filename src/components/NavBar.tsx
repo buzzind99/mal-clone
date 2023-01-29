@@ -167,7 +167,7 @@ const NavBar: React.FC = () => {
             <option>Users</option>
           </select>
           <input
-            className="h-[1.375rem] w-[18rem] border-l-[2px] border-[#2e51a2] p-2 text-[0.75rem]"
+            className="h-[1.375rem] w-[18rem] border-l-[2px] border-[#2e51a2] p-2 text-[0.75rem] focus:outline-0"
             placeholder="Search Anime, Manga, and more..."
           ></input>
           <button
