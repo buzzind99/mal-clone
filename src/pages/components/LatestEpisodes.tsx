@@ -110,7 +110,7 @@ const LatestEpisodes: React.FC<Props> = ({ latestEpisodesData }) => {
         </div>
       </div>
       <div
-        id="seasonal-anime_content"
+        id="latest-episodes_content"
         className="group relative mt-1 overflow-hidden whitespace-nowrap"
       >
         <button
@@ -125,7 +125,7 @@ const LatestEpisodes: React.FC<Props> = ({ latestEpisodesData }) => {
           onClick={slideHandler.bind(null, "right")}
           disabled={isDisabled}
         />
-        <div id="seasonal-anime_slider-container" style={slideStyle}>
+        <div id="latest-episodes_slider-container" style={slideStyle}>
           {animeList.map((data) => (
             <div key={data.id} className="mr-2 inline-block max-w-[6.75rem]">
               <div
