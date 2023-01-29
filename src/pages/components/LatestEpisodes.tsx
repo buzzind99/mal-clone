@@ -140,6 +140,7 @@ const LatestEpisodes: React.FC<Props> = ({ latestEpisodesData }) => {
                 >
                   {data.episodes.map((ep) => (
                     <div
+                      key={ep.episode}
                       onClick={() =>
                         openInNewTab(`${data.anime_url}/episode/${ep.episode}`)
                       }
