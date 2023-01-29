@@ -66,3 +66,14 @@ export interface ISeasonalAnimeData {
   anime_url: string;
   image_url: string;
 }
+
+export interface ILatestEpisodesData {
+  id: number;
+  anime: string;
+  anime_url: string;
+  image_url: string;
+  episodes: {
+    episode: number;
+    paid: boolean;
+  }[];
+}
