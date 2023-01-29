@@ -16,6 +16,7 @@ import LatestAnimeReviews from "./components/LatestAnimeReviews";
 import LatestAnimeRecommendations from "./components/LatestAnimeRecommendations";
 import SeasonalAnime from "./components/SeasonalAnime";
 import LatestEpisodes from "./components/LatestEpisodes";
+import MostPopularTrailers from "./components/MostPopularTrailers";
 import {
   INewsData,
   IDiscussionsData,
@@ -24,6 +25,7 @@ import {
   IRecommendationsData,
   ISeasonalAnimeData,
   ILatestEpisodesData,
+  IPopularTrailersData,
 } from "../types/interfaces";
 
 interface Props {
@@ -35,6 +37,7 @@ interface Props {
   recommendationsData: IRecommendationsData[];
   seasonalAnimeData: ISeasonalAnimeData[];
   latestEpisodesData: ILatestEpisodesData[];
+  popularTrailersData: IPopularTrailersData[];
 }
 
 export default function Home({
@@ -45,6 +48,7 @@ export default function Home({
   recommendationsData,
   seasonalAnimeData,
   latestEpisodesData,
+  popularTrailersData,
 }: Props) {
   return (
     <>
@@ -78,6 +82,9 @@ export default function Home({
             </div>
             <div className="mb-[1.25rem]">
               <LatestEpisodes latestEpisodesData={latestEpisodesData} />
+            </div>
+            <div className="mb-[1.25rem]">
+              <MostPopularTrailers popularTrailersData={popularTrailersData} />
             </div>
             <div className="mb-[1.25rem]">
               <AnimeMangaNews newsData={newsData} />
@@ -141,6 +148,9 @@ export async function getStaticProps() {
   const latestEpisodesData = await import(
     "@/data/latestEpisodesData.json"
   ).then((res) => res.default.data);
+  const popularTrailersData = await import(
+    "@/data/popularTrailersData.json"
+  ).then((res) => res.default.data);
 
   return {
     props: {
@@ -151,6 +161,7 @@ export async function getStaticProps() {
       recommendationsData,
       seasonalAnimeData,
       latestEpisodesData,
+      popularTrailersData,
     },
   };
 }
