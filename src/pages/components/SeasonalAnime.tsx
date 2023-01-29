@@ -25,13 +25,13 @@ const SeasonalAnime: React.FC<Props> = ({ seasonalAnimeData }) => {
     [...dummyData.slice(12, 20), ...dummyData.slice(0, 5)],
   ], [dummyData]);
 
-  const [slideStyle, setSlideStyle] = useState<SlideStyle>({
-    marginLeft: "-41.5rem",
-  });
   const [direction, setDirection] = useState("");
   const [counter, setCounter] = useState(0);
   const [isDisabled, setIsDisabled] = useState(false);
   const [animeList, setAnimeList] = useState(slideState[0]);
+  const [slideStyle, setSlideStyle] = useState<SlideStyle>({
+    marginLeft: "-41.5rem",
+  });
 
   const slideHandler = (direction: string) => {
     setIsDisabled(true);
