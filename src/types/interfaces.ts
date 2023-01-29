@@ -77,3 +77,12 @@ export interface ILatestEpisodesData {
     paid: boolean;
   }[];
 }
+
+export interface IPopularTrailersData {
+  id: number;
+  anime: string;
+  anime_url: string;
+  image_url: string;
+  video_url: string;
+  type: string;
+}
