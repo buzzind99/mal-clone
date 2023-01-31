@@ -116,7 +116,7 @@ const MostPopularTrailers: React.FC<Props> = ({ popularTrailersData }) => {
         id="most-popular-trailers_header"
         className="flex h-[1.375rem] items-center justify-between border-b-[1px] border-[#bebebe] pb-[0.1875rem] pt-1"
       >
-        <h2 className="font-bold">{"Latest Updated Episode Videos"}</h2>
+        <h2 className="font-bold">{"Most Popular Anime Trailers"}</h2>
         <div
           onClick={() =>
             openInNewTab("https://myanimelist.net/watch/promotion/popular")
