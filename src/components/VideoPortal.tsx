@@ -37,7 +37,7 @@ const VideoPortal: React.FC<Props> = ({
       ></div>
       <div
         id="video-player"
-        className={`absolute top-[calc((100vh-729px)/2)] z-50 bg-black shadow-[0px_0px_30px_rgba(0,0,0,0.60)] ${style}`}
+        className={`absolute z-50 bg-black shadow-[0px_0px_30px_rgba(0,0,0,0.60)] ${style}`}
         style={{ top: `${videoPosition}px` }}
       >
         <button
