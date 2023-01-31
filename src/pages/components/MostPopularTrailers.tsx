@@ -149,7 +149,7 @@ const MostPopularTrailers: React.FC<Props> = ({ popularTrailersData }) => {
               <div
                 onClick={showVideoModalHandler.bind(null, data.video_url)}
                 className={
-                  "relative inline-block transition-all duration-300 ease-[ease-in-out] hover:opacity-80"
+                  "relative inline-block cursor-pointer transition-all duration-300 ease-[ease-in-out] hover:opacity-80"
                 }
               >
                 <h3 className="flex justify-center text-[0.65625rem] leading-tight tracking-tighter text-white">
