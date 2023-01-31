@@ -127,7 +127,7 @@ const MostPopularTrailers: React.FC<Props> = ({ popularTrailersData }) => {
         </div>
       </div>
       <div
-        id="latest-episodes_content"
+        id="most-popular-trailers_content"
         className="group relative mt-1 overflow-hidden whitespace-nowrap"
       >
         <button
@@ -142,13 +142,14 @@ const MostPopularTrailers: React.FC<Props> = ({ popularTrailersData }) => {
           onClick={slideHandler.bind(null, "right")}
           disabled={isDisabled}
         />
-        <div id="latest-episodes_slider-container" style={slideStyle}>
+        <div id="most-popular-trailers_slider-container" style={slideStyle}>
           {animeList.map((data) => (
             <div
               key={data.id}
               className="mr-2 inline-block transition-all duration-300 ease-[ease-in-out] hover:opacity-80 "
             >
               <div
+                id={`trailers_${data.id}`}
                 onClick={showVideoModalHandler.bind(null, data.video_url)}
                 className={
                   "relative inline-block cursor-pointer transition-all duration-300 ease-[ease-in-out] hover:opacity-80"
