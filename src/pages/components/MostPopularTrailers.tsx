@@ -1,3 +1,4 @@
+import VideoPortal from "@/components/VideoPortal";
 import styles from "@/styles/MostPopularTrailers.module.css";
 import { IPopularTrailersData } from "@/types/interfaces";
 import { useEffect, useMemo, useState } from "react";
@@ -35,8 +36,10 @@ const MostPopularTrailers: React.FC<Props> = ({ popularTrailersData }) => {
   );
 
   const [direction, setDirection] = useState("");
+  const [videoUrl, setVideoUrl] = useState("");
   const [counter, setCounter] = useState(0);
   const [isDisabled, setIsDisabled] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const [animeList, setAnimeList] = useState(slideState[0]);
   const [slideStyle, setSlideStyle] = useState<SlideStyle>({
     marginLeft: "-42.75rem",
@@ -81,6 +84,15 @@ const MostPopularTrailers: React.FC<Props> = ({ popularTrailersData }) => {
     return () => clearTimeout(timer);
   }, [counter, slideState]);
 
+  const onShowModalChangeHandler = (value: boolean) => {
+    setShowModal(value);
+  };
+
+  const showVideoModalHandler = (url: string) => {
+    setVideoUrl(url);
+    setShowModal(true);
+  };
+
   // Using div with onClick event listener on links with generic text
   // (more, view more, etc.) for better SEO
   const openInNewTab = (url: string) => {
@@ -92,6 +104,12 @@ const MostPopularTrailers: React.FC<Props> = ({ popularTrailersData }) => {
       id="most-popular-trailers"
       className="font-[Verdana] text-[0.75rem]"
     >
+      {showModal && (
+        <VideoPortal
+          url={videoUrl}
+          onShowModalChange={onShowModalChangeHandler}
+        />
+      )}
       <div
         id="most-popular-trailers_header"
         className="flex h-[1.375rem] items-center justify-between border-b-[1px] border-[#bebebe] pb-[0.1875rem] pt-1"
@@ -128,10 +146,8 @@ const MostPopularTrailers: React.FC<Props> = ({ popularTrailersData }) => {
               key={data.id}
               className="mr-2 inline-block transition-all duration-300 ease-[ease-in-out] hover:opacity-80 "
             >
-              <a
-                href={data.video_url}
-                target="_blank"
-                rel="noopener noreferrer"
+              <div
+                onClick={showVideoModalHandler.bind(null, data.video_url)}
                 className={
                   "relative inline-block transition-all duration-300 ease-[ease-in-out] hover:opacity-80"
                 }
@@ -148,7 +164,7 @@ const MostPopularTrailers: React.FC<Props> = ({ popularTrailersData }) => {
                   className={`h-[7.5rem] w-[13.75rem] bg-cover bg-no-repeat`}
                   style={{ background: `url(${data.image_url})` }}
                 />
-              </a>
+              </div>
               <h3 className="mx-[0.3rem] block overflow-hidden pb-1 text-[0.65625rem] leading-none tracking-tight text-[#1c439b]">
                 <a
                   title={data.anime}
