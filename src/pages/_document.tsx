@@ -5,8 +5,11 @@ export default function Document() {
     <Html lang="en">
       <Head />
       <body className="antialiased">
+        <div
+          id="video-portal"
+          className="relative mx-auto flex w-[66.375rem] justify-center"
+        />
         <Main />
-        <div id="portal" />
         <NextScript />
       </body>
     </Html>
