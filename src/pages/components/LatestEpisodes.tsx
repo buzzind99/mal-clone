@@ -156,7 +156,7 @@ const LatestEpisodes: React.FC<Props> = ({ latestEpisodesData }) => {
                   alt={data.anime}
                   width={108}
                   height={163}
-                  className="object-cover"
+                  className="h-[10.1875rem] w-[6.75rem] object-cover"
                 />
               </div>
               <h3 className="mx-[0.15rem] block overflow-hidden text-[0.65625rem] leading-none tracking-tight text-[#1c439b] hover:underline">
