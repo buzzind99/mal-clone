@@ -29,7 +29,7 @@ export interface IFeaturedData {
   author: string;
   author_url: string;
   views: number;
-  spoiler: true;
+  spoiler: boolean;
 }
 
 export interface IReviewsData {
