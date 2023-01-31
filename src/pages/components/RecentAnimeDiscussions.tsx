@@ -1,6 +1,6 @@
 import { IDiscussionsData } from "@/types/interfaces";
 
-const initialData = [
+const initialData: IDiscussionsData[] = [
   {
     id: 0,
     title: "",

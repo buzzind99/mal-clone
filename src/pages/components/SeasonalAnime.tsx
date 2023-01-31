@@ -3,7 +3,9 @@ import styles from "@/styles/SeasonalAnime.module.css";
 import { useEffect, useMemo, useState } from "react";
 import { ISeasonalAnimeData } from "@/types/interfaces";
 
-const initialData = [{ id: 0, anime: "", anime_url: "", image_url: "" }];
+const initialData: ISeasonalAnimeData[] = [
+  { id: 0, anime: "", anime_url: "", image_url: "" },
+];
 
 interface Props {
   seasonalAnimeData: ISeasonalAnimeData[];
@@ -17,13 +19,16 @@ const SeasonalAnime: React.FC<Props> = ({ seasonalAnimeData }) => {
 
   const dummyData = seasonalAnimeData || initialData;
 
-  const slideState = useMemo(() => [
-    [...dummyData.slice(16, 20), ...dummyData.slice(0, 9)],
-    [...dummyData.slice(0, 13)],
-    [...dummyData.slice(4, 17)],
-    [...dummyData.slice(8, 20), ...dummyData.slice(0, 1)],
-    [...dummyData.slice(12, 20), ...dummyData.slice(0, 5)],
-  ], [dummyData]);
+  const slideState = useMemo(
+    () => [
+      [...dummyData.slice(16, 20), ...dummyData.slice(0, 9)],
+      [...dummyData.slice(0, 13)],
+      [...dummyData.slice(4, 17)],
+      [...dummyData.slice(8, 20), ...dummyData.slice(0, 1)],
+      [...dummyData.slice(12, 20), ...dummyData.slice(0, 5)],
+    ],
+    [dummyData]
+  );
 
   const [direction, setDirection] = useState("");
   const [counter, setCounter] = useState(0);

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { IRecommendationsData } from "@/types/interfaces";
 
-const initialData = [
+const initialData: IRecommendationsData[] = [
   {
     id: 0,
     anime: "",

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { INewsData } from "../../types/interfaces";
 
-const initialData = [
+const initialData: INewsData[] = [
   {
     id: 0,
     image_url: "",

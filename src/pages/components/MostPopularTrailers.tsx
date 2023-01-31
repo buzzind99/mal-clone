@@ -3,14 +3,16 @@ import styles from "@/styles/MostPopularTrailers.module.css";
 import { IPopularTrailersData } from "@/types/interfaces";
 import { useEffect, useMemo, useState } from "react";
 
-const initialData = {
-  id: 0,
-  anime: "",
-  anime_url: "",
-  image_url: "",
-  video_url: "",
-  type: "",
-};
+const initialData: IPopularTrailersData[] = [
+  {
+    id: 0,
+    anime: "",
+    anime_url: "",
+    image_url: "",
+    video_url: "",
+    type: "",
+  },
+];
 
 interface Props {
   popularTrailersData: IPopularTrailersData[];

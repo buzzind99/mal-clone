@@ -1,7 +1,7 @@
 import { IFeaturedData } from "@/types/interfaces";
 import Image from "next/image";
 
-const initialData = [
+const initialData: IFeaturedData[] = [
   {
     id: 0,
     title: "",

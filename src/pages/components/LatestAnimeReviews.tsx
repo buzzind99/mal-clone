@@ -1,7 +1,7 @@
 import { IReviewsData } from "@/types/interfaces";
 import Image from "next/image";
 
-const initialData = [
+const initialData: IReviewsData[] = [
   {
     id: 0,
     title: "",

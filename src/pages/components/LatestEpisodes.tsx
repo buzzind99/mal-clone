@@ -3,7 +3,7 @@ import styles from "@/styles/LatestEpisodes.module.css";
 import { useEffect, useMemo, useState } from "react";
 import { ILatestEpisodesData } from "@/types/interfaces";
 
-const initialData = [
+const initialData: ILatestEpisodesData[] = [
   {
     id: 0,
     anime: "",
