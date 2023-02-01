@@ -102,88 +102,90 @@ const MostPopularTrailers: React.FC<Props> = ({ popularTrailersData }) => {
   };
 
   return (
-    <article
-      id="most-popular-trailers"
-      className="font-[Verdana] text-[0.75rem]"
-    >
+    <>
       {showModal && (
         <VideoPortal
           url={videoUrl}
           onShowModalChange={onShowModalChangeHandler}
         />
       )}
-      <div
-        id="most-popular-trailers_header"
-        className="flex h-[1.375rem] items-center justify-between border-b-[1px] border-[#bebebe] pb-[0.1875rem] pt-1"
+      <article
+        id="most-popular-trailers"
+        className="font-[Verdana] text-[0.75rem]"
       >
-        <h2 className="font-bold">{"Most Popular Anime Trailers"}</h2>
         <div
-          onClick={() =>
-            openInNewTab("https://myanimelist.net/watch/promotion/popular")
-          }
-          className="float-right cursor-pointer pt-[0.125rem] text-[0.6875rem] font-normal leading-tight text-[#1c439b] hover:underline"
+          id="most-popular-trailers_header"
+          className="flex h-[1.375rem] items-center justify-between border-b-[1px] border-[#bebebe] pb-[0.1875rem] pt-1"
         >
-          View More
+          <h2 className="font-bold">{"Most Popular Anime Trailers"}</h2>
+          <div
+            onClick={() =>
+              openInNewTab("https://myanimelist.net/watch/promotion/popular")
+            }
+            className="float-right cursor-pointer pt-[0.125rem] text-[0.6875rem] font-normal leading-tight text-[#1c439b] hover:underline"
+          >
+            View More
+          </div>
         </div>
-      </div>
-      <div
-        id="most-popular-trailers_content"
-        className="group relative mt-1 overflow-hidden whitespace-nowrap"
-      >
-        <button
-          title="Previous"
-          className={`${styles.bg_button_left} ease[ease-in-out] transition-all duration-300 group-hover:translate-x-[1.8125rem] group-hover:opacity-100`}
-          onClick={slideHandler.bind(null, "left")}
-          disabled={isDisabled}
-        />
-        <button
-          title="Next"
-          className={`${styles.bg_button_right} transition-all duration-300 ease-[ease-in-out] group-hover:translate-x-[-1.75rem] group-hover:opacity-100`}
-          onClick={slideHandler.bind(null, "right")}
-          disabled={isDisabled}
-        />
-        <div id="most-popular-trailers_slider-container" style={slideStyle}>
-          {animeList.map((data) => (
-            <div
-              key={data.id}
-              className="mr-2 inline-block transition-all duration-300 ease-[ease-in-out] hover:opacity-80 "
-            >
+        <div
+          id="most-popular-trailers_content"
+          className="group relative mt-1 overflow-hidden whitespace-nowrap"
+        >
+          <button
+            title="Previous"
+            className={`${styles.bg_button_left} ease[ease-in-out] transition-all duration-300 group-hover:translate-x-[1.8125rem] group-hover:opacity-100`}
+            onClick={slideHandler.bind(null, "left")}
+            disabled={isDisabled}
+          />
+          <button
+            title="Next"
+            className={`${styles.bg_button_right} transition-all duration-300 ease-[ease-in-out] group-hover:translate-x-[-1.75rem] group-hover:opacity-100`}
+            onClick={slideHandler.bind(null, "right")}
+            disabled={isDisabled}
+          />
+          <div id="most-popular-trailers_slider-container" style={slideStyle}>
+            {animeList.map((data) => (
               <div
-                id={`trailers_${data.id}`}
-                onClick={showVideoModalHandler.bind(null, data.video_url)}
-                className={
-                  "relative inline-block cursor-pointer transition-all duration-300 ease-[ease-in-out] hover:opacity-80"
-                }
+                key={data.id}
+                className="mr-2 inline-block transition-all duration-300 ease-[ease-in-out] hover:opacity-80 "
               >
-                <h3 className="flex justify-center text-[0.65625rem] leading-tight tracking-tighter text-white">
-                  <span className={styles.bg_button_play}></span>
-                  <span
-                    className={`${styles.bg_anime} absolute bottom-0 w-full overflow-hidden whitespace-normal px-[0.3rem] pb-[0.225rem] pt-4`}
-                  >
-                    {data.type}
-                  </span>
-                </h3>
                 <div
-                  className={`h-[7.5rem] w-[13.75rem] bg-cover bg-no-repeat`}
-                  style={{ background: `url(${data.image_url})` }}
-                />
-              </div>
-              <h3 className="mx-[0.3rem] block overflow-hidden pb-1 text-[0.65625rem] leading-none tracking-tight text-[#1c439b]">
-                <a
-                  title={data.anime}
-                  href={data.anime_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:underline"
+                  id={`trailers_${data.id}`}
+                  onClick={showVideoModalHandler.bind(null, data.video_url)}
+                  className={
+                    "relative inline-block cursor-pointer transition-all duration-300 ease-[ease-in-out] hover:opacity-80"
+                  }
                 >
-                  {data.anime}
-                </a>
-              </h3>
-            </div>
-          ))}
+                  <h3 className="flex justify-center text-[0.65625rem] leading-tight tracking-tighter text-white">
+                    <span className={styles.bg_button_play}></span>
+                    <span
+                      className={`${styles.bg_anime} absolute bottom-0 w-full overflow-hidden whitespace-normal px-[0.3rem] pb-[0.225rem] pt-4`}
+                    >
+                      {data.type}
+                    </span>
+                  </h3>
+                  <div
+                    className={`h-[7.5rem] w-[13.75rem] bg-cover bg-no-repeat`}
+                    style={{ background: `url(${data.image_url})` }}
+                  />
+                </div>
+                <h3 className="mx-[0.3rem] block overflow-hidden pb-1 text-[0.65625rem] leading-none tracking-tight text-[#1c439b]">
+                  <a
+                    title={data.anime}
+                    href={data.anime_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline"
+                  >
+                    {data.anime}
+                  </a>
+                </h3>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </article>
+      </article>
+    </>
   );
 };
 
