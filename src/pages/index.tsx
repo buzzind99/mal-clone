@@ -74,31 +74,34 @@ export default function Home({
             id="content-left"
             className="inline-block w-[46.25rem] border-r-[1px] border-[#e5e5e5] pr-[0.625rem] pl-[0.6875rem]"
           >
-            <div className="mb-[1.25rem]">
+            <div id="mal-x-jpn_container" className="mb-[1.25rem]">
               <MALxJPN />
             </div>
-            <div className="mb-[1.25rem]">
+            <div id="seasonal-anime_container" className="mb-[1.25rem]">
               <SeasonalAnime seasonalAnimeData={seasonalAnimeData} />
             </div>
-            <div className="mb-[1.25rem]">
+            <div id="latest-episodes_container" className="mb-[1.25rem]">
               <LatestEpisodes latestEpisodesData={latestEpisodesData} />
             </div>
-            <div className="mb-[1.25rem]">
+            <div id="most-popular-trailers_container" className="mb-[1.25rem]">
               <MostPopularTrailers popularTrailersData={popularTrailersData} />
             </div>
-            <div className="mb-[1.25rem]">
+            <div id="anime-manga-news_container" className="mb-[1.25rem]">
               <AnimeMangaNews newsData={newsData} />
             </div>
-            <div className="mb-[1.25rem]">
+            <div
+              id="recent-anime-discussions_container"
+              className="mb-[1.25rem]"
+            >
               <RecentAnimeDiscussions discussionsData={discussionsData} />
             </div>
-            <div className="mb-[1.25rem]">
+            <div id="featured-articles_container" className="mb-[1.25rem]">
               <FeaturedArticles featuredData={featuredData} />
             </div>
-            <div className="mb-[1.25rem]">
+            <div id="latest-anime-reviews_container" className="mb-[1.25rem]">
               <LatestAnimeReviews reviewsData={reviewsData} />
             </div>
-            <div className="mb-10">
+            <div id="latest-anime-recommendations_container" className="mb-10">
               <LatestAnimeRecommendations
                 recommendationsData={recommendationsData}
               />
@@ -108,13 +111,13 @@ export default function Home({
             id="content-right"
             className="inline-block w-[20rem] px-[0.5rem]"
           >
-            <div className="mt-1">
+            <div id="top-airing-anime_container" className="mt-1">
               <TopAiringAnimePlaceholder />
             </div>
-            <div className="mt-[1.25rem]">
+            <div id="top-upcoming-anime_container" className="mt-[1.25rem]">
               <TopUpcomingAnimePlaceholder />
             </div>
-            <div className="mt-[1.25rem]">
+            <div id="most-popular-anime_container" className="mt-[1.25rem]">
               <MostPopularAnimePlaceholder />
             </div>
           </div>
