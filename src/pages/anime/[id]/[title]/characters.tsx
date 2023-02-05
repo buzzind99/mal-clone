@@ -3,6 +3,7 @@ import { GetStaticPaths } from "next";
 interface IParams {
   params: {
     id: string;
+    title: string;
   };
 }
 
@@ -11,8 +12,17 @@ const characters = ({ animeData }: any) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
+  const paths: IParams[] = [];
+  const json = await import(`@/data/anime/animePaths.json`).then(
+    (res) => res.default
+  );
+
+  json.slice(0, 2).forEach((anime) => {
+    paths.push({ params: { id: anime.id.toString(), title: anime.title } });
+  });
+
   return {
-    paths: [{ params: { id: "1" } }, { params: { id: "5" } }],
+    paths: paths,
     fallback: false,
   };
 };
