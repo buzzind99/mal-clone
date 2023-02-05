@@ -5,11 +5,13 @@ import MainFooter from "@/components/MainFooter";
 import MainHeader from "@/components/MainHeader";
 import NavBar from "@/components/NavBar";
 import Head from "next/head";
-import ImagePoster from "./components/ImagePoster";
+import AnimeInfo from "./components/AnimeInfo";
+import AnimeStats from "./components/AnimeStats";
+import AnimeStreaming from "./components/AnimeStreaming";
+import AnimeTitles from "./components/AnimeTitles";
+import AnimePoster from "./components/AnimePoster";
 import { GetStaticPaths } from "next";
 import { IAnimeData } from "@/types/interfaces";
-import AlternativeTitles from "./components/AlternativeTitles";
-import Information from "./components/Information";
 
 interface IParams {
   params: {
@@ -51,17 +53,44 @@ const Anime: React.FC<Props> = ({ animeData }) => {
         }
       />
       <MainContainer>
-        <div id="main-container_inner-padding" className="relative flex bg-white py-[0.5rem] text-left font-[Verdana]">
+        <div
+          id="main-container_inner-padding"
+          className="relative flex bg-white py-[0.5rem] text-left font-[Verdana]"
+        >
           <div
             id="content-left"
             className="inline-block w-[15.25rem] border-r-[1px] border-[#e5e5e5] pr-[0.2rem] pl-[0.9rem]"
           >
-            <ImagePoster
+            <AnimePoster
               title={animeData.title}
               image_url={animeData.images.webp.image_url}
             />
-            <AlternativeTitles titles={animeData.titles} />
-            <Information animeData={animeData} />
+            <AnimeTitles titles={animeData.titles} />
+            <AnimeInfo animeData={animeData} />
+            <AnimeStats animeData={animeData} />
+            <div id="available-at" className="mb-5">
+              <h2
+                id="available-at_header"
+                className="mb-[0.45rem] border-b-[1px] border-[#bebebe] py-[0.15rem] text-[0.75rem] font-bold "
+              >
+                Available At
+              </h2>
+              <span className="text-[0.6875rem] font-bold text-[#444]">
+                No Data
+              </span>
+            </div>
+            <div id="resources" className="mb-5">
+              <h2
+                id="resources_header"
+                className="mb-[0.45rem] border-b-[1px] border-[#bebebe] py-[0.15rem] text-[0.75rem] font-bold "
+              >
+                Resources
+              </h2>
+              <span className="text-[0.6875rem] font-bold text-[#444]">
+                No Data
+              </span>
+            </div>
+            <AnimeStreaming streaming={animeData.streaming} />
           </div>
           <div
             id="content-right"
