@@ -5,15 +5,12 @@ interface Props {
   }[];
 }
 
-const initialData: Props = {
-  titles: [
-    { type: "", title: "" },
-    { type: "", title: "" },
-  ],
-};
-
+const initialData = [
+  { type: "", title: "" },
+  { type: "", title: "" },
+];
 const AnimeTitles: React.FC<Props> = ({ titles }) => {
-  const data = titles || initialData.titles;
+  const data = titles || initialData;
 
   return (
     <div id="alternative-titles" className="mb-5">
