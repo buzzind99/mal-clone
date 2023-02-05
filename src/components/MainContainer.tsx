@@ -4,7 +4,7 @@ interface Props {
 
 const MainContainer: React.FC<Props> = ({ children }) => {
   return (
-    <div className="mx-auto mb-[3.375rem] w-[66.375rem] border-x-[1px] border-b-[1px] border-[#e5e5e5]">
+    <div id="main-container" className="mx-auto mb-[3.375rem] w-[66.375rem] border-x-[1px] border-b-[1px] border-[#e5e5e5]">
       {children}
     </div>
   );
