@@ -30,84 +30,83 @@ const AnimeRelations: React.FC<Props> = ({ relations }) => {
           Edit
         </span>
       </h2>
-      <tbody
-        id="relations_content"
-        className="table whitespace-pre-line text-[0.6875rem]"
-      >
-        {data
-          ? data.map((relation) => (
-              <tr key={relation.relation} className="table-row">
-                <td className="whitespace-nowrap border-b-[1px] border-[#e5e5e5] p-[0.1875rem] text-right">{`${relation.relation}:`}</td>
-                <td className="w-full border-b-[1px] border-[#e5e5e5] pl-[0.1875rem]">
-                  {relation.entry.length > 1 ? (
-                    relation.entry
-                      .slice(0, relation.entry.length - 1)
-                      .map((item) =>
-                        item.type === "anime" ? (
-                          <Link
-                            key={item.name}
-                            href={`/anime/${item.mal_id}`}
-                            className="inline-block py-[0.1875rem] pr-[0.03rem]"
-                          >
-                            <span className="cursor-pointer text-[#1c439b] hover:underline">
-                              {item.name}
-                            </span>
-                            ,&nbsp;
-                          </Link>
-                        ) : (
-                          <div
-                            key={item.name}
-                            className="inline-block py-[0.1875rem] pr-[0.03rem]"
-                          >
-                            <span
-                              title="Dummy button"
-                              className="cursor-pointer text-[#1c439b] hover:underline"
+      <table id="relations_content" className="w-full">
+        <tbody className="table whitespace-pre-line text-[0.6875rem]">
+          {data
+            ? data.map((relation) => (
+                <tr key={relation.relation} className="table-row">
+                  <td className="whitespace-nowrap border-b-[1px] border-[#e5e5e5] p-[0.1875rem] text-right">{`${relation.relation}:`}</td>
+                  <td className="w-full border-b-[1px] border-[#e5e5e5] pl-[0.1875rem]">
+                    {relation.entry.length > 1 ? (
+                      relation.entry
+                        .slice(0, relation.entry.length - 1)
+                        .map((item) =>
+                          item.type === "anime" ? (
+                            <Link
+                              key={item.name}
+                              href={`/anime/${item.mal_id}`}
+                              className="inline-block py-[0.1875rem] pr-[0.03rem]"
                             >
-                              {item.name}
-                            </span>
-                            ,&nbsp;
-                          </div>
+                              <span className="cursor-pointer text-[#1c439b] hover:underline">
+                                {item.name}
+                              </span>
+                              ,&nbsp;
+                            </Link>
+                          ) : (
+                            <div
+                              key={item.name}
+                              className="inline-block py-[0.1875rem] pr-[0.03rem]"
+                            >
+                              <span
+                                title="Dummy button"
+                                className="cursor-pointer text-[#1c439b] hover:underline"
+                              >
+                                {item.name}
+                              </span>
+                              ,&nbsp;
+                            </div>
+                          )
                         )
-                      )
-                  ) : relation.entry[0].type === "anime" ? (
-                    <Link
-                      href={`/anime/${relation.entry[0].mal_id}`}
-                      className="cursor-pointer py-[0.1875rem] text-[#1c439b] hover:underline"
-                    >
-                      {relation.entry[0].name}
-                    </Link>
-                  ) : (
-                    <span
-                      title="Dummy button"
-                      className="cursor-pointer py-[0.1875rem] text-[#1c439b] hover:underline"
-                    >
-                      {relation.entry[0].name}
-                    </span>
-                  )}
-                  {relation.entry.length > 1 &&
-                    (relation.entry[relation.entry.length - 1].type ===
-                    "anime" ? (
+                    ) : relation.entry[0].type === "anime" ? (
                       <Link
-                        href={`/anime/${
-                          relation.entry[relation.entry.length - 1].mal_id
-                        }`}
-                        className="cursor-pointer py-[0.1875rem] pr-[0.03rem] text-[#1c439b] hover:underline"
+                        href={`/anime/${relation.entry[0].mal_id}`}
+                        className="cursor-pointer py-[0.1875rem] text-[#1c439b] hover:underline"
                       >
-                        {relation.entry[relation.entry.length - 1].name}
+                        {relation.entry[0].name}
                       </Link>
                     ) : (
                       <span
                         title="Dummy button"
-                        className="cursor-pointer py-[0.1875rem] pr-[0.03rem] text-[#1c439b] hover:underline"
+                        className="cursor-pointer py-[0.1875rem] text-[#1c439b] hover:underline"
                       >
-                        {relation.entry[relation.entry.length - 1].name}
+                        {relation.entry[0].name}
                       </span>
-                    ))}
-                </td>
-              </tr>
-            ))
-          : "No related anime information has been added to this title."}
-      </tbody>
+                    )}
+                    {relation.entry.length > 1 &&
+                      (relation.entry[relation.entry.length - 1].type ===
+                      "anime" ? (
+                        <Link
+                          href={`/anime/${
+                            relation.entry[relation.entry.length - 1].mal_id
+                          }`}
+                          className="cursor-pointer py-[0.1875rem] pr-[0.03rem] text-[#1c439b] hover:underline"
+                        >
+                          {relation.entry[relation.entry.length - 1].name}
+                        </Link>
+                      ) : (
+                        <span
+                          title="Dummy button"
+                          className="cursor-pointer py-[0.1875rem] pr-[0.03rem] text-[#1c439b] hover:underline"
+                        >
+                          {relation.entry[relation.entry.length - 1].name}
+                        </span>
+                      ))}
+                  </td>
+                </tr>
+              ))
+            : "No related anime information has been added to this title."}
+        </tbody>
+      </table>
     </div>
   );
 };
