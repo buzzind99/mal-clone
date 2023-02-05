@@ -135,7 +135,6 @@ export interface IAnimeData {
         month: number | null;
         year: number | null;
       };
-      string: string | null;
     };
     string: string | null;
   };
