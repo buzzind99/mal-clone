@@ -7,7 +7,7 @@ const AnimeStreaming: React.FC<Props> = ({ streaming }) => {
     <div id="streaming-platforms" className="mb-5">
       <h2
         id="streaming-platforms_header"
-        className="mb-[0.45rem] border-b-[1px] border-[#bebebe] py-[0.15rem] text-[0.75rem] font-bold "
+        className="mb-[0.45rem] border-b-[1px] border-[#bebebe] py-[0.15rem] text-[0.75rem] font-bold"
       >
         Streaming
       </h2>
