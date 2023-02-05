@@ -10,6 +10,9 @@ import AnimeStats from "./components/AnimeStats";
 import AnimeStreaming from "./components/AnimeStreaming";
 import AnimeTitles from "./components/AnimeTitles";
 import AnimePoster from "./components/AnimePoster";
+import AnimeSynopsis from "./components/AnimeSynopsis";
+import AnimeBackground from "./components/AnimeBackground";
+import AnimeRelations from "./components/AnimeRelations";
 import { GetStaticPaths } from "next";
 import { IAnimeData } from "@/types/interfaces";
 
@@ -25,8 +28,6 @@ interface Props {
 }
 
 const Anime: React.FC<Props> = ({ animeData }) => {
-  console.log(animeData);
-
   return (
     <>
       <Head>
@@ -94,8 +95,12 @@ const Anime: React.FC<Props> = ({ animeData }) => {
           </div>
           <div
             id="content-right"
-            className="inline-block w-[20rem] px-[0.5rem]"
-          ></div>
+            className="inline-block w-[51.125rem] pl-[0.3rem] pr-[0.625rem]"
+          >
+            <AnimeSynopsis synopsis={animeData.synopsis} />
+            <AnimeBackground background={animeData.background} />
+            <AnimeRelations relations={animeData.relations} />
+          </div>
         </div>
       </MainContainer>
       <FooterChartPlaceholder />
