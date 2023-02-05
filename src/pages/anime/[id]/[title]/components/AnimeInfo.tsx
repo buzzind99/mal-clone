@@ -185,9 +185,9 @@ const AnimeInfo: React.FC<Props> = ({ animeData }) => {
         <span className="font-bold text-[#444]">{"Duration: "}</span>
         {data.duration
           ? data.duration
-              .replace("hr", "hr.")
-              .replace("min", "min.")
-              .replace("ep", "ep.")
+              .replaceAll("hr", "hr.")
+              .replaceAll("min", "min.")
+              .replaceAll("ep", "ep.")
           : "?"}
       </div>
       <div id="information_rating" className="my-[0.375rem] text-[0.6875rem]">
