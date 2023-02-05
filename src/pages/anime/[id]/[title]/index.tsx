@@ -34,10 +34,13 @@ const Anime: React.FC<Props> = ({ animeData }) => {
         <title>{`${animeData.title} (${animeData.title_english}) - MyAnimeList.net`}</title>
         <meta
           name="description"
-          content="Welcome to MyAnimeList, the world&#039;s most active
-          online anime and manga community and database.
-          Join the online community, create your anime and manga list,
-          read reviews, explore the forums, follow news, and so much more!"
+          content={`Looking for information on the anime Cowboy Bebop? Find out more with MyAnimeList, the world&#039;s most active online anime and manga community and database. ${
+            animeData.synopsis && animeData.synopsis.length > 347
+              ? animeData.synopsis?.slice(0, 347).replaceAll("\n", "") + "..."
+              : animeData.synopsis
+              ? animeData.synopsis.replaceAll("\n", "")
+              : ""
+          }`}
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="keywords" content="anime, myanimelist, anime news, manga" />
