@@ -28,19 +28,25 @@ interface Props {
 }
 
 const Anime: React.FC<Props> = ({ animeData }) => {
+  const desc_content = animeData.synopsis
+    ? animeData.synopsis.length > 347
+      ? animeData.synopsis.slice(0, 347).replaceAll("\n", "") + "..."
+      : animeData.synopsis.replaceAll("\n", "")
+    : "";
+
+  const title_english =
+    animeData.title_english && animeData.title_english !== animeData.title
+      ? animeData.title_english
+      : "";
+
   return (
     <>
       <Head>
         <title>{`${animeData.title} (${animeData.title_english}) - MyAnimeList.net`}</title>
         <meta
           name="description"
-          content={`Looking for information on the anime Cowboy Bebop? Find out more with MyAnimeList, the world&#039;s most active online anime and manga community and database. ${
-            animeData.synopsis && animeData.synopsis.length > 347
-              ? animeData.synopsis?.slice(0, 347).replaceAll("\n", "") + "..."
-              : animeData.synopsis
-              ? animeData.synopsis.replaceAll("\n", "")
-              : ""
-          }`}
+          content={`Looking for information on the anime Cowboy Bebop? Find out more with MyAnimeList,
+          the world&#039;s most active online anime and manga community and database. ${desc_content}`}
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="keywords" content="anime, myanimelist, anime news, manga" />
@@ -48,14 +54,7 @@ const Anime: React.FC<Props> = ({ animeData }) => {
       </Head>
       <MainHeader />
       <NavBar />
-      <ContentTitleBar
-        title={animeData.title}
-        title_english={
-          animeData.title_english && animeData.title_english !== animeData.title
-            ? animeData.title_english
-            : ""
-        }
-      />
+      <ContentTitleBar title={animeData.title} title_english={title_english} />
       <MainContainer>
         <div
           id="main-container_inner-padding"
