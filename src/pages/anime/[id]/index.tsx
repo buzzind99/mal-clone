@@ -8,9 +8,8 @@ interface IParams {
   };
 }
 
-const Anime = ({ mal_id, url }: any) => {
+const Anime = ({ mal_id, title_url }: any) => {
   const router = useRouter();
-  const title_url = url.match(/[^\/]+$/);
 
   useEffect(() => {
     router.push(`/anime/${mal_id}/${title_url}`);
@@ -40,9 +39,10 @@ export const getStaticProps = async (context: IParams) => {
     (res) => res.default.data
   );
   const { mal_id, url } = animeData;
+  const title_url = url.match(/[^\/]+$/);
 
   return {
-    props: { mal_id, url },
+    props: { mal_id, title_url },
   };
 };
 
