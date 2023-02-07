@@ -12,13 +12,7 @@ interface Props {
   }[];
 }
 
-const initialData = [
-  { relation: "", entry: [{ mal_id: 0, type: "", name: "", url: "" }] },
-];
-
 const AnimeRelations: React.FC<Props> = ({ relations }) => {
-  const data = relations || initialData;
-
   return (
     <div id="relations" className="mb-5">
       <h2
@@ -32,8 +26,8 @@ const AnimeRelations: React.FC<Props> = ({ relations }) => {
       </h2>
       <table id="relations_content" className="w-full">
         <tbody className="table whitespace-pre-line text-[0.6875rem]">
-          {data
-            ? data.map((relation) => (
+          {relations && relations.length
+            ? relations.map((relation) => (
                 <tr key={relation.relation} className="table-row">
                   <td className="whitespace-nowrap border-b-[1px] border-[#e5e5e5] p-[0.1875rem] text-right">{`${relation.relation}:`}</td>
                   <td className="w-full border-b-[1px] border-[#e5e5e5] pl-[0.1875rem]">
