@@ -13,6 +13,7 @@ import AnimePoster from "./components/AnimePoster";
 import AnimeSynopsis from "./components/AnimeSynopsis";
 import AnimeBackground from "./components/AnimeBackground";
 import AnimeRelations from "./components/AnimeRelations";
+import AnimeTheme from "./components/AnimeTheme";
 import { GetStaticPaths } from "next";
 import { IAnimeData } from "@/types/interfaces";
 
@@ -102,6 +103,7 @@ const Anime: React.FC<Props> = ({ animeData }) => {
             <AnimeSynopsis synopsis={animeData.synopsis} />
             <AnimeBackground background={animeData.background} />
             <AnimeRelations relations={animeData.relations} />
+            <AnimeTheme theme={animeData.theme} />
           </div>
         </div>
       </MainContainer>
