@@ -15,12 +15,12 @@ const AnimeTheme: React.FC<Props> = ({ theme }) => {
             Edit
           </span>
         </h2>
-        {theme && !theme.openings && (
+        {theme && !theme.openings.length && (
           <div className="text-[0.6875rem]">
-            No ending themes have been added to this title.
+            No opening themes have been added to this title.
           </div>
         )}
-        {theme && theme.openings && (
+        {theme && !!theme.openings.length && (
           <table id="ending-theme_content" className="text-[0.6875rem]">
             <tbody>
               {theme.openings.map((opening, index) => (
@@ -59,7 +59,7 @@ const AnimeTheme: React.FC<Props> = ({ theme }) => {
             No ending themes have been added to this title.
           </div>
         )}
-        {theme && theme.endings.length && (
+        {theme && !!theme.endings.length && (
           <table id="ending-theme_content" className="text-[0.6875rem]">
             <tbody>
               {theme.endings.map((ending, index) => (
