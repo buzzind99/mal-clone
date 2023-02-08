@@ -11,7 +11,8 @@ const AnimeMainStats: React.FC<Props> = ({ animeData }) => {
   const [showModal, setShowModal] = useState(false);
   const [videoUrl, setVideoUrl] = useState("");
 
-  const animeTypeBorder = animeData.studios.length ? "border-r-[1px]" : "";
+  const animeTypeBorder =
+    animeData && animeData.studios.length ? "border-r-[1px]" : "";
 
   const onShowModalChangeHandler = (value: boolean) => {
     setShowModal(value);
@@ -104,8 +105,7 @@ const AnimeMainStats: React.FC<Props> = ({ animeData }) => {
                 )}
                 {animeData && !!animeData.studios.length && (
                   <span className="mr-3 cursor-pointer self-center pr-3 hover:underline">
-                    {animeData.studios &&
-                      animeData.studios.length > 1 &&
+                    {animeData.studios.length > 1 &&
                       animeData.studios
                         .slice(0, animeData.studios.length - 1)
                         .map((studio) => (
@@ -114,12 +114,12 @@ const AnimeMainStats: React.FC<Props> = ({ animeData }) => {
                             ,&nbsp;
                           </div>
                         ))}
-                    {animeData.studios && animeData.studios.length > 1 && (
+                    {animeData.studios.length > 1 && (
                       <span className="cursor-pointer text-[#1c439b] hover:underline">
                         {animeData.studios[animeData.studios.length - 1].name}
                       </span>
                     )}
-                    {animeData.studios && animeData.studios.length === 1 && (
+                    {animeData.studios.length === 1 && (
                       <span>{animeData.studios[0].name}</span>
                     )}
                   </span>
@@ -190,7 +190,10 @@ const AnimeMainStats: React.FC<Props> = ({ animeData }) => {
               className="relative h-[8.3125rem] cursor-pointer transition-opacity duration-300 ease-[ease-in-out] hover:opacity-80"
             >
               <Image
-                src={animeData.trailer.images.medium_image_url}
+                src={
+                  animeData.trailer.images.medium_image_url ||
+                  "/image-placeholer-vertical.webp"
+                }
                 alt="anime-trailer"
                 width={200}
                 height={133}
