@@ -106,6 +106,13 @@ export interface IAnimeData {
     youtube_id: string | null;
     url: string | null;
     embed_url: string | null;
+    images: {
+      image_url: string;
+      small_image_url: string;
+      medium_image_url: string;
+      large_image_url: string;
+      maximum_image_url: string;
+    };
   };
   approved: boolean;
   titles: {
