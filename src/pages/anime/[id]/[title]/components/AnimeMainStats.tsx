@@ -104,13 +104,15 @@ const AnimeMainStats: React.FC<Props> = ({ animeData }) => {
                   </span>
                 )}
                 {animeData && !!animeData.studios.length && (
-                  <span className="mr-3 cursor-pointer self-center pr-3 hover:underline">
+                  <span className="mr-3 cursor-pointer self-center pr-3">
                     {animeData.studios.length > 1 &&
                       animeData.studios
                         .slice(0, animeData.studios.length - 1)
                         .map((studio) => (
                           <div key={studio.name} className="inline-block">
-                            <span>{studio.name}</span>
+                            <span className="hover:underline">
+                              {studio.name}
+                            </span>
                             ,&nbsp;
                           </div>
                         ))}
@@ -163,7 +165,9 @@ const AnimeMainStats: React.FC<Props> = ({ animeData }) => {
                   {`Episodes:`}
                 </span>
                 <div className="flex items-center">
-                  <span className="mr-1 text-[0.6875rem] leading-none tracking-tight">{`0/1`}</span>
+                  <span className="mr-1 text-[0.6875rem] leading-none tracking-tight">{`0/${
+                    animeData ? animeData.episodes : "1"
+                  }`}</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 512 512"
@@ -213,7 +217,7 @@ const AnimeMainStats: React.FC<Props> = ({ animeData }) => {
                 }}
               ></span>
             </div>
-            <div className="mt-1 cursor-pointer text-right text-[0.6875rem] text-[#1c439b] hover:underline">
+            <div className="float-right mt-1 w-fit cursor-pointer text-[0.6875rem] text-[#1c439b] hover:underline">
               More Videos
             </div>
           </div>
