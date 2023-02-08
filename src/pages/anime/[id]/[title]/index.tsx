@@ -5,6 +5,7 @@ import MainFooter from "@/components/MainFooter";
 import MainHeader from "@/components/MainHeader";
 import NavBar from "@/components/NavBar";
 import Head from "next/head";
+import MALxJPN from "@/pages/components/MALxJPN";
 import AnimeInfo from "./components/AnimeInfo";
 import AnimeStats from "./components/AnimeStats";
 import AnimeStreaming from "./components/AnimeStreaming";
@@ -15,7 +16,7 @@ import AnimeBackground from "./components/AnimeBackground";
 import AnimeRelations from "./components/AnimeRelations";
 import AnimeTheme from "./components/AnimeTheme";
 import AnimeNews from "./components/AnimeNews";
-import MALxJPN from "@/pages/components/MALxJPN";
+import AnimeMainStats from "./components/AnimeMainStats";
 import AnimeFeatured from "./components/AnimeFeatured";
 import { GetStaticPaths } from "next";
 import { IAnimeData, IFeaturedData, INewsData } from "@/types/interfaces";
@@ -111,6 +112,7 @@ const Anime: React.FC<Props> = ({
             id="content-right"
             className="inline-block w-[51.125rem] pl-[0.3rem] pr-[0.625rem]"
           >
+            <AnimeMainStats animeData={animeData} />
             <AnimeSynopsis synopsis={animeData.synopsis} />
             <AnimeBackground background={animeData.background} />
             <div id="mal-x-jpn_container" className="mb-5">
@@ -145,6 +147,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   json.slice(0, 2).forEach((anime) => {
     paths.push({ params: { id: anime.id.toString(), title: anime.title } });
+  });
+
+  paths.push({
+    params: { id: "44909", title: "San_Zhi_Xiao_Zhu__Mofa_Da_Maoxian" },
   });
 
   return {
