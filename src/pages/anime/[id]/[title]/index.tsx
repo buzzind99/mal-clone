@@ -14,8 +14,11 @@ import AnimeSynopsis from "./components/AnimeSynopsis";
 import AnimeBackground from "./components/AnimeBackground";
 import AnimeRelations from "./components/AnimeRelations";
 import AnimeTheme from "./components/AnimeTheme";
+import AnimeNews from "./components/AnimeNews";
+import MALxJPN from "@/pages/components/MALxJPN";
+import AnimeFeatured from "./components/AnimeFeatured";
 import { GetStaticPaths } from "next";
-import { IAnimeData } from "@/types/interfaces";
+import { IAnimeData, IFeaturedData, INewsData } from "@/types/interfaces";
 
 interface IParams {
   params: {
@@ -25,10 +28,18 @@ interface IParams {
 }
 
 interface Props {
+  title: string;
   animeData: IAnimeData;
+  featuredData: IFeaturedData[];
+  newsData: INewsData[];
 }
 
-const Anime: React.FC<Props> = ({ animeData }) => {
+const Anime: React.FC<Props> = ({
+  title,
+  animeData,
+  newsData,
+  featuredData,
+}) => {
   const desc_content = animeData.synopsis
     ? animeData.synopsis.length > 347
       ? animeData.synopsis.slice(0, 347).replaceAll("\n", "") + "..."
@@ -102,8 +113,21 @@ const Anime: React.FC<Props> = ({ animeData }) => {
           >
             <AnimeSynopsis synopsis={animeData.synopsis} />
             <AnimeBackground background={animeData.background} />
+            <div id="mal-x-jpn_container" className="mb-5">
+              <MALxJPN />
+            </div>
             <AnimeRelations relations={animeData.relations} />
             <AnimeTheme theme={animeData.theme} />
+            <AnimeNews
+              newsData={newsData}
+              id={animeData.mal_id}
+              title={title}
+            />
+            <AnimeFeatured
+              featuredData={featuredData}
+              id={animeData.mal_id}
+              title={title}
+            />
           </div>
         </div>
       </MainContainer>
@@ -130,14 +154,20 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps = async (context: IParams) => {
-  const { id } = context.params;
+  const { id, title } = context.params;
 
   const animeData = await import(`@/data/anime/${id}.json`).then(
     (res) => res.default.data
   );
+  const newsData = await import(
+    "@/pages/components/dummy_data/newsData.json"
+  ).then((res) => res.default.data.slice(0, 2));
+  const featuredData = await import(
+    "@/pages/components/dummy_data/featuredData.json"
+  ).then((res) => res.default.data.slice(0, 2));
 
   return {
-    props: { animeData },
+    props: { title, animeData, newsData, featuredData },
   };
 };
 
