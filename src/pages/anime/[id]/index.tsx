@@ -12,7 +12,7 @@ const Anime = ({ mal_id, title_url }: any) => {
   const router = useRouter();
 
   useEffect(() => {
-    router.push(`/anime/${mal_id}/${title_url}`);
+    router.replace(`/anime/${mal_id}/${title_url}`);
   }, []);
 };
 
@@ -25,6 +25,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
   json.slice(0, 2).forEach((anime) => {
     paths.push({ params: { id: anime.id.toString() } });
   });
+
+  paths.push({ params: { id: "44909" } });
 
   return {
     paths: paths,
