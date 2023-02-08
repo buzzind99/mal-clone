@@ -20,7 +20,7 @@ const VideoPortal: React.FC<Props> = ({
 
   useEffect(() => {
     ref.current = document.querySelector("#video-portal");
-    setVideoPosition((window.innerHeight - 729) / 2 + window.pageYOffset);
+    setVideoPosition(window.innerHeight / 8 + window.pageYOffset);
     setMounted(true);
   }, []);
 
@@ -46,8 +46,8 @@ const VideoPortal: React.FC<Props> = ({
           className="absolute top-[-15px] right-[-16px] z-[51] h-[32px] w-[32px] bg-[url(/close_btn.png)]"
         ></button>
         <iframe
-          width="947"
-          height="729"
+          width={window.innerWidth * 0.75}
+          height={window.innerHeight * 0.75}
           src={url}
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
