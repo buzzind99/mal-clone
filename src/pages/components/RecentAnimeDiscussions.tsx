@@ -1,23 +1,10 @@
 import { IDiscussionsData } from "@/types/interfaces";
 
-const initialData: IDiscussionsData[] = [
-  {
-    id: 0,
-    title: "",
-    url: "",
-    author: "",
-    author_url: "",
-    replies: 0,
-  },
-];
-
 interface Props {
   discussionsData: IDiscussionsData[];
 }
 
 const RecentAnimeDiscussions: React.FC<Props> = ({ discussionsData }) => {
-  const dummyData = discussionsData || initialData;
-
   // Using div with onClick event listener on links with generic text
   // (more, view more, etc.) for better SEO
   const openInNewTab = (url: string) => {
@@ -46,37 +33,39 @@ const RecentAnimeDiscussions: React.FC<Props> = ({ discussionsData }) => {
         </div>
       </div>
       <div id="anime-manga-news_content" className="flex-col">
-        {dummyData.map((data) => (
-          <div
-            id={`recent-anime-discussions_content-${data.id}`}
-            key={data.id}
-            className="mt-[0.375rem] flex-col border-b-[1px] border-[#e5e7eb] pb-[0.375rem] text-[0.6875rem]"
-          >
-            <h3 className="mb-[0.375rem] font-bold text-[#1c439b]">
-              <a
-                href={data.url}
-                target="_blank"
-                title={data.title}
-                rel="noopener noreferrer"
-                className="hover:underline"
-              >
-                {data.title}
-              </a>
-            </h3>
-            <p className="text-[#808080]">
-              {"by "}
-              <a
-                href={data.author_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#1c439b] hover:underline"
-              >
-                {data.author}
-              </a>
-              {` ${data.replies} replies`}
-            </p>
-          </div>
-        ))}
+        {discussionsData &&
+          discussionsData.length &&
+          discussionsData.map((data) => (
+            <div
+              id={`recent-anime-discussions_content-${data.id}`}
+              key={data.id}
+              className="mt-[0.375rem] flex-col border-b-[1px] border-[#e5e7eb] pb-[0.375rem] text-[0.6875rem]"
+            >
+              <h3 className="mb-[0.375rem] font-bold text-[#1c439b]">
+                <a
+                  href={data.url}
+                  target="_blank"
+                  title={data.title}
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  {data.title}
+                </a>
+              </h3>
+              <p className="text-[#808080]">
+                {"by "}
+                <a
+                  href={data.author_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#1c439b] hover:underline"
+                >
+                  {data.author}
+                </a>
+                {` ${data.replies} replies`}
+              </p>
+            </div>
+          ))}
       </div>
     </article>
   );
