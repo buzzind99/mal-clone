@@ -152,6 +152,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
   paths.push({
     params: { id: "44909", title: "San_Zhi_Xiao_Zhu__Mofa_Da_Maoxian" },
   });
+  paths.push({
+    params: { id: "50265", title: "Spy_x_Family" },
+  });
 
   return {
     paths: paths,

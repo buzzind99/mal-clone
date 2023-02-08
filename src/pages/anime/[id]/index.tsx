@@ -27,6 +27,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   });
 
   paths.push({ params: { id: "44909" } });
+  paths.push({ params: { id: "50265" } });
 
   return {
     paths: paths,
