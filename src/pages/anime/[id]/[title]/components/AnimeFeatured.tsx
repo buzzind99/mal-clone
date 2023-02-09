@@ -24,9 +24,12 @@ const AnimeFeatured: React.FC<Props> = ({ featuredData, id, title }) => {
         className="mb-2 flex h-[1.375rem] items-center justify-between border-b-[1px] border-[#bebebe] pb-[0.1875rem] pt-1"
       >
         <h2 className="font-bold">
-          {
-            "Recent Featured Articles {this is a placeholder, links are external}"
-          }
+          <span>
+            Recent Featured Articles
+            <span className="opacity-40">
+              {` (this is a placeholder, links are external)`}
+            </span>
+          </span>
         </h2>
         <div
           onClick={() =>
@@ -34,7 +37,7 @@ const AnimeFeatured: React.FC<Props> = ({ featuredData, id, title }) => {
               `https://myanimelist.net/anime/${id}/${title}/featured`
             )
           }
-          className="float-right cursor-pointer pt-[0.125rem] pb-2 text-[0.6875rem] font-normal leading-tight text-[#1c439b] hover:underline"
+          className="float-right mb-2 cursor-pointer pt-[0.125rem] text-[0.6875rem] font-normal leading-tight text-[#1c439b] hover:underline"
         >
           More featured arcticles
         </div>
