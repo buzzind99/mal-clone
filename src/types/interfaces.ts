@@ -87,6 +87,17 @@ export interface IPopularTrailersData {
   type: string;
 }
 
+export interface IAnimeStacksData {
+  title: string;
+  url: string;
+  user: string;
+  user_url: string;
+  entries: string;
+  restacks: string;
+  image_1: string;
+  image_2: string;
+}
+
 export interface IAnimeData {
   mal_id: number;
   url: string;
