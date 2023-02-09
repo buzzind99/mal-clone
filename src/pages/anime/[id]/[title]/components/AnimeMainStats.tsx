@@ -60,7 +60,7 @@ const AnimeMainStats: React.FC<Props> = ({ animeData }) => {
               id="main-stats_stats"
               className="ml-4 inline-block justify-between"
             >
-              <div id="main-stats_stats-top" className="mb-5">
+              <div id="main-stats_stats-top" className="mb-4">
                 <div className="mr-5 inline-block">
                   Ranked
                   <span className="font-bold">{` #${
@@ -204,6 +204,10 @@ const AnimeMainStats: React.FC<Props> = ({ animeData }) => {
                 className="inline-block h-[8.3125rem] w-[12.5rem] object-cover"
               />
               <span
+                className="absolute bottom-0 left-0 h-[25%] w-full bg-[url(/image_box_shadow_bottom.png)]"
+                style={{ backgroundSize: "100% 100%" }}
+              />
+              <span
                 className="absolute bottom-0 left-0 w-full overflow-hidden whitespace-normal px-[0.3rem] py-[0.225rem] text-[0.8125rem] leading-none tracking-tighter text-white"
                 style={{ textShadow: "rgb(0 0 0 / 80%) 1px 1px 0" }}
               >
@@ -218,7 +222,7 @@ const AnimeMainStats: React.FC<Props> = ({ animeData }) => {
               ></span>
             </div>
             <div className="float-right mt-1 w-fit cursor-pointer text-[0.6875rem] text-[#1c439b] hover:underline">
-              More Videos
+              More videos
             </div>
           </div>
         )}
