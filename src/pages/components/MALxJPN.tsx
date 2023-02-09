@@ -8,9 +8,8 @@ const MALxJPN: React.FC = () => {
         className="flex h-[1.375rem] items-center justify-between border-b-[1px] border-[#bebebe] py-[0.1875rem]"
       >
         <h2>
-          {
-            "MALxJapan -More than just anime- {this is a placeholder, links are external}"
-          }
+          MALxJapan -More than just anime-
+          <span className="opacity-40">{` (this is a placeholder, links are external)`}</span>
         </h2>
         <a
           href="https://mxj.myanimelist.net/"
