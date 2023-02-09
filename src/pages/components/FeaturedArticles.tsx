@@ -19,7 +19,8 @@ const FeaturedArticles: React.FC<Props> = ({ featuredData }) => {
         className="flex h-[1.375rem] items-center justify-between border-b-[1px] border-[#bebebe] pb-[0.1875rem] pt-1"
       >
         <h2 className="font-bold">
-          {"Featured Articles {this is a placeholder, links are external}"}
+          Featured Articles
+          <span className="opacity-40">{` (this is a placeholder, links are external)`}</span>
         </h2>
         <div
           onClick={() => openInNewTab("https://myanimelist.net/featured")}
