@@ -22,7 +22,8 @@ const LatestAnimeReviews: React.FC<Props> = ({ reviewsData }) => {
         className="flex h-[1.375rem] items-center justify-between border-b-[1px] border-[#bebebe] pb-[0.1875rem] pt-1"
       >
         <h2 className="font-bold">
-          {"Latest Anime Reviews {this is a placeholder, links are external}"}
+          Latest Anime Reviews
+          <span className="opacity-40">{` (this is a placeholder, links are external)`}</span>
         </h2>
         <div
           onClick={() =>
