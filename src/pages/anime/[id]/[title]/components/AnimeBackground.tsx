@@ -10,7 +10,10 @@ const AnimeBackground: React.FC<Props> = ({ background }) => {
         className="mb-[0.45rem] flex w-full justify-between border-b-[1px] border-[#bebebe] py-[0.15rem] text-[0.75rem] font-bold"
       >
         Background
-        <span className="cursor-pointer text-[0.6875rem] font-normal text-[#1c439b] hover:underline">
+        <span
+          title="Dummy button"
+          className="cursor-pointer text-[0.6875rem] font-normal text-[#1c439b] hover:underline"
+        >
           Edit
         </span>
       </h2>
