@@ -1,4 +1,6 @@
 import { GetStaticPaths } from "next";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 interface IParams {
   params: {
@@ -7,8 +9,12 @@ interface IParams {
   };
 }
 
-const characters = ({ animeData }: any) => {
-  return <div>{animeData.url}</div>;
+const Characters = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.replace(`/under_construction`);
+  }, []);
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -39,4 +45,4 @@ export const getStaticProps = async (context: IParams) => {
   };
 };
 
-export default characters;
+export default Characters;
