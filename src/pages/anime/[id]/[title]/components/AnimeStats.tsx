@@ -1,4 +1,3 @@
-import { initialAnimeData } from "@/types/initializer";
 import { IAnimeData } from "@/types/interfaces";
 
 interface Props {
@@ -6,8 +5,6 @@ interface Props {
 }
 
 const AnimeStats: React.FC<Props> = ({ animeData }) => {
-  const data = animeData || initialAnimeData;
-
   return (
     <div id="statistics" className="mb-5">
       <h2
@@ -18,17 +15,17 @@ const AnimeStats: React.FC<Props> = ({ animeData }) => {
       </h2>
       <div id="statistics_score" className="my-[0.375rem] text-[0.6875rem]">
         <span className="font-bold text-[#444]">{"Score: "}</span>
-        {data.score || "N/A"}
+        {(animeData && animeData.score) || "N/A"}
         <sup className="text-[0.5625rem] text-black">1</sup>
         {` (scored by ${
-          data.scored_by
-            ? new Intl.NumberFormat("en").format(+data.scored_by)
+          animeData && animeData.scored_by
+            ? new Intl.NumberFormat("en").format(+animeData.scored_by)
             : "-"
         } users)`}
       </div>
       <div id="statistics_ranked" className="my-[0.375rem] text-[0.6875rem]">
         <span className="font-bold text-[#444]">{"Ranked: "}</span>
-        {`#${data.rank || "N/A"}`}
+        {`#${(animeData && animeData.rank) || "N/A"}`}
         <sup className="text-[0.5625rem] text-black">2</sup>
       </div>
       <div
@@ -36,18 +33,18 @@ const AnimeStats: React.FC<Props> = ({ animeData }) => {
         className="my-[0.375rem] text-[0.6875rem]"
       >
         <span className="font-bold text-[#444]">{"Popularity: "}</span>
-        {`#${data.popularity || "N/A"}`}
+        {`#${(animeData && animeData.popularity) || "N/A"}`}
       </div>
       <div id="statistics_members" className="my-[0.375rem] text-[0.6875rem]">
         <span className="font-bold text-[#444]">{"Members: "}</span>
-        {data.members
-          ? new Intl.NumberFormat("en").format(+data.members)
+        {animeData && animeData.members
+          ? new Intl.NumberFormat("en").format(+animeData.members)
           : "N/A"}
       </div>
       <div id="statistics_favorites" className="my-[0.375rem] text-[0.6875rem]">
         <span className="font-bold text-[#444]">{"Members: "}</span>
-        {data.favorites
-          ? new Intl.NumberFormat("en").format(+data.favorites)
+        {animeData && animeData.favorites
+          ? new Intl.NumberFormat("en").format(+animeData.favorites)
           : "N/A"}
       </div>
     </div>
