@@ -22,8 +22,10 @@ import AnimeNav from "./components/AnimeNav";
 import AnimeStacks from "./components/AnimeStacks";
 import AnimeNoData from "./components/AnimeNoData";
 import AnimeInfoNoData from "./components/AnimeInfoNoData";
+import AnimeCharacters from "./components/AnimeCharacters";
 import { GetStaticPaths } from "next";
 import {
+  IAnimeCharactersData,
   IAnimeData,
   IAnimeStacksData,
   IFeaturedData,
@@ -38,19 +40,21 @@ interface IParams {
 }
 
 interface Props {
-  title: string;
+  title_url: string;
   animeData: IAnimeData;
   featuredData: IFeaturedData[];
   newsData: INewsData[];
   stacksData: IAnimeStacksData[];
+  displayCharacters: IAnimeCharactersData[] | null;
 }
 
 const Anime: React.FC<Props> = ({
-  title,
+  title_url,
   animeData,
   newsData,
   featuredData,
   stacksData,
+  displayCharacters,
 }) => {
   const desc_content = animeData.synopsis
     ? animeData.synopsis.length > 347
@@ -106,7 +110,7 @@ const Anime: React.FC<Props> = ({
             <AnimeNav
               id={animeData.mal_id}
               title={animeData.title}
-              title_url={title}
+              title_url={title_url}
             />
             <AnimeMainStats animeData={animeData} />
             <AnimeSynopsis synopsis={animeData.synopsis} />
@@ -115,18 +119,19 @@ const Anime: React.FC<Props> = ({
               <MALxJPN />
             </div>
             <AnimeRelations relations={animeData.relations} />
+            <AnimeCharacters displayCharacters={displayCharacters} />
             <AnimeNoData title="Staff" link_title="More staff" />
             <AnimeTheme theme={animeData.theme} />
             <AnimeNoData title="Reviews" link_title="More reviews" />
             <AnimeStacks
               stacks={stacksData}
               id={animeData.mal_id}
-              title={title}
+              title_url={title_url}
             />
             <AnimeNews
               newsData={newsData}
               id={animeData.mal_id}
-              title={title}
+              title_url={title_url}
             />
             <AnimeNoData
               title="Recent Forum Discussion"
@@ -135,7 +140,7 @@ const Anime: React.FC<Props> = ({
             <AnimeFeatured
               featuredData={featuredData}
               id={animeData.mal_id}
-              title={title}
+              title_url={title_url}
             />
           </div>
         </div>
@@ -152,16 +157,26 @@ export const getStaticPaths: GetStaticPaths = async () => {
     (res) => res.default
   );
 
-  json.slice(0, 2).forEach((anime) => {
+  json.forEach((anime) => {
     paths.push({ params: { id: anime.id.toString(), title: anime.title } });
   });
 
-  paths.push({
-    params: { id: "44909", title: "San_Zhi_Xiao_Zhu__Mofa_Da_Maoxian" },
-  });
-  paths.push({
-    params: { id: "50265", title: "Spy_x_Family" },
-  });
+  // json.slice(0, 2).forEach((anime) => {
+  //   paths.push({ params: { id: anime.id.toString(), title: anime.title } });
+  // });
+
+  // paths.push({
+  //   params: { id: "44909", title: "San_Zhi_Xiao_Zhu__Mofa_Da_Maoxian" },
+  // });
+  // paths.push({
+  //   params: { id: "50265", title: "Spy_x_Family" },
+  // });
+  // paths.push({
+  //   params: {
+  //     id: "10384",
+  //     title: "Sono_Hanabira_ni_Kuchizuke_wo__Reo_x_Mai_Diaries",
+  //   },
+  // });
 
   return {
     paths: paths,
@@ -170,23 +185,61 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps = async (context: IParams) => {
-  const { id, title } = context.params;
+  const { id, title: title_url } = context.params;
 
-  const animeData = await import(`@/data/anime/${id}.json`).then(
+  const animeData = (await import(`@/data/anime/${id}.json`).then(
     (res) => res.default.data
-  );
-  const newsData = await import(
+  )) as IAnimeData;
+  const newsData = (await import(
     "@/pages/components/dummy_data/newsData.json"
-  ).then((res) => res.default.data.slice(0, 2));
-  const featuredData = await import(
+  ).then((res) => res.default.data.slice(0, 2))) as INewsData[];
+  const featuredData = (await import(
     "@/pages/components/dummy_data/featuredData.json"
-  ).then((res) => res.default.data.slice(0, 2));
-  const stacksData = await import(
+  ).then((res) => res.default.data.slice(0, 2))) as IFeaturedData[];
+  const stacksData = (await import(
     "./components/dummy_data/stacksData.json"
-  ).then((res) => res.default.data);
+  ).then((res) => res.default.data)) as IAnimeStacksData[];
+
+  const animeCharactersData = (await import(
+    `@/data/animeCharacters/${id}.json`
+  ).then((res) =>
+    res.default.data.sort((a: any, b: any) => b.favorites - a.favorites)
+  )) as IAnimeCharactersData[];
+
+  let displayCharacters: IAnimeCharactersData[] | null =
+    animeCharactersData.length ? [] : null;
+
+  if (displayCharacters) {
+    displayCharacters = animeCharactersData.filter((character) => {
+      return character.role === "Main";
+    });
+
+    const supportingCharacters = animeCharactersData
+      .filter((character) => {
+        return character.role === "Supporting";
+      })
+      .slice(0, 10 - displayCharacters.length);
+
+    if (displayCharacters.length < 10) {
+      displayCharacters = displayCharacters.concat(supportingCharacters);
+    }
+
+    displayCharacters.forEach((character) => {
+      character.voice_actors = character.voice_actors.filter(
+        (va) => va.language === "Japanese"
+      );
+    });
+  }
 
   return {
-    props: { title, animeData, newsData, featuredData, stacksData },
+    props: {
+      title_url,
+      animeData,
+      newsData,
+      featuredData,
+      stacksData,
+      displayCharacters,
+    },
   };
 };
 
