@@ -4,10 +4,10 @@ import Image from "next/image";
 interface Props {
   newsData: INewsData[];
   id: number;
-  title: string;
+  title_url: string;
 }
 
-const AnimeNews: React.FC<Props> = ({ newsData, id, title }) => {
+const AnimeNews: React.FC<Props> = ({ newsData, id, title_url }) => {
   // Using div with onClick event listener on links with generic text
   // (more, view more, etc.) for better SEO
   const openInNewTab = (url: string) => {
@@ -15,7 +15,7 @@ const AnimeNews: React.FC<Props> = ({ newsData, id, title }) => {
   };
 
   return (
-    <article id="recent-news" className="mb-5 font-[Verdana] text-[0.75rem]">
+    <div id="recent-news" className="mb-5 font-[Verdana] text-[0.75rem]">
       <div
         id="recent-news_header"
         className="mb-2 flex h-[1.375rem] items-center justify-between border-b-[1px] border-[#bebebe] pb-[0.1875rem] pt-1"
@@ -30,7 +30,9 @@ const AnimeNews: React.FC<Props> = ({ newsData, id, title }) => {
         </h2>
         <div
           onClick={() =>
-            openInNewTab(`https://myanimelist.net/anime/${id}/${title}/news`)
+            openInNewTab(
+              `https://myanimelist.net/anime/${id}/${title_url}/news`
+            )
           }
           className="float-right mb-2 cursor-pointer pt-[0.125rem] text-[0.6875rem] font-normal leading-tight text-[#1c439b] hover:underline"
         >
@@ -101,7 +103,7 @@ const AnimeNews: React.FC<Props> = ({ newsData, id, title }) => {
             </div>
           ))}
       </div>
-    </article>
+    </div>
   );
 };
 
