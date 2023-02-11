@@ -1,3 +1,4 @@
+import { IAnimeData } from "@/types/interfaces";
 import { GetStaticPaths } from "next";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
@@ -22,12 +23,17 @@ export const getStaticPaths: GetStaticPaths = async () => {
     (res) => res.default
   );
 
-  json.slice(0, 2).forEach((anime) => {
+  json.forEach((anime) => {
     paths.push({ params: { id: anime.id.toString() } });
   });
 
-  paths.push({ params: { id: "44909" } });
-  paths.push({ params: { id: "50265" } });
+  // json.slice(0, 2).forEach((anime) => {
+  //   paths.push({ params: { id: anime.id.toString() } });
+  // });
+
+  // paths.push({ params: { id: "44909" } });
+  // paths.push({ params: { id: "50265" } });
+  // paths.push({ params: { id: "10384" } });
 
   return {
     paths: paths,
@@ -40,7 +46,7 @@ export const getStaticProps = async (context: IParams) => {
 
   const animeData = await import(`@/data/anime/${id}.json`).then(
     (res) => res.default.data
-  );
+  ) as IAnimeData;
   const { mal_id, url } = animeData;
   const title_url = url.match(/[^\/]+$/);
 

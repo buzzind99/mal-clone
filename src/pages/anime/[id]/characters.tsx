@@ -27,12 +27,17 @@ export const getStaticPaths: GetStaticPaths = async () => {
     (res) => res.default
   );
 
-  json.slice(0, 2).forEach((anime) => {
+  json.forEach((anime) => {
     paths.push({ params: { id: anime.id.toString() } });
   });
 
-  paths.push({ params: { id: "44909" } });
-  paths.push({ params: { id: "50265" } });
+  // json.slice(0, 2).forEach((anime) => {
+  //   paths.push({ params: { id: anime.id.toString() } });
+  // });
+
+  // paths.push({ params: { id: "44909" } });
+  // paths.push({ params: { id: "50265" } });
+  // paths.push({ params: { id: "10384" } });
 
   return {
     paths: paths,
