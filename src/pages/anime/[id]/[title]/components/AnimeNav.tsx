@@ -7,6 +7,19 @@ interface Props {
   path?: string;
 }
 
+const navs = new Map([
+  ["characters", "Characters & Staff"],
+  ["videos", "Videos"],
+  ["stats", "Stats"],
+  ["reviews", "Reviews"],
+  ["userrecs", "Recommendations"],
+  ["stacks", "Interest Stacks"],
+  ["news", "News"],
+  ["forums", "Forums"],
+  ["clubs", "Clubs"],
+  ["pics", "Pictures"],
+]);
+
 const AnimeNav: React.FC<Props> = ({ id, title, title_url, path }) => {
   const activeStyle = "text-white bg-[#1c439b]";
 
@@ -21,7 +34,7 @@ const AnimeNav: React.FC<Props> = ({ id, title, title_url, path }) => {
             !path ? activeStyle : ""
           }`}
         >
-          Details
+          <Link href={`/anime/${id}/${title_url}`}>Details</Link>
         </span>
         <span
           className={`mr-[0.17rem] cursor-pointer px-[0.21rem] py-[0.095rem] hover:bg-[#1c439b] hover:text-white ${
@@ -33,6 +46,7 @@ const AnimeNav: React.FC<Props> = ({ id, title, title_url, path }) => {
           >{`Characters & Staff`}</Link>
         </span>
         <span
+          title="Dummy button"
           className={`mr-[0.17rem] cursor-pointer px-[0.21rem] py-[0.095rem] hover:bg-[#1c439b] hover:text-white ${
             path === "video" ? activeStyle : ""
           }`}
@@ -40,6 +54,7 @@ const AnimeNav: React.FC<Props> = ({ id, title, title_url, path }) => {
           Videos
         </span>
         <span
+          title="Dummy button"
           className={`mr-[0.17rem] cursor-pointer px-[0.21rem] py-[0.095rem] hover:bg-[#1c439b] hover:text-white ${
             path === "stats" ? activeStyle : ""
           }`}
@@ -47,6 +62,7 @@ const AnimeNav: React.FC<Props> = ({ id, title, title_url, path }) => {
           Stats
         </span>
         <span
+          title="Dummy button"
           className={`mr-[0.17rem] cursor-pointer px-[0.21rem] py-[0.095rem] hover:bg-[#1c439b] hover:text-white ${
             path === "reviews" ? activeStyle : ""
           }`}
@@ -54,6 +70,7 @@ const AnimeNav: React.FC<Props> = ({ id, title, title_url, path }) => {
           Reviews
         </span>
         <span
+          title="Dummy button"
           className={`mr-[0.17rem] cursor-pointer px-[0.21rem] py-[0.095rem] hover:bg-[#1c439b] hover:text-white ${
             path === "userrecs" ? activeStyle : ""
           }`}
@@ -61,6 +78,7 @@ const AnimeNav: React.FC<Props> = ({ id, title, title_url, path }) => {
           Recommendations
         </span>
         <span
+          title="Dummy button"
           className={`mr-[0.17rem] cursor-pointer px-[0.21rem] py-[0.095rem] hover:bg-[#1c439b] hover:text-white ${
             path === "stacks" ? activeStyle : ""
           }`}
@@ -68,6 +86,7 @@ const AnimeNav: React.FC<Props> = ({ id, title, title_url, path }) => {
           Interest Stacks
         </span>
         <span
+          title="Dummy button"
           className={`mr-[0.17rem] cursor-pointer px-[0.21rem] py-[0.095rem] hover:bg-[#1c439b] hover:text-white ${
             path === "news" ? activeStyle : ""
           }`}
@@ -75,6 +94,7 @@ const AnimeNav: React.FC<Props> = ({ id, title, title_url, path }) => {
           News
         </span>
         <span
+          title="Dummy button"
           className={`mr-[0.17rem] cursor-pointer px-[0.21rem] py-[0.095rem] hover:bg-[#1c439b] hover:text-white ${
             path === "forum" ? activeStyle : ""
           }`}
@@ -82,6 +102,7 @@ const AnimeNav: React.FC<Props> = ({ id, title, title_url, path }) => {
           Forum
         </span>
         <span
+          title="Dummy button"
           className={`mr-[0.17rem] cursor-pointer px-[0.21rem] py-[0.095rem] hover:bg-[#1c439b] hover:text-white ${
             path === "clubs" ? activeStyle : ""
           }`}
@@ -89,6 +110,7 @@ const AnimeNav: React.FC<Props> = ({ id, title, title_url, path }) => {
           Clubs
         </span>
         <span
+          title="Dummy button"
           className={`mr-[0.17rem] cursor-pointer px-[0.21rem] py-[0.095rem] hover:bg-[#1c439b] hover:text-white ${
             path === "pics" ? activeStyle : ""
           }`}
@@ -128,7 +150,7 @@ const AnimeNav: React.FC<Props> = ({ id, title, title_url, path }) => {
               }
               className="mr-2 hover:underline"
             >
-              {title.length > 30 ? `${title.slice(0, 30)}...` : title}
+              {navs.get(path)}
             </Link>
           </span>
         )}
