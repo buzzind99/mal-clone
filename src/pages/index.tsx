@@ -130,30 +130,30 @@ export default function Home({
 }
 
 export async function getStaticProps() {
-  const newsData = await import("./components/dummy_data/newsData.json").then(
+  const newsData = (await import("./components/dummy_data/newsData.json").then(
     (res) => res.default.data
-  );
-  const discussionsData = await import(
+  )) as INewsData[];
+  const discussionsData = (await import(
     "./components/dummy_data/discussionsData.json"
-  ).then((res) => res.default.data);
-  const featuredData = await import(
+  ).then((res) => res.default.data)) as IDiscussionsData[];
+  const featuredData = (await import(
     "./components/dummy_data/featuredData.json"
-  ).then((res) => res.default.data);
-  const reviewsData = await import(
+  ).then((res) => res.default.data)) as IFeaturedData[];
+  const reviewsData = (await import(
     "./components/dummy_data/reviewsData.json"
-  ).then((res) => res.default.data);
-  const recommendationsData = await import(
+  ).then((res) => res.default.data)) as IReviewsData[];
+  const recommendationsData = (await import(
     "./components/dummy_data/recommendationsData.json"
-  ).then((res) => res.default.data);
-  const seasonalAnimeData = await import("@/data/seasonalAnimeData.json").then(
+  ).then((res) => res.default.data)) as IRecommendationsData[];
+  const seasonalAnimeData = (await import("@/data/seasonalAnimeData.json").then(
     (res) => res.default.data
-  );
-  const latestEpisodesData = await import(
+  )) as ISeasonalAnimeData[];
+  const latestEpisodesData = (await import(
     "@/data/latestEpisodesData.json"
-  ).then((res) => res.default.data);
-  const popularTrailersData = await import(
+  ).then((res) => res.default.data)) as ILatestEpisodesData[];
+  const popularTrailersData = (await import(
     "@/data/popularTrailersData.json"
-  ).then((res) => res.default.data);
+  ).then((res) => res.default.data)) as IPopularTrailersData[];
 
   return {
     props: {
