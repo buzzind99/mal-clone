@@ -89,7 +89,10 @@ const AnimeMainStats: React.FC<Props> = ({ animeData }) => {
                 className="flex text-[0.625rem] text-[#1c439b]"
               >
                 {animeData && animeData.season && animeData.year && (
-                  <span className="mr-3 cursor-pointer self-center border-r-[1px] border-[#bebebe] pr-3 hover:underline">
+                  <span
+                    title="Dummy button"
+                    className="mr-3 cursor-pointer self-center border-r-[1px] border-[#bebebe] pr-3 hover:underline"
+                  >
                     {animeData.season.charAt(0).toUpperCase() +
                       animeData.season.slice(1)}{" "}
                     {animeData.year}
@@ -97,6 +100,7 @@ const AnimeMainStats: React.FC<Props> = ({ animeData }) => {
                 )}
                 {animeData && animeData.type && (
                   <span
+                    title="Dummy button"
                     className={`mr-3 cursor-pointer self-center border-[#bebebe] pr-3 hover:underline ${animeTypeBorder}`}
                     style={{}}
                   >
@@ -110,19 +114,27 @@ const AnimeMainStats: React.FC<Props> = ({ animeData }) => {
                         .slice(0, animeData.studios.length - 1)
                         .map((studio) => (
                           <div key={studio.name} className="inline-block">
-                            <span className="hover:underline">
+                            <span
+                              title="Dummy button"
+                              className="hover:underline"
+                            >
                               {studio.name}
                             </span>
                             ,&nbsp;
                           </div>
                         ))}
                     {animeData.studios.length > 1 && (
-                      <span className="cursor-pointer text-[#1c439b] hover:underline">
+                      <span
+                        title="Dummy button"
+                        className="cursor-pointer hover:underline"
+                      >
                         {animeData.studios[animeData.studios.length - 1].name}
                       </span>
                     )}
                     {animeData.studios.length === 1 && (
-                      <span>{animeData.studios[0].name}</span>
+                      <span title="Dummy button" className="hover:underline">
+                        {animeData.studios[0].name}
+                      </span>
                     )}
                   </span>
                 )}
@@ -221,7 +233,10 @@ const AnimeMainStats: React.FC<Props> = ({ animeData }) => {
                 }}
               ></span>
             </div>
-            <div className="float-right mt-1 w-fit cursor-pointer text-[0.6875rem] text-[#1c439b] hover:underline">
+            <div
+              title="Dummy button"
+              className="float-right mt-1 w-fit cursor-pointer text-[0.6875rem] text-[#1c439b] hover:underline"
+            >
               More videos
             </div>
           </div>
