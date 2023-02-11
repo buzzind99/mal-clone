@@ -38,7 +38,11 @@ const AnimeTheme: React.FC<Props> = ({ theme }) => {
                   <td className="w-[1.8125rem]">
                     <div
                       className="h-[1.125rem] w-[1.8125rem] opacity-[0.09]"
-                      style={{ background: "url(/mv-icon.png)" }}
+                      style={{
+                        background: "url(/mv-icon.png)",
+                        backgroundRepeat: "no-repeat",
+                        backgroundSize: "1.8125rem 1.125rem",
+                      }}
                     ></div>
                   </td>
                 </tr>
@@ -80,7 +84,11 @@ const AnimeTheme: React.FC<Props> = ({ theme }) => {
                   <td className="w-[1.8125rem]">
                     <div
                       className="h-[1.125rem] w-[1.8125rem] opacity-[0.09]"
-                      style={{ background: "url(/mv-icon.png)" }}
+                      style={{
+                        background: "url(/mv-icon.png)",
+                        backgroundRepeat: "no-repeat",
+                        backgroundSize: "1.8125rem 1.125rem",
+                      }}
                     ></div>
                   </td>
                 </tr>
