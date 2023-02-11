@@ -14,7 +14,7 @@ const AnimePoster: React.FC<Props> = ({ title, image_url }) => {
         width={225}
         height={320}
         priority={true}
-        className="mb-[0.6rem] cursor-pointer object-cover"
+        className="mb-[0.6rem] h-80 w-[14.0625rem] cursor-pointer object-cover"
       />
       <div
         title="Dummy button"
