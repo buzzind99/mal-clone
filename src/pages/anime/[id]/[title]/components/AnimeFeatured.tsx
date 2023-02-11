@@ -4,10 +4,10 @@ import { IFeaturedData } from "@/types/interfaces";
 interface Props {
   featuredData: IFeaturedData[];
   id: number;
-  title: string;
+  title_url: string;
 }
 
-const AnimeFeatured: React.FC<Props> = ({ featuredData, id, title }) => {
+const AnimeFeatured: React.FC<Props> = ({ featuredData, id, title_url }) => {
   // Using div with onClick event listener on links with generic text
   // (more, view more, etc.) for better SEO
   const openInNewTab = (url: string) => {
@@ -15,7 +15,7 @@ const AnimeFeatured: React.FC<Props> = ({ featuredData, id, title }) => {
   };
 
   return (
-    <article
+    <div
       id="featured-articles"
       className="mb-32 font-[Verdana] text-[0.75rem]"
     >
@@ -34,7 +34,7 @@ const AnimeFeatured: React.FC<Props> = ({ featuredData, id, title }) => {
         <div
           onClick={() =>
             openInNewTab(
-              `https://myanimelist.net/anime/${id}/${title}/featured`
+              `https://myanimelist.net/anime/${id}/${title_url}/featured`
             )
           }
           className="float-right mb-2 cursor-pointer pt-[0.125rem] text-[0.6875rem] font-normal leading-tight text-[#1c439b] hover:underline"
@@ -98,7 +98,7 @@ const AnimeFeatured: React.FC<Props> = ({ featuredData, id, title }) => {
             </div>
           ))}
       </div>
-    </article>
+    </div>
   );
 };
 
