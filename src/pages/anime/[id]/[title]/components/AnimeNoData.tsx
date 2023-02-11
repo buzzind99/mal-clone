@@ -1,6 +1,6 @@
 interface Props {
   title: string;
-  link_title: string;
+  link_title?: string;
 }
 
 const AnimeNoData: React.FC<Props> = ({ title, link_title }) => {
