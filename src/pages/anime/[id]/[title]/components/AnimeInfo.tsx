@@ -1,4 +1,3 @@
-import { initialAnimeData } from "@/types/initializer";
 import { IAnimeData } from "@/types/interfaces";
 
 interface Props {
@@ -6,8 +5,6 @@ interface Props {
 }
 
 const AnimeInfo: React.FC<Props> = ({ animeData }) => {
-  const data = animeData || initialAnimeData;
-
   return (
     <div id="information" className="mb-5">
       <h2
@@ -18,32 +15,39 @@ const AnimeInfo: React.FC<Props> = ({ animeData }) => {
       </h2>
       <div id="information_type" className="my-[0.375rem] text-[0.6875rem]">
         <span className="font-bold text-[#444]">{"Type: "}</span>
-        <span className="cursor-pointer text-[#1c439b] hover:underline">
-          {data.type || "?"}
+        <span
+          title="Dummy button"
+          className="cursor-pointer text-[#1c439b] hover:underline"
+        >
+          {(animeData && animeData.type) || "?"}
         </span>
       </div>
       <div id="information_episodes" className="my-[0.375rem] text-[0.6875rem]">
         <span className="font-bold text-[#444]">{"Episodes: "}</span>
-        {data.episodes || "?"}
+        {(animeData && animeData.episodes) || "?"}
       </div>
       <div id="information_status" className="my-[0.375rem] text-[0.6875rem]">
         <span className="font-bold text-[#444]">{"Status: "}</span>
-        {data.status || "?"}
+        {(animeData && animeData.status) || "?"}
       </div>
       <div id="information_aired" className="my-[0.375rem] text-[0.6875rem]">
         <span className="font-bold text-[#444]">{"Aired: "}</span>
-        {data.aired.string || "?"}
+        {(animeData && animeData.aired.string) || "?"}
       </div>
       <div
         id="information_premiered"
         className="my-[0.375rem] text-[0.6875rem]"
       >
         <span className="font-bold text-[#444]">{"Premiered: "}</span>
-        {data.season && data.year ? (
-          <span className="cursor-pointer text-[#1c439b] hover:underline">
-            {`${data.season.charAt(0).toUpperCase() + data.season.slice(1)} ${
-              data.year
-            }`}
+        {animeData && animeData.season && animeData.year ? (
+          <span
+            title="Dummy button"
+            className="cursor-pointer text-[#1c439b] hover:underline"
+          >
+            {`${
+              animeData.season.charAt(0).toUpperCase() +
+              animeData.season.slice(1)
+            } ${animeData.year}`}
           </span>
         ) : (
           "?"
@@ -54,142 +58,207 @@ const AnimeInfo: React.FC<Props> = ({ animeData }) => {
         className="my-[0.375rem] text-[0.6875rem]"
       >
         <span className="font-bold text-[#444]">{"Broadcast: "}</span>
-        {data.broadcast.string || "?"}
+        {(animeData && animeData.broadcast.string) || "?"}
       </div>
       <div
         id="information_producers"
         className="my-[0.375rem] text-[0.6875rem]"
       >
         <span className="font-bold text-[#444]">{`Producers: `}</span>
-        {data.producers &&
-          data.producers.length > 1 &&
-          data.producers.slice(0, data.producers.length - 1).map((producer) => (
-            <div key={producer.name} className="inline-block">
-              <span className="cursor-pointer text-[#1c439b] hover:underline">
-                {producer.name}
-              </span>
-              ,&nbsp;
-            </div>
-          ))}
-        {data.producers && data.producers.length > 1 && (
-          <span className="cursor-pointer text-[#1c439b] hover:underline">
-            {data.producers[data.producers.length - 1].name}
+        {animeData &&
+          animeData.producers &&
+          animeData.producers.length > 1 &&
+          animeData.producers
+            .slice(0, animeData.producers.length - 1)
+            .map((producer) => (
+              <div key={producer.name} className="inline-block">
+                <span
+                  title="Dummy button"
+                  className="cursor-pointer text-[#1c439b] hover:underline"
+                >
+                  {producer.name}
+                </span>
+                ,&nbsp;
+              </div>
+            ))}
+        {animeData && animeData.producers && animeData.producers.length > 1 && (
+          <span
+            title="Dummy button"
+            className="cursor-pointer text-[#1c439b] hover:underline"
+          >
+            {animeData.producers[animeData.producers.length - 1].name}
           </span>
         )}
-        {data.producers && data.producers.length === 1 && (
-          <span className="cursor-pointer text-[#1c439b] hover:underline">
-            {data.producers[0].name}
-          </span>
-        )}
-        {!data.producers.length && "None found"}
+        {animeData &&
+          animeData.producers &&
+          animeData.producers.length === 1 && (
+            <span
+              title="Dummy button"
+              className="cursor-pointer text-[#1c439b] hover:underline"
+            >
+              {animeData.producers[0].name}
+            </span>
+          )}
+        {animeData && !animeData.producers.length && "None found"}
       </div>
       <div
         id="information_licensors"
         className="my-[0.375rem] text-[0.6875rem]"
       >
         <span className="font-bold text-[#444]">{`Licensors: `}</span>
-        {data.licensors &&
-          data.licensors.length > 1 &&
-          data.licensors.slice(0, data.licensors.length - 1).map((licensor) => (
-            <div key={licensor.name} className="inline-block">
-              <span className="cursor-pointer text-[#1c439b] hover:underline">
-                {licensor.name}
-              </span>
-              ,&nbsp;
-            </div>
-          ))}
-        {data.licensors && data.licensors.length > 1 && (
-          <span className="cursor-pointer text-[#1c439b] hover:underline">
-            {data.licensors[data.licensors.length - 1].name}
+        {animeData &&
+          animeData.licensors &&
+          animeData.licensors.length > 1 &&
+          animeData.licensors
+            .slice(0, animeData.licensors.length - 1)
+            .map((licensor) => (
+              <div key={licensor.name} className="inline-block">
+                <span
+                  title="Dummy button"
+                  className="cursor-pointer text-[#1c439b] hover:underline"
+                >
+                  {licensor.name}
+                </span>
+                ,&nbsp;
+              </div>
+            ))}
+        {animeData && animeData.licensors && animeData.licensors.length > 1 && (
+          <span
+            title="Dummy button"
+            className="cursor-pointer text-[#1c439b] hover:underline"
+          >
+            {animeData.licensors[animeData.licensors.length - 1].name}
           </span>
         )}
-        {data.licensors && data.licensors.length === 1 && (
-          <span className="cursor-pointer text-[#1c439b] hover:underline">
-            {data.licensors[0].name}
-          </span>
-        )}
-        {!data.licensors.length && "None found"}
+        {animeData &&
+          animeData.licensors &&
+          animeData.licensors.length === 1 && (
+            <span
+              title="Dummy button"
+              className="cursor-pointer text-[#1c439b] hover:underline"
+            >
+              {animeData.licensors[0].name}
+            </span>
+          )}
+        {animeData && !animeData.licensors.length && "None found"}
       </div>
       <div id="information_studios" className="my-[0.375rem] text-[0.6875rem]">
         <span className="font-bold text-[#444]">{`Studios: `}</span>
-        {data.studios &&
-          data.studios.length > 1 &&
-          data.studios.slice(0, data.studios.length - 1).map((studio) => (
-            <div key={studio.name} className="inline-block">
-              <span className="cursor-pointer text-[#1c439b] hover:underline">
-                {studio.name}
-              </span>
-              ,&nbsp;
-            </div>
-          ))}
-        {data.studios && data.studios.length > 1 && (
-          <span className="cursor-pointer text-[#1c439b] hover:underline">
-            {data.studios[data.studios.length - 1].name}
+        {animeData &&
+          animeData.studios &&
+          animeData.studios.length > 1 &&
+          animeData.studios
+            .slice(0, animeData.studios.length - 1)
+            .map((studio) => (
+              <div key={studio.name} className="inline-block">
+                <span
+                  title="Dummy button"
+                  className="cursor-pointer text-[#1c439b] hover:underline"
+                >
+                  {studio.name}
+                </span>
+                ,&nbsp;
+              </div>
+            ))}
+        {animeData && animeData.studios && animeData.studios.length > 1 && (
+          <span
+            title="Dummy button"
+            className="cursor-pointer text-[#1c439b] hover:underline"
+          >
+            {animeData.studios[animeData.studios.length - 1].name}
           </span>
         )}
-        {data.studios && data.studios.length === 1 && (
-          <span className="cursor-pointer text-[#1c439b] hover:underline">
-            {data.studios[0].name}
+        {animeData && animeData.studios && animeData.studios.length === 1 && (
+          <span
+            title="Dummy button"
+            className="cursor-pointer text-[#1c439b] hover:underline"
+          >
+            {animeData.studios[0].name}
           </span>
         )}
-        {!data.studios.length && "None found"}
+        {animeData && !animeData.studios.length && "None found"}
       </div>
       <div id="information_source" className="my-[0.375rem] text-[0.6875rem]">
         <span className="font-bold text-[#444]">{"Source: "}</span>
-        {data.source || "?"}
+        {(animeData && animeData.source) || "?"}
       </div>
       <div id="information_genres" className="my-[0.375rem] text-[0.6875rem]">
         <span className="font-bold text-[#444]">{`Genres: `}</span>
-        {data.genres &&
-          data.genres.length > 1 &&
-          data.genres.slice(0, data.genres.length - 1).map((genre) => (
-            <div key={genre.name} className="inline-block">
-              <span className="cursor-pointer text-[#1c439b] hover:underline">
-                {genre.name}
-              </span>
-              ,&nbsp;
-            </div>
-          ))}
-        {data.genres && data.genres.length > 1 && (
-          <span className="cursor-pointer text-[#1c439b] hover:underline">
-            {data.genres[data.genres.length - 1].name}
+        {animeData &&
+          animeData.genres &&
+          animeData.genres.length > 1 &&
+          animeData.genres
+            .slice(0, animeData.genres.length - 1)
+            .map((genre) => (
+              <div
+                title="Dummy button"
+                key={genre.name}
+                className="inline-block"
+              >
+                <span className="cursor-pointer text-[#1c439b] hover:underline">
+                  {genre.name}
+                </span>
+                ,&nbsp;
+              </div>
+            ))}
+        {animeData && animeData.genres && animeData.genres.length > 1 && (
+          <span
+            title="Dummy button"
+            className="cursor-pointer text-[#1c439b] hover:underline"
+          >
+            {animeData.genres[animeData.genres.length - 1].name}
           </span>
         )}
-        {data.genres && data.genres.length === 1 && (
-          <span className="cursor-pointer text-[#1c439b] hover:underline">
-            {data.genres[0].name}
+        {animeData && animeData.genres && animeData.genres.length === 1 && (
+          <span
+            title="Dummy button"
+            className="cursor-pointer text-[#1c439b] hover:underline"
+          >
+            {animeData.genres[0].name}
           </span>
         )}
-        {!data.genres.length && "None found"}
+        {animeData && !animeData.genres.length && "None found"}
       </div>
       <div id="information_themes" className="my-[0.375rem] text-[0.6875rem]">
         <span className="font-bold text-[#444]">{`Themes: `}</span>
-        {data.themes &&
-          data.themes.length > 1 &&
-          data.themes.slice(0, data.themes.length - 1).map((theme) => (
-            <div key={theme.name} className="inline-block">
-              <span className="cursor-pointer text-[#1c439b] hover:underline">
-                {theme.name}
-              </span>
-              ,&nbsp;
-            </div>
-          ))}
-        {data.themes && data.themes.length > 1 && (
-          <span className="cursor-pointer text-[#1c439b] hover:underline">
-            {data.themes[data.themes.length - 1].name}
+        {animeData &&
+          animeData.themes &&
+          animeData.themes.length > 1 &&
+          animeData.themes
+            .slice(0, animeData.themes.length - 1)
+            .map((theme) => (
+              <div key={theme.name} className="inline-block">
+                <span
+                  title="Dummy button"
+                  className="cursor-pointer text-[#1c439b] hover:underline"
+                >
+                  {theme.name}
+                </span>
+                ,&nbsp;
+              </div>
+            ))}
+        {animeData && animeData.themes && animeData.themes.length > 1 && (
+          <span
+            title="Dummy button"
+            className="cursor-pointer text-[#1c439b] hover:underline"
+          >
+            {animeData.themes[animeData.themes.length - 1].name}
           </span>
         )}
-        {data.themes && data.themes.length === 1 && (
-          <span className="cursor-pointer text-[#1c439b] hover:underline">
-            {data.themes[0].name}
+        {animeData && animeData.themes && animeData.themes.length === 1 && (
+          <span
+            title="Dummy button"
+            className="cursor-pointer text-[#1c439b] hover:underline"
+          >
+            {animeData.themes[0].name}
           </span>
         )}
-        {!data.themes.length && "None found"}
+        {animeData && !animeData.themes.length && "None found"}
       </div>
       <div id="information_duration" className="my-[0.375rem] text-[0.6875rem]">
         <span className="font-bold text-[#444]">{"Duration: "}</span>
-        {data.duration
-          ? data.duration
+        {animeData && animeData.duration
+          ? animeData.duration
               .replaceAll("hr", "hr.")
               .replaceAll("min", "min.")
               .replaceAll("ep", "ep.")
@@ -197,7 +266,7 @@ const AnimeInfo: React.FC<Props> = ({ animeData }) => {
       </div>
       <div id="information_rating" className="my-[0.375rem] text-[0.6875rem]">
         <span className="font-bold text-[#444]">{"Rating: "}</span>
-        {data.rating || "?"}
+        {(animeData && animeData.rating) || "?"}
       </div>
     </div>
   );
