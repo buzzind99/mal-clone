@@ -238,3 +238,36 @@ export interface IAnimeData {
     url: string;
   }[];
 }
+
+export interface IAnimeCharactersData {
+  character: {
+    mal_id: number;
+    url: string;
+    images: {
+      jpg: {
+        image_url: string | null;
+        small_image_url: string | null;
+      };
+      webp: {
+        image_url: string | null;
+        small_image_url: string | null;
+      };
+    };
+    name: string;
+  };
+  favorites: number;
+  role: string;
+  voice_actors: {
+    person: {
+      mal_id: number;
+      url: string;
+      images: {
+        jpg: {
+          image_url: string | null;
+        };
+      };
+      name: string;
+    };
+    language: string;
+  }[];
+}
