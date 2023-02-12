@@ -4,8 +4,8 @@ interface Props {
 
 const AnimeTheme: React.FC<Props> = ({ theme }) => {
   return (
-    <div id="theme" className="mb-5">
-      <div id="opening-theme" className="mr-4 inline-block w-[24.5rem]">
+    <div id="theme" className="mb-5 flex justify-between">
+      <div id="opening-theme" className="inline-block w-[24.5rem]">
         <h2
           id="opening-theme_header"
           className="mb-[0.45rem] flex w-full justify-between border-b-[1px] border-[#bebebe] py-[0.15rem] text-[0.75rem] font-bold"
