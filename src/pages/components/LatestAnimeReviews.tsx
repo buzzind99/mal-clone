@@ -1,5 +1,6 @@
-import { IReviewsData } from "@/types/interfaces";
 import Image from "next/image";
+import Link from "next/link";
+import { IReviewsData } from "@/types/interfaces";
 
 interface Props {
   reviewsData: IReviewsData[];
@@ -23,7 +24,7 @@ const LatestAnimeReviews: React.FC<Props> = ({ reviewsData }) => {
       >
         <h2 className="font-bold">
           Latest Anime Reviews
-          <span className="opacity-40">{` (this is a placeholder, links are external)`}</span>
+          <span className="opacity-40">{` (this is a placeholder, some links are external)`}</span>
         </h2>
         <div
           onClick={() =>
@@ -43,10 +44,8 @@ const LatestAnimeReviews: React.FC<Props> = ({ reviewsData }) => {
               key={data.id}
               className="mt-[0.375rem] flex border-b-[1px] border-[#e5e7eb] pb-[0.375rem]"
             >
-              <a
-                href={data.anime_url}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href={data.anime_url.replace("https://myanimelist.net", "")}
               >
                 <Image
                   src={data.image_url}
@@ -55,18 +54,16 @@ const LatestAnimeReviews: React.FC<Props> = ({ reviewsData }) => {
                   height={70}
                   className="h-[4.5rem] min-w-[3.25rem] border-[1px] border-[#bebebe] object-cover"
                 />
-              </a>
+              </Link>
               <div className="ml-2 inline-block text-[0.6875rem]">
                 <h3 className="mr-1 inline-block pb-[0.1875rem] font-bold text-[#1c439b]">
-                  <a
-                    href={data.anime_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    href={data.anime_url.replace("https://myanimelist.net", "")}
                     title={data.title}
                     className="text-[#1c439b] hover:underline"
                   >
                     {data.title}
-                  </a>
+                  </Link>
                 </h3>
                 <span className="h-[0.875rem] w-[1.5rem] cursor-pointer border-b-[1px] border-[#e5e5e5] bg-[#f0f0f0] px-[0.225rem] pt-[0.05rem] text-[0.625rem] tracking-tighter text-[#1c439b] transition-all duration-300 hover:text-white">
                   add

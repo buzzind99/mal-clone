@@ -1,7 +1,8 @@
 import VideoPortal from "@/components/VideoPortal";
 import styles from "@/styles/MostPopularTrailers.module.css";
-import { IPopularTrailersData } from "@/types/interfaces";
+import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
+import { IPopularTrailersData } from "@/types/interfaces";
 
 const initialData: IPopularTrailersData[] = [
   {
@@ -170,15 +171,13 @@ const MostPopularTrailers: React.FC<Props> = ({ popularTrailersData }) => {
                   />
                 </div>
                 <h3 className="mx-[0.3rem] block overflow-hidden pb-1 text-[0.65625rem] leading-none tracking-tight text-[#1c439b]">
-                  <a
+                  <Link
                     title={data.anime}
-                    href={data.anime_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href={data.anime_url.replace("https://myanimelist.net", "")}
                     className="hover:underline"
                   >
                     {data.anime}
-                  </a>
+                  </Link>
                 </h3>
               </div>
             ))}

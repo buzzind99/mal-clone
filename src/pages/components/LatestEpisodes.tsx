@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "@/styles/LatestEpisodes.module.css";
+import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { ILatestEpisodesData } from "@/types/interfaces";
 
@@ -128,8 +129,8 @@ const LatestEpisodes: React.FC<Props> = ({ latestEpisodesData }) => {
         <div id="latest-episodes_slider-container" style={slideStyle}>
           {animeList.map((data) => (
             <div key={data.id} className="mr-2 inline-block max-w-[6.75rem]">
-              <div
-                onClick={() => openInNewTab(data.anime_url)}
+              <Link
+                href={data.anime_url.replace("https://myanimelist.net", "")}
                 className={`relative inline-block cursor-pointer transition-all duration-300 ease-[ease-in-out] hover:opacity-80`}
                 style={childHover}
               >
@@ -158,16 +159,16 @@ const LatestEpisodes: React.FC<Props> = ({ latestEpisodesData }) => {
                   height={163}
                   className="h-[10.1875rem] w-[6.75rem] object-cover"
                 />
-              </div>
+              </Link>
               <h3 className="mx-[0.15rem] block overflow-hidden text-[0.65625rem] leading-none tracking-tight text-[#1c439b] hover:underline">
-                <a
+                <Link
                   title={data.anime}
-                  href={data.anime_url}
+                  href={data.anime_url.replace("https://myanimelist.net", "")}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   {data.anime}
-                </a>
+                </Link>
               </h3>
             </div>
           ))}

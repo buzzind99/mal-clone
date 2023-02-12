@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { IRecommendationsData } from "@/types/interfaces";
 
 interface Props {
@@ -54,10 +55,8 @@ const LatestAnimeRecommendations: React.FC<Props> = ({
           >
             <div className="inline-block w-[50%]">
               <div className="flex">
-                <a
-                  href={data.anime_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href={data.anime_url.replace("https://myanimelist.net", "")}
                 >
                   <Image
                     src={data.image_url}
@@ -66,19 +65,20 @@ const LatestAnimeRecommendations: React.FC<Props> = ({
                     height={70}
                     className="h-[4.5rem] min-w-[3.25rem] border-[1px] border-[#bebebe] object-cover"
                   />
-                </a>
+                </Link>
                 <div className="ml-2">
                   <p className="mt-[0.2rem]">If you liked</p>
-                  <a
-                    href={data.anime_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    href={data.anime_url.replace("https://myanimelist.net", "")}
                     className="font-bold text-[#1c439b]"
                   >
-                    <h3 className="mt-1 w-fit cursor-pointer hover:underline">
+                    <h3
+                      title={data.anime}
+                      className="mt-1 w-fit cursor-pointer hover:underline"
+                    >
                       {data.anime}
                     </h3>
-                  </a>
+                  </Link>
                   <div className="mt-[0.375rem] h-[0.875rem] w-[1.5rem] cursor-pointer border-b-[1px] border-[#e5e5e5] bg-[#f0f0f0] px-[0.225rem] pt-[0.05rem] text-[0.625rem] tracking-tighter text-[#1c439b] transition-all duration-300 hover:text-white">
                     add
                   </div>
@@ -87,8 +87,11 @@ const LatestAnimeRecommendations: React.FC<Props> = ({
             </div>
             <div className="inline-block w-[50%]">
               <div className="flex">
-                <a
-                  href={data.anime_rec_url}
+                <Link
+                  href={data.anime_rec_url.replace(
+                    "https://myanimelist.net",
+                    ""
+                  )}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -99,19 +102,25 @@ const LatestAnimeRecommendations: React.FC<Props> = ({
                     height={70}
                     className="h-[4.5rem] min-w-[3.25rem] border-[1px] border-[#bebebe] object-cover"
                   />
-                </a>
+                </Link>
                 <div className="ml-2">
                   <p className="mt-[0.2rem]">...then you might like</p>
-                  <a
-                    href={data.anime_rec_url}
+                  <Link
+                    href={data.anime_rec_url.replace(
+                      "https://myanimelist.net",
+                      ""
+                    )}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="font-bold text-[#1c439b]"
                   >
-                    <h3 className="mt-1 w-fit cursor-pointer hover:underline">
+                    <h3
+                      title={data.anime_rec}
+                      className="mt-1 w-fit cursor-pointer hover:underline"
+                    >
                       {data.anime_rec}
                     </h3>
-                  </a>
+                  </Link>
                   <div className="mt-[0.375rem] h-[0.875rem] w-[1.5rem] cursor-pointer border-b-[1px] border-[#e5e5e5] bg-[#f0f0f0] px-[0.225rem] pt-[0.05rem] text-[0.625rem] tracking-tighter text-[#1c439b] transition-all duration-300 hover:text-white">
                     add
                   </div>

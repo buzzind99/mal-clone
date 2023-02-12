@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "@/styles/SeasonalAnime.module.css";
+import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { ISeasonalAnimeData } from "@/types/interfaces";
 
@@ -115,11 +116,9 @@ const SeasonalAnime: React.FC<Props> = ({ seasonalAnimeData }) => {
         />
         <div id="seasonal-anime_slider-container" style={slideStyle}>
           {animeList.map((data) => (
-            <a
+            <Link
               key={data.id}
-              href={data.anime_url}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={data.anime_url.replace("https://myanimelist.net", "")}
               className={
                 "relative mr-[0.375rem] inline-block h-[13.75rem] w-[10rem] transition-all duration-300 ease-[ease-in-out] hover:opacity-70"
               }
@@ -139,7 +138,7 @@ const SeasonalAnime: React.FC<Props> = ({ seasonalAnimeData }) => {
                 loading="eager"
                 className="h-[13.75rem] w-[10rem] border-[1px] border-[#e5e5e5] object-cover"
               />
-            </a>
+            </Link>
           ))}
         </div>
       </div>
