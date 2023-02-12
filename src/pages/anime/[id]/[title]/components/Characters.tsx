@@ -1,5 +1,5 @@
-import { IAnimeCharactersData } from "@/types/interfaces";
 import Image from "next/image";
+import { IAnimeCharactersData } from "@/types/interfaces";
 
 interface Props {
   characters: IAnimeCharactersData[] | null;
@@ -57,9 +57,9 @@ const Characters: React.FC<Props> = ({ characters }) => {
       >
         {characters &&
           !!characters.length &&
-          characters.map((character) => (
+          characters.map((character, index) => (
             <div
-              key={character.character.name}
+              key={index}
               id="characters_each"
               className="flex justify-between border-b-[1px] border-[#e5e5e5]"
             >
@@ -92,7 +92,6 @@ const Characters: React.FC<Props> = ({ characters }) => {
                   </div>
                 </div>
               </div>
-
               <div
                 id="characters_each-right"
                 className="p-[0.1875rem] align-top"
