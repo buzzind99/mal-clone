@@ -44,7 +44,7 @@ const AnimeMainStats: React.FC<Props> = ({ animeData }) => {
               id="main-stats_score"
               className="my-[0.24rem] inline-block border-r-[1px] border-[#d8d8d8] pr-4 text-center"
             >
-              <div className="w-[3.75rem] rounded-[2px] bg-[#2e51a2] text-[0.625rem] text-white">
+              <div className="mx-auto w-[3.75rem] rounded-[2px] bg-[#2e51a2] text-[0.625rem] text-white">
                 SCORE
               </div>
               <div className="mt-[0.4rem] text-[1.5rem] font-bold  leading-none">
@@ -152,7 +152,7 @@ const AnimeMainStats: React.FC<Props> = ({ animeData }) => {
                 </span>
                 Add to list
               </div>
-              <div className="mr-2 flex h-[1.4375rem] w-[8.625rem] items-center justify-between rounded-[4px] border-[1px] border-[#bebebe] bg-white px-2 text-[#2e51a2] opacity-50">
+              <div className="mr-2 flex h-[1.4375rem] w-[8.625rem] cursor-default items-center justify-between rounded-[4px] border-[1px] border-[#bebebe] bg-white px-2 text-[#2e51a2] opacity-50">
                 <div className="flex items-center">
                   <Image
                     src="/star-icon.png"
@@ -172,7 +172,7 @@ const AnimeMainStats: React.FC<Props> = ({ animeData }) => {
                   <path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z" />
                 </svg>
               </div>
-              <div className="flex h-[1.4375rem] w-[8.625rem] items-center justify-between rounded-[4px] border-[1px] border-[#bebebe] bg-white px-2 text-[#2e51a2] opacity-50">
+              <div className="flex h-[1.4375rem] w-[8.625rem] cursor-default items-center justify-between rounded-[4px] border-[1px] border-[#bebebe] bg-white px-2 text-[#2e51a2] opacity-50">
                 <span className="py-[0.1rem] text-[0.6875rem] leading-none text-[#323232]">
                   {`Episodes:`}
                 </span>
