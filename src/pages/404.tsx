@@ -1,5 +1,5 @@
 import ContentTitleBar from "@/components/ContentTitleBar";
-import FooterChartPlaceholder from "@/components/FooterChartPlaceholder";
+import FooterChart from "@/components/FooterChart";
 import MainContainer from "@/components/MainContainer";
 import MainFooter from "@/components/MainFooter";
 import MainHeader from "@/components/MainHeader";
@@ -41,7 +41,7 @@ const NotFound: React.FC = () => {
         </div>
       </MainContainer>
       <div className="h-36" />
-      <FooterChartPlaceholder />
+      <FooterChart />
       <MainFooter />
     </>
   );

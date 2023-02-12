@@ -1,5 +1,5 @@
 import ContentTitleBar from "@/components/ContentTitleBar";
-import FooterChartPlaceholder from "@/components/FooterChartPlaceholder";
+import FooterChart from "@/components/FooterChart";
 import MainContainer from "@/components/MainContainer";
 import MainFooter from "@/components/MainFooter";
 import MainHeader from "@/components/MainHeader";
@@ -23,7 +23,7 @@ const UnderConstructionPage: React.FC = () => {
       <MainContainer>
         <UnderConstruction />
       </MainContainer>
-      <FooterChartPlaceholder />
+      <FooterChart />
       <MainFooter />
     </>
   );
