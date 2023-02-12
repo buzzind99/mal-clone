@@ -1,5 +1,5 @@
 import ContentTitleBar from "@/components/ContentTitleBar";
-import FooterChartPlaceholder from "@/components/FooterChartPlaceholder";
+import FooterChart from "@/components/FooterChart";
 import MainContainer from "@/components/MainContainer";
 import MainFooter from "@/components/MainFooter";
 import MainHeader from "@/components/MainHeader";
@@ -8,10 +8,10 @@ import Head from "next/head";
 import AnimeMangaNews from "./components/AnimeMangaNews";
 import FeaturedArticles from "./components/FeaturedArticles";
 import MALxJPN from "./components/MALxJPN";
-import MostPopularAnimePlaceholder from "./components/MostPopularAnimePlaceholder";
+import MostPopularAnime from "./components/MostPopularAnime";
 import RecentAnimeDiscussions from "./components/RecentAnimeDiscussions";
-import TopAiringAnimePlaceholder from "./components/TopAiringAnimePlaceholder";
-import TopUpcomingAnimePlaceholder from "./components/TopUpcomingAnimePlaceholder";
+import TopAiringAnime from "./components/TopAiringAnime";
+import TopUpcomingAnime from "./components/TopUpcomingAnime";
 import LatestAnimeReviews from "./components/LatestAnimeReviews";
 import LatestAnimeRecommendations from "./components/LatestAnimeRecommendations";
 import SeasonalAnime from "./components/SeasonalAnime";
@@ -26,6 +26,7 @@ import {
   ISeasonalAnimeData,
   ILatestEpisodesData,
   IPopularTrailersData,
+  IAnimeChartData,
 } from "../types/interfaces";
 
 interface Props {
@@ -38,6 +39,9 @@ interface Props {
   seasonalAnimeData: ISeasonalAnimeData[];
   latestEpisodesData: ILatestEpisodesData[];
   popularTrailersData: IPopularTrailersData[];
+  topAiringAnimeData: IAnimeChartData[];
+  topUpcomingAnimeData: IAnimeChartData[];
+  mostPopularAnimeData: IAnimeChartData[];
 }
 
 export default function Home({
@@ -49,6 +53,9 @@ export default function Home({
   seasonalAnimeData,
   latestEpisodesData,
   popularTrailersData,
+  topAiringAnimeData,
+  topUpcomingAnimeData,
+  mostPopularAnimeData,
 }: Props) {
   return (
     <>
@@ -112,18 +119,18 @@ export default function Home({
             className="inline-block w-[20rem] px-[0.5rem]"
           >
             <div id="top-airing-anime_container" className="mt-1">
-              <TopAiringAnimePlaceholder />
+              <TopAiringAnime topAiringAnimeData={topAiringAnimeData} />
             </div>
             <div id="top-upcoming-anime_container" className="mt-[1.25rem]">
-              <TopUpcomingAnimePlaceholder />
+              <TopUpcomingAnime topUpcomingAnimeData={topUpcomingAnimeData} />
             </div>
             <div id="most-popular-anime_container" className="mt-[1.25rem]">
-              <MostPopularAnimePlaceholder />
+              <MostPopularAnime mostPopularAnimeData={mostPopularAnimeData} />
             </div>
           </div>
         </div>
       </MainContainer>
-      <FooterChartPlaceholder />
+      <FooterChart />
       <MainFooter />
     </>
   );
@@ -154,6 +161,15 @@ export async function getStaticProps() {
   const popularTrailersData = (await import(
     "@/data/popularTrailersData.json"
   ).then((res) => res.default.data)) as IPopularTrailersData[];
+  const topAiringAnimeData = (await import(
+    "@/data/topAiringAnimeData.json"
+  ).then((res) => res.default.data)) as IAnimeChartData[];
+  const topUpcomingAnimeData = (await import(
+    "@/data/topUpcomingAnimeData.json"
+  ).then((res) => res.default.data)) as IAnimeChartData[];
+  const mostPopularAnimeData = (await import(
+    "@/data/mostPopularAnimeData.json"
+  ).then((res) => res.default.data)) as IAnimeChartData[];
 
   return {
     props: {
@@ -165,6 +181,9 @@ export async function getStaticProps() {
       seasonalAnimeData,
       latestEpisodesData,
       popularTrailersData,
+      topAiringAnimeData,
+      topUpcomingAnimeData,
+      mostPopularAnimeData,
     },
   };
 }
