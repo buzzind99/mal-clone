@@ -20,10 +20,10 @@ const AnimeTitles: React.FC<Props> = ({ titles }) => {
       >
         Alternative Titles
       </h2>
-      {data.slice(1).map((title) => (
+      {data.slice(1).map((title, index) => (
         <div
           id={`titles_${title.type.toLowerCase()}`}
-          key={title.type}
+          key={index}
           className="my-[0.375rem] text-[0.6875rem]"
         >
           <span className="font-bold text-[#444]">{`${
