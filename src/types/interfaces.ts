@@ -98,6 +98,21 @@ export interface IAnimeStacksData {
   image_2: string;
 }
 
+export interface IFooterTopAnimeData {
+  name: string;
+  url: string;
+}
+
+export interface IAnimeChartData {
+  name: string;
+  url: string;
+  image_url: string;
+  type: string;
+  episodes: number;
+  score: number | string;
+  members: number;
+}
+
 export interface IAnimeData {
   mal_id: number;
   url: string;
