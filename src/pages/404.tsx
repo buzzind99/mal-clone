@@ -24,20 +24,23 @@ const NotFound: React.FC = () => {
       <MainContainer>
         <div className="py-14 text-center">
           <div className="flex justify-center">
-            <Link href="/">
+            <Link
+              href="/"
+              className="transition-opacity duration-300 ease-[ease-in-out] hover:opacity-80"
+            >
               <Image
                 src="https://cdn.myanimelist.net/images/error/404_image.png?v=170126"
                 alt="404 Not Found"
                 width={337}
                 height={191}
                 priority={true}
-                className="object-cover"
-              ></Image>
+                className="h-[11.9375rem] w-[21.0625rem] object-cover"
+              />
             </Link>
           </div>
-          <div className="font-[Helvetica] text-[2.4rem] font-bold text-[#2e51a2]">
-            This page doesn&apos;t exist.
-          </div>
+          <div
+            className={`mx-auto w-fit font-[Helvetica] text-[2.4rem] font-bold text-[#2e51a2] after:content-["This_page_doesn't_exist."]`}
+          />
         </div>
       </MainContainer>
       <div className="h-36" />

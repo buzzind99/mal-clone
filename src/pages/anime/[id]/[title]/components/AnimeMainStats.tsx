@@ -89,26 +89,31 @@ const AnimeMainStats: React.FC<Props> = ({ animeData }) => {
                 className="flex text-[0.625rem] text-[#1c439b]"
               >
                 {animeData && animeData.season && animeData.year && (
-                  <span
-                    title="Dummy button"
-                    className="mr-3 cursor-pointer self-center border-r-[1px] border-[#bebebe] pr-3 hover:underline"
-                  >
-                    {animeData.season.charAt(0).toUpperCase() +
-                      animeData.season.slice(1)}{" "}
-                    {animeData.year}
+                  <span className="mr-3 self-center border-r-[1px] border-[#bebebe] pr-3">
+                    <span
+                      title="Dummy button"
+                      className="cursor-pointer hover:underline"
+                    >
+                      {animeData.season.charAt(0).toUpperCase() +
+                        animeData.season.slice(1)}{" "}
+                      {animeData.year}
+                    </span>
                   </span>
                 )}
                 {animeData && animeData.type && (
                   <span
-                    title="Dummy button"
-                    className={`mr-3 cursor-pointer self-center border-[#bebebe] pr-3 hover:underline ${animeTypeBorder}`}
-                    style={{}}
+                    className={`mr-3 self-center border-[#bebebe] pr-3 ${animeTypeBorder}`}
                   >
-                    {animeData.type}
+                    <span
+                      title="Dummy button"
+                      className="cursor-pointer hover:underline"
+                    >
+                      {animeData.type}
+                    </span>
                   </span>
                 )}
                 {animeData && !!animeData.studios.length && (
-                  <span className="mr-3 cursor-pointer self-center pr-3">
+                  <span className="mr-3 self-center pr-3">
                     {animeData.studios.length > 1 &&
                       animeData.studios
                         .slice(0, animeData.studios.length - 1)
@@ -116,7 +121,7 @@ const AnimeMainStats: React.FC<Props> = ({ animeData }) => {
                           <div key={studio.name} className="inline-block">
                             <span
                               title="Dummy button"
-                              className="hover:underline"
+                              className="cursor-pointer hover:underline"
                             >
                               {studio.name}
                             </span>
@@ -132,7 +137,10 @@ const AnimeMainStats: React.FC<Props> = ({ animeData }) => {
                       </span>
                     )}
                     {animeData.studios.length === 1 && (
-                      <span title="Dummy button" className="hover:underline">
+                      <span
+                        title="Dummy button"
+                        className="cursor-pointer hover:underline"
+                      >
                         {animeData.studios[0].name}
                       </span>
                     )}
