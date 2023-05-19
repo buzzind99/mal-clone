@@ -1,6 +1,6 @@
 This is [Next.js](https://nextjs.org/) implementation of [MyAnimeList.net](https://myanimelist.net/) (frontend side).
 
-Site contains ~96k static pages
+This project contains ~96k static pages after building.
 
 ## Deployment
 
