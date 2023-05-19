@@ -10,7 +10,13 @@ Link: -
 
 ## Run Locally (Development Server)
 
-Run the development server using:
+Install dependencies:
+
+```bash
+npm install
+```
+
+Then run the development server using:
 
 ```bash
 npm run dev
@@ -22,12 +28,17 @@ pnpm dev
 
 Then open [http://localhost:3000](http://localhost:3000).
 
-
 ## Run Locally (Production Server)
 
 (~30 min build time, require min 8GB of RAM)
 
-Build the project using:
+Install dependencies:
+
+```bash
+npm install
+```
+
+Then build the project using:
 
 ```bash
 npm run build
