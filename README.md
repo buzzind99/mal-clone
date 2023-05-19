@@ -8,9 +8,9 @@ Status: OFFLINE
 
 Link: -
 
-## Run Locally
+## Run Locally (Development Server)
 
-Run the development server:
+Run the development server using:
 
 ```bash
 npm run dev
@@ -22,11 +22,19 @@ pnpm dev
 
 Then open [http://localhost:3000](http://localhost:3000).
 
-For faster performance build the project first before running:
 
-(~30 min build time, require min 8GB of RAM)
+## Run Locally (Production Server)
+
+Build the project using:
 
 ```bash
 npm run build
+```
+(~30 min build time, require min 8GB of RAM)
+
+Then start the server using:
+
+```bash
 npm run start
 ```
+Then open [http://localhost:3000](http://localhost:3000).
