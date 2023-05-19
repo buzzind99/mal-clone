@@ -25,12 +25,13 @@ Then open [http://localhost:3000](http://localhost:3000).
 
 ## Run Locally (Production Server)
 
+(~30 min build time, require min 8GB of RAM)
+
 Build the project using:
 
 ```bash
 npm run build
 ```
-(~30 min build time, require min 8GB of RAM)
 
 Then start the server using:
 
