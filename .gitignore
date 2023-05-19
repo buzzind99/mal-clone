@@ -12,9 +12,6 @@
 /.next/
 /out/
 
-# local data
-/src/data/animeCharacters
-
 # production
 /build
 
